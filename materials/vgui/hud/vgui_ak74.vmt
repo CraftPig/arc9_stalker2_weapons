@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	"$baseTexture" "vgui/hud/vgui_ak74"
+	
+	"$translucent" "1"
+}
