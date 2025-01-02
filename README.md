@@ -1,4 +1,4 @@
-# [ARC9] S.T.A.L.K.E.R.2: Heart of Chornobyl Weapons
+# [ARC9] S.T.A.L.K.E.R. 2: Heart of Chornobyl Weapons
 
 ## 🔽 Required Items
 [ARC9](https://steamcommunity.com/workshop/filedetails/?id=2910505837) **REQUIRED**
