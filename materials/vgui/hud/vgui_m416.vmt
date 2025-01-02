@@ -1,6 +1,6 @@
 "UnlitGeneric"
 {
-	"$baseTexture" "vgui/hud/vgui_spsa"
+	"$baseTexture" "vgui/hud/vgui_m416"
 	
 	"$translucent" "1"
 }

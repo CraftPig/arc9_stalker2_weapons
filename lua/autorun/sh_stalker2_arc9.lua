@@ -29,6 +29,7 @@ Sound Tables
 -- Sounds_GROZA
 -- Sounds_M416
 -- Sounds_SPSA
+-- Sounds_Fora21
 
 ----------------------------------------------------------------------------------------------------- Sounds_Generic
 sound.Add( {
@@ -38,7 +39,7 @@ sound.Add( {
     level = 60,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/generic/SFX_Empty_01.mp3",
+        "weapons/arc9/stalker2/generic/SFX_Empty_01.ogg",
     }
 } )
 sound.Add( {
@@ -48,10 +49,10 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/generic/SFX_Jam_01.mp3",
-		"weapons/arc9/stalker2/generic/SFX_Jam_02.mp3",
-		"weapons/arc9/stalker2/generic/SFX_Jam_03.mp3",
-		"weapons/arc9/stalker2/generic/SFX_Jam_04.mp3",
+        "weapons/arc9/stalker2/generic/SFX_Jam_01.ogg",
+		"weapons/arc9/stalker2/generic/SFX_Jam_02.ogg",
+		"weapons/arc9/stalker2/generic/SFX_Jam_03.ogg",
+		"weapons/arc9/stalker2/generic/SFX_Jam_04.ogg",
     }
 } )
 sound.Add( {
@@ -61,10 +62,10 @@ sound.Add( {
     level = 60,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/generic/SFX_Trigger_01.mp3",
-		"weapons/arc9/stalker2/generic/SFX_Trigger_02.mp3",
-		"weapons/arc9/stalker2/generic/SFX_Trigger_03.mp3",
-		"weapons/arc9/stalker2/generic/SFX_Trigger_04.mp3",
+        "weapons/arc9/stalker2/generic/SFX_Trigger_01.ogg",
+		"weapons/arc9/stalker2/generic/SFX_Trigger_02.ogg",
+		"weapons/arc9/stalker2/generic/SFX_Trigger_03.ogg",
+		"weapons/arc9/stalker2/generic/SFX_Trigger_04.ogg",
     }
 } )
 sound.Add( {
@@ -74,15 +75,15 @@ sound.Add( {
     level = 60,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_01.mp3",
-		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_02.mp3",
-		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_03.mp3",
-		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_04.mp3",
-		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_05.mp3",
-		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_06.mp3",
-		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_07.mp3",
-		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_08.mp3",
-		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_09.mp3",
+        "weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_01.ogg",
+		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_02.ogg",
+		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_03.ogg",
+		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_04.ogg",
+		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_05.ogg",
+		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_06.ogg",
+		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_07.ogg",
+		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_08.ogg",
+		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_09.ogg",
     }
 } )
 
@@ -94,17 +95,17 @@ sound.Add( {
     level = 65,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/cloth/SFX_PlayerClothes_01.mp3",
-		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_02.mp3",
-		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_03.mp3",
-		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_04.mp3",
-		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_05.mp3",
-		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_06.mp3",
-		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_07.mp3",
-		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_08.mp3",
-		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_09.mp3",
-		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_10.mp3",
-		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_11.mp3",
+        "weapons/arc9/stalker2/cloth/SFX_PlayerClothes_01.ogg",
+		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_02.ogg",
+		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_03.ogg",
+		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_04.ogg",
+		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_05.ogg",
+		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_06.ogg",
+		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_07.ogg",
+		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_08.ogg",
+		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_09.ogg",
+		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_10.ogg",
+		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_11.ogg",
     }
 } )
 sound.Add( {
@@ -114,11 +115,11 @@ sound.Add( {
     level = 65,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/cloth/SFX_PlayerClothes_12.mp3",
-		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_14.mp3",
-		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_15.mp3",
-		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_17.mp3",
-		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_18.mp3",
+        "weapons/arc9/stalker2/cloth/SFX_PlayerClothes_12.ogg",
+		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_14.ogg",
+		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_15.ogg",
+		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_17.ogg",
+		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_18.ogg",
     }
 } )
 
@@ -130,9 +131,9 @@ sound.Add( {
     level = 125,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/shot_toz/Fire_01.mp3",
-		"weapons/arc9/stalker2/shot_toz/Fire_02.mp3",
-		"weapons/arc9/stalker2/shot_toz/Fire_03.mp3",
+        "weapons/arc9/stalker2/shot_toz/Fire_01.ogg",
+		"weapons/arc9/stalker2/shot_toz/Fire_02.ogg",
+		"weapons/arc9/stalker2/shot_toz/Fire_03.ogg",
     }
 } )
 sound.Add( {
@@ -142,9 +143,9 @@ sound.Add( {
     level = 125,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/shot_toz/Fire_Outdoors_01.mp3",
-		"weapons/arc9/stalker2/shot_toz/Fire_Outdoors_02.mp3",
-		"weapons/arc9/stalker2/shot_toz/Fire_Outdoors_03.mp3",
+        "weapons/arc9/stalker2/shot_toz/Fire_Outdoors_01.ogg",
+		"weapons/arc9/stalker2/shot_toz/Fire_Outdoors_02.ogg",
+		"weapons/arc9/stalker2/shot_toz/Fire_Outdoors_03.ogg",
     }
 } )
 sound.Add( {
@@ -154,9 +155,9 @@ sound.Add( {
     level = 125,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/shot_toz/Fire_Indoors_01.mp3",
-		"weapons/arc9/stalker2/shot_toz/Fire_Indoors_02.mp3",
-		"weapons/arc9/stalker2/shot_toz/Fire_Indoors_03.mp3",
+        "weapons/arc9/stalker2/shot_toz/Fire_Indoors_01.ogg",
+		"weapons/arc9/stalker2/shot_toz/Fire_Indoors_02.ogg",
+		"weapons/arc9/stalker2/shot_toz/Fire_Indoors_03.ogg",
     }
 } )
 sound.Add( {
@@ -166,8 +167,8 @@ sound.Add( {
     level = 65,
     pitch = {95, 100},
     sound = {
-        "weapons/arc9/stalker2/shot_toz/SFX_TOZ34_Slide_Back_01.mp3",
-		"weapons/arc9/stalker2/shot_toz/SFX_TOZ34_Slide_Back_02.mp3",
+        "weapons/arc9/stalker2/shot_toz/SFX_TOZ34_Slide_Back_01.ogg",
+		"weapons/arc9/stalker2/shot_toz/SFX_TOZ34_Slide_Back_02.ogg",
     }
 } )
 sound.Add( {
@@ -177,8 +178,8 @@ sound.Add( {
     level = 65,
     pitch = {95, 100},
     sound = {
-        "weapons/arc9/stalker2/shot_toz/SFX_TOZ34_Slide_Forward_01.mp3",
-		"weapons/arc9/stalker2/shot_toz/SFX_TOZ34_Slide_Forward_02.mp3",
+        "weapons/arc9/stalker2/shot_toz/SFX_TOZ34_Slide_Forward_01.ogg",
+		"weapons/arc9/stalker2/shot_toz/SFX_TOZ34_Slide_Forward_02.ogg",
     }
 } )
 sound.Add( {
@@ -188,7 +189,7 @@ sound.Add( {
     level = 65,
     pitch = {95, 100},
     sound = {
-        "weapons/arc9/stalker2/shot_toz/SFX_TOZ34_Click.mp3",
+        "weapons/arc9/stalker2/shot_toz/SFX_TOZ34_Click.ogg",
     }
 } )
 sound.Add( {
@@ -198,8 +199,8 @@ sound.Add( {
     level = 65,
     pitch = {95, 100},
     sound = {
-        "weapons/arc9/stalker2/shot_toz/SFX_TOZ34_MagOut_Calm_01.mp3",
-		"weapons/arc9/stalker2/shot_toz/SFX_TOZ34_MagOut_Calm_02.mp3",
+        "weapons/arc9/stalker2/shot_toz/SFX_TOZ34_MagOut_Calm_01.ogg",
+		"weapons/arc9/stalker2/shot_toz/SFX_TOZ34_MagOut_Calm_02.ogg",
     }
 } )
 sound.Add( {
@@ -209,8 +210,8 @@ sound.Add( {
     level = 65,
     pitch = {95, 100},
     sound = {
-        "weapons/arc9/stalker2/shot_toz/SFX_TOZ34_MagIn_Calm_01.mp3",
-		"weapons/arc9/stalker2/shot_toz/SFX_TOZ34_MagIn_Calm_02.mp3",
+        "weapons/arc9/stalker2/shot_toz/SFX_TOZ34_MagIn_Calm_01.ogg",
+		"weapons/arc9/stalker2/shot_toz/SFX_TOZ34_MagIn_Calm_02.ogg",
     }
 } )
 sound.Add( {
@@ -220,8 +221,8 @@ sound.Add( {
     level = 65,
     pitch = {95, 100},
     sound = {
-        "weapons/arc9/stalker2/shot_toz/SFX_TOZ34_MagIn_Tactical_01.mp3",
-		"weapons/arc9/stalker2/shot_toz/SFX_TOZ34_MagIn_Tactical_02.mp3",
+        "weapons/arc9/stalker2/shot_toz/SFX_TOZ34_MagIn_Tactical_01.ogg",
+		"weapons/arc9/stalker2/shot_toz/SFX_TOZ34_MagIn_Tactical_02.ogg",
     }
 } )
 sound.Add( {
@@ -231,8 +232,8 @@ sound.Add( {
     level = 65,
     pitch = {95, 100},
     sound = {
-        "weapons/arc9/stalker2/shot_toz/SFX_TOZ34_MagOut_Tactical_01.mp3",
-		"weapons/arc9/stalker2/shot_toz/SFX_TOZ34_MagOut_Tactical_02.mp3",
+        "weapons/arc9/stalker2/shot_toz/SFX_TOZ34_MagOut_Tactical_01.ogg",
+		"weapons/arc9/stalker2/shot_toz/SFX_TOZ34_MagOut_Tactical_02.ogg",
     }
 } )
 
@@ -243,11 +244,11 @@ sound.Add( {
     level = 125,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_ak74/fire_core_1.mp3",
-		"weapons/arc9/stalker2/ar_ak74/fire_core_2.mp3",
-		"weapons/arc9/stalker2/ar_ak74/fire_core_3.mp3",
-		"weapons/arc9/stalker2/ar_ak74/fire_core_4.mp3",
-		"weapons/arc9/stalker2/ar_ak74/fire_core_5.mp3",
+        "weapons/arc9/stalker2/ar_ak74/fire_core_1.ogg",
+		"weapons/arc9/stalker2/ar_ak74/fire_core_2.ogg",
+		"weapons/arc9/stalker2/ar_ak74/fire_core_3.ogg",
+		"weapons/arc9/stalker2/ar_ak74/fire_core_4.ogg",
+		"weapons/arc9/stalker2/ar_ak74/fire_core_5.ogg",
     }
 } )
 sound.Add( {
@@ -256,9 +257,9 @@ sound.Add( {
     level = 125,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_ak74/fire_sil_1.mp3",
-		"weapons/arc9/stalker2/ar_ak74/fire_sil_2.mp3",
-		"weapons/arc9/stalker2/ar_ak74/fire_sil_3.mp3",
+        "weapons/arc9/stalker2/ar_ak74/fire_sil_1.ogg",
+		"weapons/arc9/stalker2/ar_ak74/fire_sil_2.ogg",
+		"weapons/arc9/stalker2/ar_ak74/fire_sil_3.ogg",
     }
 } )
 sound.Add( {
@@ -268,10 +269,10 @@ sound.Add( {
     level = 125,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_ak74/outdoors_1.mp3",
-		"weapons/arc9/stalker2/ar_ak74/outdoors_7.mp3",
-		"weapons/arc9/stalker2/ar_ak74/outdoors_5.mp3",
-		"weapons/arc9/stalker2/ar_ak74/outdoors_6.mp3",
+        "weapons/arc9/stalker2/ar_ak74/outdoors_1.ogg",
+		"weapons/arc9/stalker2/ar_ak74/outdoors_7.ogg",
+		"weapons/arc9/stalker2/ar_ak74/outdoors_5.ogg",
+		"weapons/arc9/stalker2/ar_ak74/outdoors_6.ogg",
     }
 } )
 sound.Add( {
@@ -281,12 +282,12 @@ sound.Add( {
     level = 125,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_ak74/indoors_1.mp3",
-		"weapons/arc9/stalker2/ar_ak74/indoors_2.mp3",
-		"weapons/arc9/stalker2/ar_ak74/indoors_3.mp3",
-		"weapons/arc9/stalker2/ar_ak74/indoors_4.mp3",
-		"weapons/arc9/stalker2/ar_ak74/indoors_5.mp3",
-		"weapons/arc9/stalker2/ar_ak74/indoors_6.mp3",
+        "weapons/arc9/stalker2/ar_ak74/indoors_1.ogg",
+		"weapons/arc9/stalker2/ar_ak74/indoors_2.ogg",
+		"weapons/arc9/stalker2/ar_ak74/indoors_3.ogg",
+		"weapons/arc9/stalker2/ar_ak74/indoors_4.ogg",
+		"weapons/arc9/stalker2/ar_ak74/indoors_5.ogg",
+		"weapons/arc9/stalker2/ar_ak74/indoors_6.ogg",
     }
 } )
 
@@ -297,9 +298,9 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagOutCalm_1.mp3",
-		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagOutCalm_2.mp3",
-		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagOutCalm_3.mp3",
+        "weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagOutCalm_1.ogg",
+		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagOutCalm_2.ogg",
+		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagOutCalm_3.ogg",
     }
 } )
 sound.Add( {
@@ -309,9 +310,9 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagOut_1.mp3",
-		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagOut_2.mp3",
-		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagOut_3.mp3",
+        "weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagOut_1.ogg",
+		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagOut_2.ogg",
+		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagOut_3.ogg",
     }
 } )
 sound.Add( {
@@ -321,9 +322,9 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagIn_1.mp3",
-		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagIn_2.mp3",
-		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagIn_3.mp3",
+        "weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagIn_1.ogg",
+		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagIn_2.ogg",
+		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagIn_3.ogg",
     }
 } )
 sound.Add( {
@@ -333,8 +334,8 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagTap_1.mp3",
-		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagTap_2.mp3",
+        "weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagTap_1.ogg",
+		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_MagTap_2.ogg",
     }
 } )
 sound.Add( {
@@ -344,9 +345,9 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideIn_1.mp3",
-		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideIn_2.mp3",
-		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideIn_3.mp3",
+        "weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideIn_1.ogg",
+		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideIn_2.ogg",
+		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideIn_3.ogg",
     }
 } )
 sound.Add( {
@@ -356,9 +357,9 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideOut_1.mp3",
-		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideOut_2.mp3",
-		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideOut_3.mp3",
+        "weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideOut_1.ogg",
+		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideOut_2.ogg",
+		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideOut_3.ogg",
     }
 } )
 sound.Add( {
@@ -368,9 +369,9 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideJamIn_1.mp3",
-		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideJamIn_2.mp3",
-		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideJamIn_3.mp3",
+        "weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideJamIn_1.ogg",
+		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideJamIn_2.ogg",
+		"weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideJamIn_3.ogg",
     }
 } )
 sound.Add( {
@@ -380,7 +381,7 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideJamOut_1.mp3",
+        "weapons/arc9/stalker2/ar_ak74/SFX_AK74_SlideJamOut_1.ogg",
     }
 } )
 sound.Add( {
@@ -390,7 +391,7 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_ak74/SFX_AK74_BreakBullet_1.mp3",
+        "weapons/arc9/stalker2/ar_ak74/SFX_AK74_BreakBullet_1.ogg",
     }
 } )
 
@@ -401,11 +402,11 @@ sound.Add( {
     level = 125,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_Groza/fire_core_1.mp3",
-		"weapons/arc9/stalker2/ar_Groza/fire_core_2.mp3",
-		"weapons/arc9/stalker2/ar_Groza/fire_core_3.mp3",
-		"weapons/arc9/stalker2/ar_Groza/fire_core_4.mp3",
-		"weapons/arc9/stalker2/ar_Groza/fire_core_5.mp3",
+        "weapons/arc9/stalker2/ar_Groza/fire_core_1.ogg",
+		"weapons/arc9/stalker2/ar_Groza/fire_core_2.ogg",
+		"weapons/arc9/stalker2/ar_Groza/fire_core_3.ogg",
+		"weapons/arc9/stalker2/ar_Groza/fire_core_4.ogg",
+		"weapons/arc9/stalker2/ar_Groza/fire_core_5.ogg",
     }
 } )
 -- sound.Add( {
@@ -414,9 +415,9 @@ sound.Add( {
     -- level = 125,
     -- pitch = {95, 110},
     -- sound = {
-        -- "weapons/arc9/stalker2/ar_Groza/fire_sil_1.mp3",
-		-- "weapons/arc9/stalker2/ar_Groza/fire_sil_2.mp3",
-		-- "weapons/arc9/stalker2/ar_Groza/fire_sil_3.mp3",
+        -- "weapons/arc9/stalker2/ar_Groza/fire_sil_1.ogg",
+		-- "weapons/arc9/stalker2/ar_Groza/fire_sil_2.ogg",
+		-- "weapons/arc9/stalker2/ar_Groza/fire_sil_3.ogg",
     -- }
 -- } )
 
@@ -427,7 +428,7 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagIn_Outro.mp3",
+        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagIn_Outro.ogg",
     }
 } )
 sound.Add( {
@@ -437,9 +438,9 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagOut_1.mp3",
-		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagOut_2.mp3",
-		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagOut_3.mp3",
+        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagOut_1.ogg",
+		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagOut_2.ogg",
+		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagOut_3.ogg",
     }
 } )
 sound.Add( {
@@ -449,9 +450,9 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagIn_1.mp3",
-		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagIn_2.mp3",
-		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagIn_3.mp3",
+        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagIn_1.ogg",
+		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagIn_2.ogg",
+		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagIn_3.ogg",
     }
 } )
 sound.Add( {
@@ -461,8 +462,8 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagBig_In_1.mp3",
-		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagBig_In_2.mp3",
+        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagBig_In_1.ogg",
+		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagBig_In_2.ogg",
     }
 } )
 sound.Add( {
@@ -472,8 +473,8 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagBig_Out_1.mp3",
-		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagBig_Out_2.mp3",
+        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagBig_Out_1.ogg",
+		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_MagBig_Out_2.ogg",
     }
 } )
 sound.Add( {
@@ -483,9 +484,9 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideBack_1.mp3",
-		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideBack_2.mp3",
-		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideBack_3.mp3",
+        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideBack_1.ogg",
+		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideBack_2.ogg",
+		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideBack_3.ogg",
     }
 } )
 sound.Add( {
@@ -495,8 +496,8 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideForward_1.mp3",
-		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideForward_2.mp3",
+        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideForward_1.ogg",
+		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideForward_2.ogg",
     }
 } )
 sound.Add( {
@@ -506,7 +507,7 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideHit_1.mp3",
+        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideHit_1.ogg",
     }
 } )
 sound.Add( {
@@ -516,7 +517,7 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideJam_Back.mp3",
+        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideJam_Back.ogg",
     }
 } )
 sound.Add( {
@@ -526,10 +527,10 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideJam_Effort_1.mp3",
-		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideJam_Effort_2.mp3",
-		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideJam_Effort_3.mp3",
-		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideJam_Effort_4.mp3",
+        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideJam_Effort_1.ogg",
+		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideJam_Effort_2.ogg",
+		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideJam_Effort_3.ogg",
+		"weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideJam_Effort_4.ogg",
     }
 } )
 sound.Add( {
@@ -539,7 +540,7 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideJam_Froward.mp3",
+        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_SlideJam_Froward.ogg",
     }
 } )
 sound.Add( {
@@ -549,7 +550,7 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_GP_Out.mp3",
+        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_GP_Out.ogg",
     }
 } )
 sound.Add( {
@@ -559,7 +560,7 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_GP_In.mp3",
+        "weapons/arc9/stalker2/ar_Groza/SFX_Grim_GP_In.ogg",
     }
 } )
 
@@ -570,10 +571,10 @@ sound.Add( {
     level = 125,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_M416/fire_core_1.mp3",
-		"weapons/arc9/stalker2/ar_M416/fire_core_2.mp3",
-		"weapons/arc9/stalker2/ar_M416/fire_core_3.mp3",
-		"weapons/arc9/stalker2/ar_M416/fire_core_4.mp3",
+        "weapons/arc9/stalker2/ar_M416/fire_core_1.ogg",
+		"weapons/arc9/stalker2/ar_M416/fire_core_2.ogg",
+		"weapons/arc9/stalker2/ar_M416/fire_core_3.ogg",
+		"weapons/arc9/stalker2/ar_M416/fire_core_4.ogg",
     }
 } )
 sound.Add( {
@@ -582,10 +583,10 @@ sound.Add( {
     level = 125,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_M416/fire_sil_1.mp3",
-		"weapons/arc9/stalker2/ar_M416/fire_sil_2.mp3",
-		"weapons/arc9/stalker2/ar_M416/fire_sil_3.mp3",
-		"weapons/arc9/stalker2/ar_M416/fire_sil_4.mp3",
+        "weapons/arc9/stalker2/ar_M416/fire_sil_1.ogg",
+		"weapons/arc9/stalker2/ar_M416/fire_sil_2.ogg",
+		"weapons/arc9/stalker2/ar_M416/fire_sil_3.ogg",
+		"weapons/arc9/stalker2/ar_M416/fire_sil_4.ogg",
     }
 } )
 
@@ -596,7 +597,7 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_M416/SFX_M416_MagInIncreased_Outro.mp3",
+        "weapons/arc9/stalker2/ar_M416/SFX_M416_MagInIncreased_Outro.ogg",
     }
 } )
 sound.Add( {
@@ -606,7 +607,7 @@ sound.Add( {
     level = 70,
     pitch = {90, 95},
     sound = {
-        "weapons/arc9/stalker2/ar_M416/SFX_M416_MagInIncreased_Outro.mp3",
+        "weapons/arc9/stalker2/ar_M416/SFX_M416_MagInIncreased_Outro.ogg",
     }
 } )
 sound.Add( {
@@ -616,7 +617,7 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_M416/SFX_M416_MagIn_Intro.mp3",
+        "weapons/arc9/stalker2/ar_M416/SFX_M416_MagIn_Intro.ogg",
     }
 } )
 sound.Add( {
@@ -626,8 +627,8 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_M416/SFX_M416_MagOut_1.mp3",
-		"weapons/arc9/stalker2/ar_M416/SFX_M416_MagOut_2.mp3",
+        "weapons/arc9/stalker2/ar_M416/SFX_M416_MagOut_1.ogg",
+		"weapons/arc9/stalker2/ar_M416/SFX_M416_MagOut_2.ogg",
     }
 } )
 sound.Add( {
@@ -637,8 +638,8 @@ sound.Add( {
     level = 70,
     pitch = {85, 90},
     sound = {
-        "weapons/arc9/stalker2/ar_M416/SFX_M416_MagOut_1.mp3",
-		"weapons/arc9/stalker2/ar_M416/SFX_M416_MagOut_2.mp3",
+        "weapons/arc9/stalker2/ar_M416/SFX_M416_MagOut_1.ogg",
+		"weapons/arc9/stalker2/ar_M416/SFX_M416_MagOut_2.ogg",
     }
 } )
 sound.Add( {
@@ -648,7 +649,7 @@ sound.Add( {
     level = 70,
     pitch = {80, 90},
     sound = {
-        "weapons/arc9/stalker2/ar_M416/SFX_M416_MagIn_Intro.mp3",
+        "weapons/arc9/stalker2/ar_M416/SFX_M416_MagIn_Intro.ogg",
     }
 } )
 sound.Add( {
@@ -658,8 +659,8 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_M416/SFX_M416_SlideBack_1.mp3",
-		"weapons/arc9/stalker2/ar_M416/SFX_M416_SlideBack_2.mp3",
+        "weapons/arc9/stalker2/ar_M416/SFX_M416_SlideBack_1.ogg",
+		"weapons/arc9/stalker2/ar_M416/SFX_M416_SlideBack_2.ogg",
     }
 } )
 sound.Add( {
@@ -669,8 +670,8 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_M416/SFX_M416_SlideForward_1.mp3",
-		"weapons/arc9/stalker2/ar_M416/SFX_M416_SlideForward_2.mp3",
+        "weapons/arc9/stalker2/ar_M416/SFX_M416_SlideForward_1.ogg",
+		"weapons/arc9/stalker2/ar_M416/SFX_M416_SlideForward_2.ogg",
     }
 } )
 sound.Add( {
@@ -680,7 +681,7 @@ sound.Add( {
     level = 70,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/ar_M416/SFX_M416_SlideHit.mp3",
+        "weapons/arc9/stalker2/ar_M416/SFX_M416_SlideHit.ogg",
     }
 } )
 
@@ -692,10 +693,10 @@ sound.Add( {
     level = 125,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/shot_spsa/fire_core_1.mp3",
-		"weapons/arc9/stalker2/shot_spsa/fire_core_2.mp3",
-		"weapons/arc9/stalker2/shot_spsa/fire_core_3.mp3",
-		"weapons/arc9/stalker2/shot_spsa/fire_core_4.mp3",
+        "weapons/arc9/stalker2/shot_spsa/fire_core_1.ogg",
+		"weapons/arc9/stalker2/shot_spsa/fire_core_2.ogg",
+		"weapons/arc9/stalker2/shot_spsa/fire_core_3.ogg",
+		"weapons/arc9/stalker2/shot_spsa/fire_core_4.ogg",
     }
 } )
 sound.Add( {
@@ -705,9 +706,9 @@ sound.Add( {
     level = 125,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/shot_spsa/Fire_Outdoors_01.mp3",
-		"weapons/arc9/stalker2/shot_spsa/Fire_Outdoors_02.mp3",
-		"weapons/arc9/stalker2/shot_spsa/Fire_Outdoors_03.mp3",
+        "weapons/arc9/stalker2/shot_spsa/Fire_Outdoors_01.ogg",
+		"weapons/arc9/stalker2/shot_spsa/Fire_Outdoors_02.ogg",
+		"weapons/arc9/stalker2/shot_spsa/Fire_Outdoors_03.ogg",
     }
 } )
 sound.Add( {
@@ -717,9 +718,9 @@ sound.Add( {
     level = 125,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/shot_spsa/Fire_Indoors_01.mp3",
-		"weapons/arc9/stalker2/shot_spsa/Fire_Indoors_02.mp3",
-		"weapons/arc9/stalker2/shot_spsa/Fire_Indoors_03.mp3",
+        "weapons/arc9/stalker2/shot_spsa/Fire_Indoors_01.ogg",
+		"weapons/arc9/stalker2/shot_spsa/Fire_Indoors_02.ogg",
+		"weapons/arc9/stalker2/shot_spsa/Fire_Indoors_03.ogg",
     }
 } )
 
@@ -730,9 +731,9 @@ sound.Add( {
     level = 65,
     pitch = {95, 105},
     sound = {
-        "weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagIn_1.mp3",
-		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagIn_2.mp3",
-		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagIn_3.mp3",
+        "weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagIn_1.ogg",
+		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagIn_2.ogg",
+		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagIn_3.ogg",
     }
 } )
 sound.Add( {
@@ -742,14 +743,14 @@ sound.Add( {
     level = 65,
     pitch = {95, 105},
     sound = {
-        "weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagInTac_1.mp3",
-		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagInTac_2.mp3",
-		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagInTac_3.mp3",
-		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagInTac_4.mp3",
-		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagInTac_5.mp3",
-		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagInTac_6.mp3",
-		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagInTac_7.mp3",
-		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagInTac_8.mp3",
+        "weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagInTac_1.ogg",
+		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagInTac_2.ogg",
+		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagInTac_3.ogg",
+		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagInTac_4.ogg",
+		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagInTac_5.ogg",
+		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagInTac_6.ogg",
+		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagInTac_7.ogg",
+		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_MagInTac_8.ogg",
     }
 } )
 
@@ -760,9 +761,9 @@ sound.Add( {
     level = 65,
     pitch = {95, 100},
     sound = {
-        "weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideBack_1.mp3",
-		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideBack_2.mp3",
-		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideBack_3.mp3",
+        "weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideBack_1.ogg",
+		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideBack_2.ogg",
+		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideBack_3.ogg",
     }
 } )
 sound.Add( {
@@ -772,9 +773,9 @@ sound.Add( {
     level = 65,
     pitch = {95, 100},
     sound = {
-        "weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideForward_1.mp3",
-		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideForward_2.mp3",
-		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideForward_3.mp3",
+        "weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideForward_1.ogg",
+		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideForward_2.ogg",
+		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideForward_3.ogg",
     }
 } )
 sound.Add( {
@@ -784,7 +785,7 @@ sound.Add( {
     level = 65,
     pitch = {95, 100},
     sound = {
-        "weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideHit.mp3",
+        "weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideHit.ogg",
     }
 } )
 
@@ -795,7 +796,7 @@ sound.Add( {
     level = 65,
     pitch = {95, 100},
     sound = {
-        "weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideJamBack.mp3",
+        "weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideJamBack.ogg",
     }
 } )
 sound.Add( {
@@ -805,10 +806,10 @@ sound.Add( {
     level = 65,
     pitch = {95, 100},
     sound = {
-        "weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideJamEffort_1.mp3",
-		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideJamEffort_2.mp3",
-		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideJamEffort_3.mp3",
-		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideJamEffort_4.mp3",
+        "weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideJamEffort_1.ogg",
+		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideJamEffort_2.ogg",
+		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideJamEffort_3.ogg",
+		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideJamEffort_4.ogg",
     }
 } )
 sound.Add( {
@@ -818,9 +819,9 @@ sound.Add( {
     level = 65,
     pitch = {95, 100},
     sound = {
-        "weapons/arc9/stalker2/shot_spsa/SFX_SPSA_BreakBullet_1.mp3",
-		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_BreakBullet_2.mp3",
-		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_BreakBullet_3.mp3",
+        "weapons/arc9/stalker2/shot_spsa/SFX_SPSA_BreakBullet_1.ogg",
+		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_BreakBullet_2.ogg",
+		"weapons/arc9/stalker2/shot_spsa/SFX_SPSA_BreakBullet_3.ogg",
     }
 } )
 sound.Add( {
@@ -830,6 +831,106 @@ sound.Add( {
     level = 65,
     pitch = {95, 100},
     sound = {
-        "weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideJamForward_1.mp3",
+        "weapons/arc9/stalker2/shot_spsa/SFX_SPSA_SlideJamForward_1.ogg",
+    }
+} )
+
+----------------------------------------------------------------------------------------------------- Sounds_Fora21
+sound.Add( {
+    name = "Stalker2.ForaFire",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 125,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/ar_tar21/fire_core_1.ogg",
+		"weapons/arc9/stalker2/ar_tar21/fire_core_2.ogg",
+		"weapons/arc9/stalker2/ar_tar21/fire_core_3.ogg",
+		"weapons/arc9/stalker2/ar_tar21/fire_core_4.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.ForaMagInIntro",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/ar_tar21/SFX_Fora_MagIn_Intro.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ForaMagInOutro",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/ar_tar21/SFX_Fora_MagIn_Outro.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ForaMagInOut",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {100, 100},
+    sound = {
+        "weapons/arc9/stalker2/ar_tar21/SFX_Fora_MagOut.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.ForaSlideBack",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/ar_tar21/SFX_Fora_Slide_Back.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ForaSlideForward",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/ar_tar21/SFX_Fora_Slide_Forward.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.ForaSlideJamBack",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/ar_tar21/SFX_Fora_SlideJam_Back.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ForaSlideJamEffort",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/ar_tar21/SFX_Fora_SlideJam_Effort_1.ogg",
+		"weapons/arc9/stalker2/ar_tar21/SFX_Fora_SlideJam_Effort_2.ogg",
+		"weapons/arc9/stalker2/ar_tar21/SFX_Fora_SlideJam_Effort_3.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ForaSlideJamForward",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/ar_tar21/SFX_Fora_SlideJam_Forward.ogg",
     }
 } )

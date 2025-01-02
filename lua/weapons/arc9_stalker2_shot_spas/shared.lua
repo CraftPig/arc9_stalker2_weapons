@@ -74,24 +74,21 @@ SWEP.NonTPIKAnimMelee		 = ACT_GMOD_GESTURE_MELEE_SHOVE_2HAND
 -------------------------------------------------------------------------------------------------------
 -- Weapon Stats ---------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
-SWEP.DamageMax			 = 11 * (GetConVar("arc9_stalker2_mult_dmg"):GetFloat())
+SWEP.DamageMax			 = 11.6 * (GetConVar("arc9_stalker2_mult_dmg"):GetFloat())
 SWEP.DamageMin 			 = SWEP.DamageMax / 1.5
-SWEP.DamageRand 		 = nil -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
--- SWEP.DamageLookupTable = {
--- }
-SWEP.RangeMin 			 = 9.5 / 0.0254
-SWEP.RangeMax			 = 250 / 0.0254
+SWEP.RangeMax			 = 150 / 0.0254
+SWEP.RangeMin 			 = SWEP.RangeMax / 3
 
 SWEP.Num 				 = 12
 SWEP.DamageType			 = DMG_BULLET
 
-SWEP.ImpactForce		 = 2 -- Force that bullets apply on hit
-SWEP.ArmorPiercing		 = 0.3
-SWEP.Penetration		 = 2 -- Units of wood that can be penetrated by this gun. -- 19min to pen two targets.
-SWEP.PenetrationDelta 	 = 0 -- The damage multiplier after all penetration distance is spent.
+SWEP.ImpactForce		 = 4 
+SWEP.ArmorPiercing		 = 0.48
+SWEP.Penetration		 = 200/1000/0.0254
 
-SWEP.PhysBulletMuzzleVelocity = 365 / 0.0254 -- Physical bullet muzzle velocity in Hammer Units/second. 1 HU != 1 inch.
+SWEP.PhysBulletMuzzleVelocity 	= 365 / 0.0254
+SWEP.RicochetChance 			= SWEP.PhysBulletMuzzleVelocity/100000
 
 SWEP.RPM = 600
 SWEP.Firemodes = { -- -1: Automatic, 1: Semi, 2: Two-round burst, 3: Three-round burst
@@ -99,13 +96,6 @@ SWEP.Firemodes = { -- -1: Automatic, 1: Semi, 2: Two-round burst, 3: Three-round
 	    Mode = 1,
     },
 }
-SWEP.PostBurstDelay 			= 0
-SWEP.TriggerDelay			    = false -- Add a delay before the weapon fires.
-SWEP.TriggerDelayTime		    = 1 -- Time until weapon fires.
-SWEP.TriggerDelayRepeat 		= false -- Whether to do it for every shot on automatics.
-SWEP.TriggerDelayCancellable 	= false -- Whether it is possible to cancel trigger delay by releasing the trigger before it is done.
-SWEP.TriggerDelayReleaseToFire  = false -- Release the trigger to fire instead of firing as soon as the delay is over.
-SWEP.TriggerStartFireAnim	    = false -- Whether trigger begins the firing animation
 
 SWEP.BodyDamageMults = {
     [HITGROUP_HEAD] = 3,
@@ -129,18 +119,17 @@ SWEP.InfiniteAmmo   = false
 SWEP.BottomlessClip = false 
 
 -- Recoil ---------------------------------------------------------------------------------------------
-SWEP.Recoil 								= 1 * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
+SWEP.Recoil 								= 2.2 * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
 SWEP.RecoilAddSighted 						= -0.25
 
-SWEP.RecoilUp 								= 6 -- Multiplier for vertical recoil
-SWEP.RecoilSide 							= 0 -- Multiplier for vertical recoil
+SWEP.RecoilUp 								= 2.2 -- Multiplier for vertical recoil
+SWEP.RecoilSide 							= 2.2 -- Multiplier for vertical recoil
 SWEP.RecoilRandomUp 						= 0.5
 SWEP.RecoilRandomSide 						= 1
 
 SWEP.RecoilAutoControl 						= 4 -- Multiplier for automatic recoil control.
 
 SWEP.RecoilDissipationRate 					= 5
--- SWEP.RecoilAutoControlMultHipFire 			= 1.0
 SWEP.RecoilResetTime 						= 0.1
 SWEP.RecoilFullResetTime 					= 1
 
@@ -171,19 +160,16 @@ SWEP.RecoilKick 							= 5 -- Camera recoil
 SWEP.RecoilKickDamping 						= 4 -- Camera recoil damping
 
 -- Spread ---------------------------------------------------------------------------------------------
-SWEP.Spread 			= (0.065 / 1.2) * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
+SWEP.Spread 			= 0.065 * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
 
 SWEP.SpreadAddRecoil 	= 0.0668 / 4
 
--- SWEP.SpreadAddHipFire 	= 0
 SWEP.SpreadAddMove 		= SWEP.Spread * 0.1
 SWEP.SpreadAddMidAir 	= SWEP.Spread * 3
 SWEP.SpreadAddCrouch 	= -SWEP.Spread * 0.25
 SWEP.SpreadAddSights 	= -SWEP.Spread * 0.5
 
--- SWEP.SpreadMultRecoil = nil
 SWEP.RecoilModifierCap = SWEP.RecoilMax
--- SWEP.RecoilModifierCapMove = nil
 
 -- Weapon Handling ------------------------------------------------------------------------------------
 SWEP.Sway 					= 0 -- How much the gun sways
