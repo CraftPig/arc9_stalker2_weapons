@@ -505,6 +505,12 @@ SWEP.InstantSprintIdle = false -- Instantly go to idle_sprint instead of playing
 SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
 SWEP.InstantSightIdle = false
 
+SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayCancellable = false
+SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
+
+
 SWEP.Animations = {
     ["idle"] = {
         Source = {"idle"},

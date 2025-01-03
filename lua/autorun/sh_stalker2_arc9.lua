@@ -30,6 +30,7 @@ Sound Tables
 -- Sounds_M416
 -- Sounds_SPSA
 -- Sounds_Fora21
+-- Sounds_PM
 
 ----------------------------------------------------------------------------------------------------- Sounds_Generic
 sound.Add( {
@@ -861,6 +862,16 @@ sound.Add( {
     }
 } )
 sound.Add( {
+    name = "Stalker2.ForaMagInIntroLow",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {80, 85},
+    sound = {
+        "weapons/arc9/stalker2/ar_tar21/SFX_Fora_MagIn_Intro.ogg",
+    }
+} )
+sound.Add( {
     name = "Stalker2.ForaMagInOutro",
     channel = CHAN_WEAPON,
     volume = 1,
@@ -932,5 +943,118 @@ sound.Add( {
     pitch = {95, 100},
     sound = {
         "weapons/arc9/stalker2/ar_tar21/SFX_Fora_SlideJam_Forward.ogg",
+    }
+} )
+
+----------------------------------------------------------------------------------------------------- Sounds_Pm21
+sound.Add( {
+    name = "Stalker2.PmFire",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 125,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/pt_pm/fire_core_1.ogg",
+		"weapons/arc9/stalker2/pt_pm/fire_core_2.ogg",
+		"weapons/arc9/stalker2/pt_pm/fire_core_3.ogg",
+		"weapons/arc9/stalker2/pt_pm/fire_core_4.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.PmMagPullIncreased",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/pt_pm/SFX_PM_IncreasedMagPull_1.ogg",
+		"weapons/arc9/stalker2/pt_pm/SFX_PM_IncreasedMagPull_2.ogg",
+		"weapons/arc9/stalker2/pt_pm/SFX_PM_IncreasedMagPull_3.ogg",
+		"weapons/arc9/stalker2/pt_pm/SFX_PM_IncreasedMagPull_4.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.PmMagIn",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/pt_pm/SFX_PM_MagIn_1.ogg",
+		"weapons/arc9/stalker2/pt_pm/SFX_PM_MagIn_2.ogg",
+		"weapons/arc9/stalker2/pt_pm/SFX_PM_MagIn_3.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.PmMagOutIntro",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/pt_pm/SFX_PM_MagOut_Intro.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.PmMagOutOutro",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/pt_pm/SFX_PM_MagOut_Outro.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.PmSlideForward",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/pt_pm/SFX_PM_SlideForward.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.PmSlideForwardLow",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {85, 90},
+    sound = {
+        "weapons/arc9/stalker2/pt_pm/SFX_PM_SlideForward.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.PmSlideJamBack",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/pt_pm/SFX_PM_SlideJam_Back.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.PmSlideJamEffort",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {90, 105},
+    sound = {
+        "weapons/arc9/stalker2/pt_pm/SFX_PM_SlideJam_Effort.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.PmBreakBullet",
+    channel = CHAN_ITEM,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/pt_pm/SFX_PM_BreakBullet.ogg",
     }
 } )

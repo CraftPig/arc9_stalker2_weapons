@@ -301,8 +301,8 @@ SWEP.NearWallPos = Vector(1, -5, -0.0)
 SWEP.NearWallAng = Angle(10, 0, -20) 
 
 SWEP.CustomizeAng = Angle(90, -0, 0)
-SWEP.CustomizePos = Vector(16, 40, 10)
-SWEP.CustomizeRotateAnchor = Vector(16, -3, -7)
+SWEP.CustomizePos = Vector(12, 32, 8)
+SWEP.CustomizeRotateAnchor = Vector(12, -3, -7)
 
 -------------------------------------------------------------------------------------------------------
 -- Visuals & Effects ----------------------------------------------------------------------------------
@@ -398,18 +398,19 @@ SWEP.Attachments = {
 	{
         PrintName = "Muzzle",
 		Bone = "jnt_offset",
-        Category = {"muzzle_scp5k", "muzzle", "cod2019_muzzle" },
-		Pos = Vector(24, 0, 2),
+        Category = {"scp5k_muzzle", "muzzle", "cod2019_muzzle" },
+		Pos = Vector(12, 0, 2.1),
         Ang = Angle(-0, 0, -0),
         Icon_Offset = Vector(0, 0, 0),
+		Scale = 0.8,
     },
 	{
         PrintName = "Tactical",
         Category = {"cod2019_tac","csgo_tac", "scp5k_tactical"},
         Bone = "jnt_offset",
-		Pos = Vector(16.5, -0.21, 3.03),
-        Ang = Angle(-0, 0, 90),
-		Scale = 0.8,
+		Pos = Vector(7, 1.2, 3.05),
+        Ang = Angle(-0, 0, -90),
+		Scale = 1,
     },
     {
         PrintName = "Optic",
@@ -422,15 +423,15 @@ SWEP.Attachments = {
     },
 	{
         PrintName = "Magazine",
-		Bone = "jnt_magazine1",
-        Category = "stalker2_ak74_mag",
+		Bone = "jnt_clip_base",
+        Category = "stalker2_tar21_mag",
 		Pos = Vector(0, -0, 0),
     },
 	{
         PrintName = "Ammo",
-        Bone = "jnt_bullet",
+        Bone = "bullets",
         Category = "go_ammo",
-		Pos = Vector(0, -0, 0),
+		Pos = Vector(0, -0, 3),
     },
 	{
         PrintName = "Cosmetic",
@@ -458,27 +459,23 @@ SWEP.Attachments = {
     },
 	{
 		PrintName = "Sticker 1",
-        StickerModel = "models/weapons/arc9/stalker2/ar_ak74/s_ar_ak74_1.mdl",
+        StickerModel = "models/weapons/arc9/stalker2/ar_tar21/s_ar_tar21_1.mdl",
         Category = "stickers",
-		Icon_Offset = Vector(-0, 999.0, 0.0),
     },
 	{
 		PrintName = "Sticker 2",
-        StickerModel = "models/weapons/arc9/stalker2/ar_ak74/s_ar_ak74_2.mdl",
+        StickerModel = "models/weapons/arc9/stalker2/ar_tar21/s_ar_tar21_2.mdl",
         Category = "stickers",
-		Icon_Offset = Vector(-0, 999.0, 0.0),
     },
 	{
 		PrintName = "Sticker 3",
-        StickerModel = "models/weapons/arc9/stalker2/ar_ak74/s_ar_ak74_3.mdl",
+        StickerModel = "models/weapons/arc9/stalker2/ar_tar21/s_ar_tar21_3.mdl",
         Category = "stickers",
-		Icon_Offset = Vector(-0, 999.0, 0.0),
     },
 	{
 		PrintName = "Sticker 4",
-        StickerModel = "models/weapons/arc9/stalker2/ar_ak74/s_ar_ak74_4.mdl",
+        StickerModel = "models/weapons/arc9/stalker2/ar_tar21/s_ar_tar21_4.mdl",
         Category = "stickers",
-		Icon_Offset = Vector(-0, 999.0, 0.0),
     },
 }
 
@@ -548,6 +545,20 @@ SWEP.Animations = {
 			{s = "Stalker2.ARC9Cloth2", t = 22 / 30},
         },
     },
+	["ready"] = {
+        Source = {"ready"},
+        MinProgress = 0.8,
+        FireASAP = true,
+		EventTable = {
+			{s = "Stalker2.ARC9Cloth2", t = 3 / 30},
+			{s = "Stalker2.ForaMagInIntroLow", t = 10 / 30},
+			{s = "Stalker2.ForaMagInIntro", t = 25 / 30},
+			{s = "Stalker2.ForaMagInOutro", t = 30 / 30},
+			{s = "Stalker2.GrozaSlideHit", t = 38 / 30},
+			{s = "Stalker2.ForaSlideBack", t = 55 / 30},
+			{s = "Stalker2.ForaSlideForward", t = 68 / 30},
+        },
+    },
 	["holster"] = {
         Source = {"holster"},
 		Time = 0.5,
@@ -555,7 +566,7 @@ SWEP.Animations = {
     --------------------------------------------------- Reload
     ["reload"] = {
         Source = {"reload"},
-        MinProgress = 0.7,
+        MinProgress = 0.62,
         FireASAP = false,
 		EventTable = {
 		    {s = "Stalker2.ForaMagInOut", t = 8 / 30},

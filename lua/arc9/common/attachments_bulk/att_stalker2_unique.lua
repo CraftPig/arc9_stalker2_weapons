@@ -170,3 +170,23 @@ ATT.Hook_TranslateAnimation = function (self, anim)
 end
 
 ARC9.LoadAttachment(ATT, "stalker2_m416_mag_drum")
+
+--[[ -----------------------------------------------------------------------------------------------------------
+--------- TAR21
+]] -------------------------------------------------------------------------------------------------------------
+ATT = {}
+
+ATT.PrintName = "High-Capacity Fora-221"
+ATT.CompactName = "Extended Mag"
+ATT.Icon = Material("entities/attachments/wrench.png", "mips smooth") 
+ATT.Description = "Increased magazine capacity at the cost of longer reload time."
+
+ATT.SortOrder = 1
+ATT.MenuCategory = "ARC9 - S.T.A.L.K.E.R. 2"
+ATT.Category = {"stalker2_tar21_mag"}
+
+ATT.ActivateElements = {"stalker2_tar21_mag_big"}
+
+ATT.ClipSizeMult = 1.35
+
+ARC9.LoadAttachment(ATT, "stalker2_tar21_mag_ext")
