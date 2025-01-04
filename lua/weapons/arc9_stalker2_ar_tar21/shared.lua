@@ -9,7 +9,7 @@ SWEP.Spawnable = true
 -------------------------------------------------------------------------------------------------------
 -- Hud and Spawn Menu Elements ------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
-SWEP.CustomSelectIcon = Material("vgui/hud/vgui_ak74")
+SWEP.CustomSelectIcon = Material("vgui/hud/vgui_fora")
 
 SWEP.Category = "ARC9 - S.T.A.L.K.E.R. 2"
 SWEP.SubCategory = "Assault Rifles"
@@ -44,7 +44,7 @@ SWEP.MirrorVMWM = true
  SWEP.WorldModelOffset = {
      Pos = Vector(-11, 4, -8), -- non tpik (while on ground, on npc etc)
      Ang = Angle(-5, 0, 180),
-     TPIKPos = Vector(-22, 4, -1), -- arc9_tpik 1, you can make cool poses with it
+     TPIKPos = Vector(-20, 4, -1), -- arc9_tpik 1, you can make cool poses with it
      TPIKAng = Angle(0, -0, 180),
      Scale = 1
  }
@@ -154,84 +154,70 @@ SWEP.RecoilLookupTable =
 	-22,
 	-23,
 }
---translate this recoil table in what degrees the bullet would go for each entry
 
-SWEP.Recoil 								= 1.98 * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
-SWEP.RecoilAddSighted 						= -SWEP.Recoil / 2
+SWEP.Recoil 								= (1.98 / 3) * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
 
 SWEP.RecoilRandomUp 						= 0
 SWEP.RecoilRandomSide 						= 0.1
 
-SWEP.RecoilAutoControl 						= 0.8 -- Multiplier for automatic recoil control.
+SWEP.RecoilAutoControl 						= 0.0 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilDissipationRate 					= 15
+SWEP.RecoilDissipationRate 					= 20
 SWEP.RecoilResetTime 						= 0.25
 SWEP.RecoilFullResetTime 					= 1
 
 SWEP.RecoilPerShot 							= 1
-SWEP.RecoilMax 								= SWEP.ClipSize / 2.5 -- MaxRadiusExtensionModifier
+SWEP.RecoilMax 								= SWEP.ClipSize / 2 -- MaxRadiusExtensionModifier
 
 ---- Weapon Visual Recoil
 SWEP.UseVisualRecoil 						= true
 SWEP.PhysicalVisualRecoil 					= false 
 
-SWEP.VisualRecoilMultHipFire 				= 0.05
-SWEP.VisualRecoilMultSights 				= 0.005
-SWEP.VisualRecoilMultCrouch 				= 0.025
+SWEP.VisualRecoilMultHipFire 				= 0.1
+SWEP.VisualRecoilMultSights 				= 0.03
+SWEP.VisualRecoilMultCrouch 				= 0.0
 
 SWEP.VisualRecoilUp 						= 1 
 SWEP.VisualRecoilUpAddSighted 				= -1
-SWEP.VisualRecoilSide 						= 0.5
-SWEP.VisualRecoilRoll 						= 500.0
+SWEP.VisualRecoilSide 						= 3
+SWEP.VisualRecoilSideAddSighted 			= -3
+SWEP.VisualRecoilRoll 						= 150
 
-SWEP.VisualRecoilPunch 						= 30
-SWEP.VisualRecoilPunchMultSights 			= 10
-
-SWEP.VisualRecoilDampingConst 				= 100 -- How spring will be visual recoil, 120 is default
-SWEP.VisualRecoilSpringMagnitude 			= 1
-SWEP.VisualRecoilSpringPunchDamping 		= 4 -- ehh another val for "eft" recoil, 6 is default
+SWEP.VisualRecoilPunch 						= 8
+SWEP.VisualRecoilPunchMultSights 			= 1
 
 SWEP.RecoilKick 							= 0.5 -- Camera recoil
-SWEP.RecoilKickDamping 						= 1 -- Camera recoil damping
+SWEP.RecoilKickDamping 						= 0.25 -- Camera recoil damping
 
 -- Spread ---------------------------------------------------------------------------------------------
-SWEP.Spread 			= 0.04 * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
+SWEP.Spread 					= 0.04 * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
 
-SWEP.SpreadAddRecoil 	= 0.0108 / 10
-SWEP.SpreadAddFirstShot = -SWEP.Spread
+SWEP.SpreadAddRecoil 			= 0.0108 / 5
+SWEP.SpreadAddFirstShot 		= -SWEP.Spread
 
-SWEP.SpreadAddMove 		= SWEP.Spread * 0.1
-SWEP.SpreadAddMidAir 	= SWEP.Spread * 3
-SWEP.SpreadAddCrouch 	= -SWEP.Spread * 0.25
-SWEP.SpreadAddSights 	= -SWEP.Spread
+SWEP.SpreadAddMove 				= SWEP.Spread * 0.1
+SWEP.SpreadAddMidAir 			= SWEP.Spread * 3
+SWEP.SpreadAddCrouch 			= -SWEP.Spread * 0.35
+SWEP.SpreadAddSights 			= -SWEP.Spread * 1.33
 
-SWEP.RecoilModifierCap = SWEP.RecoilMax
+SWEP.RecoilModifierCap 			= SWEP.RecoilMax
 
 -- Weapon Handling ------------------------------------------------------------------------------------
 SWEP.Sway 					= 0 -- How much the gun sways
 SWEP.SwayAddSighted 		= 0.35
 SWEP.SwayAddMidAir 			= 1.0 
 
-SWEP.BarrelLength 			= 25 
+SWEP.BarrelLength 			= 32 
 SWEP.PushBackForce 			= 1
 SWEP.FreeAimRadius 			= 2
 
-SWEP.AimDownSightsTime 		= 0.55 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime 		= 0.4 -- How long it takes to go from sprinting to being able to fire.
-
-SWEP.ReloadWhileSprint 		= true
-SWEP.NoSprintWhenLocked 	= false -- You cannot sprint while reloading with this gun
+SWEP.AimDownSightsTime 		= 0.3
+SWEP.SprintToFireTime 		= 0.4
 SWEP.NoFireDuringSighting 	= true
 
-
 SWEP.Speed = 1
-
-SWEP.SpeedMult = 1
-SWEP.SpeedMultSights = 0.65
+SWEP.SpeedMultSights = 0.5
 SWEP.SpeedMultShooting = 0.9
-SWEP.SpeedMultMelee = 1
-SWEP.SpeedMultCrouch = 1
-SWEP.SpeedMultBlindFire = 1
 
 -- Malfunctions ----------------------------------------------------------------------------------------------
 SWEP.Overheat 			= true
@@ -337,7 +323,7 @@ SWEP.ShellModel 				= "models/shells/shell_556.mdl" -- shell_12gauge, shell_338m
 SWEP.MuzzleEffectQCA 			= 2 -- QC Attachment that controls muzzle effect.
 SWEP.AfterShotQCA 				= 2 -- QC Attachment that controls after shot particle.
 
-SWEP.MuzzleParticle 			= { "muzzleflash_4" } -- m79_smoke_c m79_shockwave
+SWEP.MuzzleParticle 			= { "muzzleflash_FAMAS" } -- m79_smoke_c m79_shockwave
 SWEP.AfterShotParticle 			= "barrel_smoke"
 
 -------------------------- TRACERS
@@ -443,7 +429,7 @@ SWEP.Attachments = {
         CosmeticOnly = true,
         Category = "charm",
         Bone = "jnt_offset",
-        Pos = Vector(-0.75, -1, 1.48),
+        Pos = Vector(2.35, -0.72, 1.1),
 		Ang = Angle(-0, 0, -0),
 		Icon_Offset = Vector(0, 0, 0),
 		Scale = 1,
@@ -452,8 +438,8 @@ SWEP.Attachments = {
         PrintName = "Stats",
         Category = "killcounter",
         Bone = "jnt_offset",
-        Pos = Vector(7.8, -0.7, 1.8),
-		Ang = Angle(0, 0, -0),
+        Pos = Vector(0.0, -0.95, 2.7),
+		Ang = Angle(0, 0, 0),
 		Icon_Offset = Vector(-0, 0.0, 0.0),
 		CosmeticOnly = true,
     },
@@ -566,7 +552,7 @@ SWEP.Animations = {
     --------------------------------------------------- Reload
     ["reload"] = {
         Source = {"reload"},
-        MinProgress = 0.62,
+        MinProgress = 0.7,
         FireASAP = false,
 		EventTable = {
 		    {s = "Stalker2.ForaMagInOut", t = 8 / 30},

@@ -167,84 +167,70 @@ SWEP.RecoilLookupTable =
 	13.61,
 	15.00
 }
---translate this recoil table in what degrees the bullet would go for each entry
 
-SWEP.Recoil 								= 2.04 * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
-SWEP.RecoilAddSighted 						= -SWEP.Recoil / 2
+SWEP.Recoil 								= (2.04 / 3) * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
 
 SWEP.RecoilRandomUp 						= 0
 SWEP.RecoilRandomSide 						= 0.1
 
-SWEP.RecoilAutoControl 						= 0.8 -- Multiplier for automatic recoil control.
+SWEP.RecoilAutoControl 						= 0.0 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilDissipationRate 					= 15
+SWEP.RecoilDissipationRate 					= 20
 SWEP.RecoilResetTime 						= 0.25
 SWEP.RecoilFullResetTime 					= 1
 
 SWEP.RecoilPerShot 							= 1
-SWEP.RecoilMax 								= SWEP.ClipSize / 1.5 -- MaxRadiusExtensionModifier
+SWEP.RecoilMax 								= SWEP.ClipSize / 2 -- MaxRadiusExtensionModifier
 
 ---- Weapon Visual Recoil
 SWEP.UseVisualRecoil 						= true
 SWEP.PhysicalVisualRecoil 					= false 
 
-SWEP.VisualRecoilMultHipFire 				= 0.05
-SWEP.VisualRecoilMultSights 				= 0.005
-SWEP.VisualRecoilMultCrouch 				= 0.025
+SWEP.VisualRecoilMultHipFire 				= 0.1
+SWEP.VisualRecoilMultSights 				= 0.03
+SWEP.VisualRecoilMultCrouch 				= 0.0
 
 SWEP.VisualRecoilUp 						= 1 
 SWEP.VisualRecoilUpAddSighted 				= -1
-SWEP.VisualRecoilSide 						= 0.5
-SWEP.VisualRecoilRoll 						= 500.0
+SWEP.VisualRecoilSide 						= 3
+SWEP.VisualRecoilSideAddSighted 			= -3
+SWEP.VisualRecoilRoll 						= 150
 
-SWEP.VisualRecoilPunch 						= 30
-SWEP.VisualRecoilPunchMultSights 			= 10
-
-SWEP.VisualRecoilDampingConst 				= 100 -- How spring will be visual recoil, 120 is default
-SWEP.VisualRecoilSpringMagnitude 			= 1
-SWEP.VisualRecoilSpringPunchDamping 		= 4 -- ehh another val for "eft" recoil, 6 is default
+SWEP.VisualRecoilPunch 						= 8
+SWEP.VisualRecoilPunchMultSights 			= 1
 
 SWEP.RecoilKick 							= 0.5 -- Camera recoil
-SWEP.RecoilKickDamping 						= 1 -- Camera recoil damping
+SWEP.RecoilKickDamping 						= 0.25 -- Camera recoil damping
 
 -- Spread ---------------------------------------------------------------------------------------------
-SWEP.Spread 			= 0.03 * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
+SWEP.Spread 					= 0.03 * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
 
-SWEP.SpreadAddRecoil 	= 0.0111 / 10
-SWEP.SpreadAddFirstShot = -SWEP.Spread
+SWEP.SpreadAddRecoil 			= 0.0111 / 5
+SWEP.SpreadAddFirstShot 		= -SWEP.Spread
 
-SWEP.SpreadAddMove 		= SWEP.Spread * 0.1
-SWEP.SpreadAddMidAir 	= SWEP.Spread * 3
-SWEP.SpreadAddCrouch 	= -SWEP.Spread * 0.25
-SWEP.SpreadAddSights 	= -SWEP.Spread
+SWEP.SpreadAddMove 				= SWEP.Spread * 0.1
+SWEP.SpreadAddMidAir 			= SWEP.Spread * 3
+SWEP.SpreadAddCrouch 			= -SWEP.Spread * 0.35
+SWEP.SpreadAddSights 			= -SWEP.Spread * 1.44
 
-SWEP.RecoilModifierCap = SWEP.RecoilMax
+SWEP.RecoilModifierCap 			= SWEP.RecoilMax
 
 -- Weapon Handling ------------------------------------------------------------------------------------
 SWEP.Sway 					= 0 -- How much the gun sways
-SWEP.SwayAddSighted 		= 0.0
+SWEP.SwayAddSighted 		= 0.35
 SWEP.SwayAddMidAir 			= 1.0 
 
-SWEP.BarrelLength 			= 25 
+SWEP.BarrelLength 			= 32 
 SWEP.PushBackForce 			= 1
 SWEP.FreeAimRadius 			= 2
 
-SWEP.AimDownSightsTime 		= 0.55 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime 		= 0.4 -- How long it takes to go from sprinting to being able to fire.
-
-SWEP.ReloadWhileSprint 		= true
-SWEP.NoSprintWhenLocked 	= false -- You cannot sprint while reloading with this gun
+SWEP.AimDownSightsTime 		= 0.3
+SWEP.SprintToFireTime 		= 0.4
 SWEP.NoFireDuringSighting 	= true
 
-
 SWEP.Speed = 1
-
-SWEP.SpeedMult = 1
-SWEP.SpeedMultSights = 0.65
+SWEP.SpeedMultSights = 0.5
 SWEP.SpeedMultShooting = 0.9
-SWEP.SpeedMultMelee = 1
-SWEP.SpeedMultCrouch = 1
-SWEP.SpeedMultBlindFire = 1
 
 -- Malfunctions ----------------------------------------------------------------------------------------------
 SWEP.Overheat 			= true
@@ -314,8 +300,8 @@ SWEP.NearWallPos = Vector(1, -5, -0.0)
 SWEP.NearWallAng = Angle(10, 0, -20) 
 
 SWEP.CustomizeAng = Angle(90, -0, 0)
-SWEP.CustomizePos = Vector(10, 40, 9)
-SWEP.CustomizeRotateAnchor = Vector(11, -3, -5)
+SWEP.CustomizePos = Vector(10, 33, 8)
+SWEP.CustomizeRotateAnchor = Vector(10, -3, -5)
 
 -------------------------------------------------------------------------------------------------------
 -- Visuals & Effects ----------------------------------------------------------------------------------
@@ -422,10 +408,10 @@ SWEP.Attachments = {
         PrintName = "Tactical",
         Category = {"cod2019_tac","csgo_tac", "scp5k_tactical"},
 		InstalledElements = {"stalker2_groza_rail3"},
-        Bone = "LaserRailSocket",
+        Bone = "jnt_offset",
 		LaserCorrectionAngle = Angle(-0.0, 0, 0),
-		Pos = Vector(0, -0.0, 0.25),
-        Ang = Angle(-0, 0, 180),
+		Pos = Vector(1.45, -0.85, 1.65),
+        Ang = Angle(-0, 0, 90),
 		Scale = 1,
     },
     {

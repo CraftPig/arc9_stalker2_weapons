@@ -156,82 +156,69 @@ SWEP.RecoilLookupTable =
 	26,
 }
 
-SWEP.Recoil 								= 1.8 * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
-SWEP.RecoilAddSighted 						= -SWEP.Recoil / 2
+SWEP.Recoil 								= (1.8 / 3) * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
 
 SWEP.RecoilRandomUp 						= 0
 SWEP.RecoilRandomSide 						= 0.1
 
-SWEP.RecoilAutoControl 						= 0.8 -- Multiplier for automatic recoil control.
+SWEP.RecoilAutoControl 						= 0.0 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilDissipationRate 					= 15
+SWEP.RecoilDissipationRate 					= 20
 SWEP.RecoilResetTime 						= 0.25
 SWEP.RecoilFullResetTime 					= 1
 
 SWEP.RecoilPerShot 							= 1
-SWEP.RecoilMax 								= SWEP.ClipSize / 1.5 -- MaxRadiusExtensionModifier
+SWEP.RecoilMax 								= SWEP.ClipSize / 2 -- MaxRadiusExtensionModifier
 
 ---- Weapon Visual Recoil
 SWEP.UseVisualRecoil 						= true
 SWEP.PhysicalVisualRecoil 					= false 
 
-SWEP.VisualRecoilMultHipFire 				= 0.05
-SWEP.VisualRecoilMultSights 				= 0.005
-SWEP.VisualRecoilMultCrouch 				= 0.025
+SWEP.VisualRecoilMultHipFire 				= 0.1
+SWEP.VisualRecoilMultSights 				= 0.03
+SWEP.VisualRecoilMultCrouch 				= 0.0
 
 SWEP.VisualRecoilUp 						= 1 
 SWEP.VisualRecoilUpAddSighted 				= -1
-SWEP.VisualRecoilSide 						= 0.5
-SWEP.VisualRecoilRoll 						= 500.0
+SWEP.VisualRecoilSide 						= 3
+SWEP.VisualRecoilSideAddSighted 			= -3
+SWEP.VisualRecoilRoll 						= 150
 
-SWEP.VisualRecoilPunch 						= 30
-SWEP.VisualRecoilPunchMultSights 			= 10
-
-SWEP.VisualRecoilDampingConst 				= 100 -- How spring will be visual recoil, 120 is default
-SWEP.VisualRecoilSpringMagnitude 			= 1
-SWEP.VisualRecoilSpringPunchDamping 		= 4 -- ehh another val for "eft" recoil, 6 is default
+SWEP.VisualRecoilPunch 						= 8
+SWEP.VisualRecoilPunchMultSights 			= 1
 
 SWEP.RecoilKick 							= 0.5 -- Camera recoil
-SWEP.RecoilKickDamping 						= 1 -- Camera recoil damping
+SWEP.RecoilKickDamping 						= 0.25 -- Camera recoil damping
 
 -- Spread ---------------------------------------------------------------------------------------------
-SWEP.Spread 			= 0.028 * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
+SWEP.Spread 					= 0.028 * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
 
-SWEP.SpreadAddRecoil 	= 0.0133 / 10
-SWEP.SpreadAddFirstShot = -SWEP.Spread
+SWEP.SpreadAddRecoil 			= 0.0133 / 5
+SWEP.SpreadAddFirstShot 		= -SWEP.Spread
 
-SWEP.SpreadAddMove 		= SWEP.Spread * 0.1
-SWEP.SpreadAddMidAir 	= SWEP.Spread * 3
-SWEP.SpreadAddCrouch 	= -SWEP.Spread * 0.25
-SWEP.SpreadAddSights 	= -SWEP.Spread
+SWEP.SpreadAddMove 				= SWEP.Spread * 0.1
+SWEP.SpreadAddMidAir 			= SWEP.Spread * 3
+SWEP.SpreadAddCrouch 			= -SWEP.Spread * 0.35
+SWEP.SpreadAddSights 			= -SWEP.Spread * 1.44
 
 SWEP.RecoilModifierCap 			= SWEP.RecoilMax
 
 -- Weapon Handling ------------------------------------------------------------------------------------
 SWEP.Sway 					= 0 -- How much the gun sways
-SWEP.SwayAddSighted 		= 0.0
+SWEP.SwayAddSighted 		= 0.35
 SWEP.SwayAddMidAir 			= 1.0 
 
-SWEP.BarrelLength 			= 25 
+SWEP.BarrelLength 			= 32 
 SWEP.PushBackForce 			= 1
 SWEP.FreeAimRadius 			= 2
 
-SWEP.AimDownSightsTime 		= 0.5 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime 		= 0.4 -- How long it takes to go from sprinting to being able to fire.
-
-SWEP.ReloadWhileSprint 		= true
-SWEP.NoSprintWhenLocked 	= false -- You cannot sprint while reloading with this gun
+SWEP.AimDownSightsTime 		= 0.3
+SWEP.SprintToFireTime 		= 0.4
 SWEP.NoFireDuringSighting 	= true
 
-
 SWEP.Speed = 1
-
-SWEP.SpeedMult = 1
-SWEP.SpeedMultSights = 0.65
+SWEP.SpeedMultSights = 0.5
 SWEP.SpeedMultShooting = 0.9
-SWEP.SpeedMultMelee = 1
-SWEP.SpeedMultCrouch = 1
-SWEP.SpeedMultBlindFire = 1
 
 -- Malfunctions ----------------------------------------------------------------------------------------------
 SWEP.Overheat 			= true
@@ -337,7 +324,7 @@ SWEP.ShellModel 				= "models/shells/shell_556.mdl" -- shell_12gauge, shell_338m
 SWEP.MuzzleEffectQCA 			= 2 -- QC Attachment that controls muzzle effect.
 SWEP.AfterShotQCA 				= 2 -- QC Attachment that controls after shot particle.
 
-SWEP.MuzzleParticle 			= { "muzzleflash_famas" } -- m79_smoke_c m79_shockwave
+SWEP.MuzzleParticle 			= { "muzzleflash_ar" } -- m79_smoke_c m79_shockwave
 SWEP.AfterShotParticle 			= "barrel_smoke"
 
 -------------------------- TRACERS
@@ -389,8 +376,6 @@ SWEP.MalfunctionSound 			= { "Stalker2.Jam" }
 SWEP.DefaultBodygroups = "0000000000000000000000000000000000000"
 
 SWEP.AttachmentElements = {
-	-- ["stalker2_ak74_handguard_blank"] = { Bodygroups = { {1, 1} } },
-	-- ["stalker2_ak74_stock_blank"] = { Bodygroups = { {2, 1} } },
 	["stalker2_m416_mag_drum"] = { Bodygroups = { {5, 1} } },
 	["stalker2_m416_stock_blank"] = { Bodygroups = { {4, 1} } },
 	["stalker2_m416_front_blank"] = { Bodygroups = { {6, 1} } },
@@ -505,12 +490,6 @@ SWEP.InstantSprintIdle = false -- Instantly go to idle_sprint instead of playing
 SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
 SWEP.InstantSightIdle = false
 
-SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
-SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
-SWEP.TriggerDelayCancellable = false
-SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
-
-
 SWEP.Animations = {
     ["idle"] = {
         Source = {"idle"},
@@ -580,7 +559,7 @@ SWEP.Animations = {
     --------------------------------------------------- Reload
     ["reload"] = {
         Source = {"reload"},
-        MinProgress = 0.7,
+        MinProgress = 0.75,
         FireASAP = false,
 		EventTable = {
 			{s = "Stalker2.M416MagOut", t = 11 / 30},
@@ -612,7 +591,7 @@ SWEP.Animations = {
     },
 	["reload_empty"] = {
         Source = {"reload_empty"},
-        MinProgress = 0.75,
+        MinProgress = 0.8,
         FireASAP = false,
 		EventTable = {
 			{s = "Stalker2.M416MagOut", t = 11 / 30},

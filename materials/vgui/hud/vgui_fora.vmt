@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	"$baseTexture" "vgui/hud/vgui_fora"
+	
+	"$translucent" "1"
+}

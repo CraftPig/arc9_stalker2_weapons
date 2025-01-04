@@ -9,7 +9,7 @@ SWEP.Spawnable = true
 -------------------------------------------------------------------------------------------------------
 -- Hud and Spawn Menu Elements ------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
-SWEP.CustomSelectIcon = Material("vgui/hud/vgui_ak74")
+SWEP.CustomSelectIcon = Material("vgui/hud/vgui_pm")
 
 SWEP.Category = "ARC9 - S.T.A.L.K.E.R. 2"
 SWEP.SubCategory = "Pistols"
@@ -20,7 +20,7 @@ SWEP.TrueName = "Makarov PM"
 
 SWEP.Slot = 1
 
-SWEP.Class = "Assault Rifle"
+SWEP.Class = "Pistol"
 SWEP.Trivia = {
     Caliber = "9x18mm",
 	Origin = "Soviet Union",
@@ -95,7 +95,7 @@ SWEP.Firemodes = { -- -1: Automatic, 1: Semi, 2: Two-round burst, 3: Three-round
 }
 
 SWEP.BodyDamageMults = {
-    [HITGROUP_HEAD] = 3,
+    [HITGROUP_HEAD] = 1.5,
     [HITGROUP_CHEST] = 1,
     [HITGROUP_STOMACH] = 0.9,
     [HITGROUP_LEFTARM] = 0.6,
@@ -116,7 +116,7 @@ SWEP.InfiniteAmmo   = false
 SWEP.BottomlessClip = false 
 
 -- Recoil ---------------------------------------------------------------------------------------------
-SWEP.RecoilSeed = 421
+SWEP.RecoilSeed = 5341
 SWEP.RecoilPatternDrift = 1 -- Higher values = more extreme recoil patterns.
 SWEP.RecoilLookupTable = 
 {
@@ -134,84 +134,70 @@ SWEP.RecoilLookupTable =
 	12,
 	15,
 }
---translate this recoil table in what degrees the bullet would go for each entry
 
-SWEP.Recoil 								= 3.0 * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
-SWEP.RecoilAddSighted 						= -SWEP.Recoil / 2
+SWEP.Recoil 								= (3.0 / 3) * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
 
 SWEP.RecoilRandomUp 						= 0
 SWEP.RecoilRandomSide 						= 0.1
 
-SWEP.RecoilAutoControl 						= 2.5 -- Multiplier for automatic recoil control.
+SWEP.RecoilAutoControl 						= 0.0 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilDissipationRate 					= 15
-SWEP.RecoilResetTime 						= 0.25
+SWEP.RecoilDissipationRate 					= 10
+SWEP.RecoilResetTime 						= 0.35
 SWEP.RecoilFullResetTime 					= 1
 
 SWEP.RecoilPerShot 							= 1
-SWEP.RecoilMax 								= SWEP.ClipSize -- MaxRadiusExtensionModifier
+SWEP.RecoilMax 								= SWEP.ClipSize / 2 -- MaxRadiusExtensionModifier
 
 ---- Weapon Visual Recoil
 SWEP.UseVisualRecoil 						= true
 SWEP.PhysicalVisualRecoil 					= false 
 
-SWEP.VisualRecoilMultHipFire 				= 0.05
-SWEP.VisualRecoilMultSights 				= 0.005
-SWEP.VisualRecoilMultCrouch 				= 0.025
+SWEP.VisualRecoilMultHipFire 				= 0.1
+SWEP.VisualRecoilMultSights 				= 0.03
+SWEP.VisualRecoilMultCrouch 				= 0.0
 
 SWEP.VisualRecoilUp 						= 1 
 SWEP.VisualRecoilUpAddSighted 				= -1
-SWEP.VisualRecoilSide 						= 0.5
-SWEP.VisualRecoilRoll 						= 500.0
+SWEP.VisualRecoilSide 						= 3
+SWEP.VisualRecoilSideAddSighted 			= -3
+SWEP.VisualRecoilRoll 						= 150
 
-SWEP.VisualRecoilPunch 						= 30
-SWEP.VisualRecoilPunchMultSights 			= 10
-
-SWEP.VisualRecoilDampingConst 				= 100 -- How spring will be visual recoil, 120 is default
-SWEP.VisualRecoilSpringMagnitude 			= 1
-SWEP.VisualRecoilSpringPunchDamping 		= 4 -- ehh another val for "eft" recoil, 6 is default
+SWEP.VisualRecoilPunch 						= 8
+SWEP.VisualRecoilPunchMultSights 			= 1
 
 SWEP.RecoilKick 							= 0.5 -- Camera recoil
-SWEP.RecoilKickDamping 						= 1 -- Camera recoil damping
+SWEP.RecoilKickDamping 						= 0.25 -- Camera recoil damping
 
 -- Spread ---------------------------------------------------------------------------------------------
-SWEP.Spread 			= 0.035 * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
+SWEP.Spread 					= 0.035 * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
 
-SWEP.SpreadAddRecoil 	= 0.0189 / 10
-SWEP.SpreadAddFirstShot = -SWEP.Spread
+SWEP.SpreadAddRecoil 			= 0.0189 / 5
+SWEP.SpreadAddFirstShot 		= -SWEP.Spread
 
-SWEP.SpreadAddMove 		= SWEP.Spread * 0.1
-SWEP.SpreadAddMidAir 	= SWEP.Spread * 3
-SWEP.SpreadAddCrouch 	= -SWEP.Spread * 0.25
-SWEP.SpreadAddSights 	= -SWEP.Spread
+SWEP.SpreadAddMove 				= SWEP.Spread * 0.1
+SWEP.SpreadAddMidAir 			= SWEP.Spread * 3
+SWEP.SpreadAddCrouch 			= -SWEP.Spread * 0.35
+SWEP.SpreadAddSights 			= -SWEP.Spread
 
-SWEP.RecoilModifierCap = SWEP.RecoilMax
+SWEP.RecoilModifierCap 			= SWEP.RecoilMax
 
 -- Weapon Handling ------------------------------------------------------------------------------------
 SWEP.Sway 					= 0 -- How much the gun sways
-SWEP.SwayAddSighted 		= 0.0
+SWEP.SwayAddSighted 		= 0.35
 SWEP.SwayAddMidAir 			= 1.0 
 
-SWEP.BarrelLength 			= 5 
+SWEP.BarrelLength 			= 32 
 SWEP.PushBackForce 			= 1
 SWEP.FreeAimRadius 			= 2
 
-SWEP.AimDownSightsTime 		= 0.55 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime 		= 0.4 -- How long it takes to go from sprinting to being able to fire.
-
-SWEP.ReloadWhileSprint 		= true
-SWEP.NoSprintWhenLocked 	= false -- You cannot sprint while reloading with this gun
+SWEP.AimDownSightsTime 		= 0.3
+SWEP.SprintToFireTime 		= 0.4
 SWEP.NoFireDuringSighting 	= true
 
-
 SWEP.Speed = 1
-
-SWEP.SpeedMult = 1
-SWEP.SpeedMultSights = 0.65
+SWEP.SpeedMultSights = 0.5
 SWEP.SpeedMultShooting = 0.9
-SWEP.SpeedMultMelee = 1
-SWEP.SpeedMultCrouch = 1
-SWEP.SpeedMultBlindFire = 1
 
 -- Malfunctions ----------------------------------------------------------------------------------------------
 SWEP.Overheat 			= true
@@ -281,8 +267,8 @@ SWEP.NearWallPos = Vector(1, -5, -0.0)
 SWEP.NearWallAng = Angle(10, 0, -20) 
 
 SWEP.CustomizeAng = Angle(90, -0, 0)
-SWEP.CustomizePos = Vector(16, 40, 10)
-SWEP.CustomizeRotateAnchor = Vector(16, -3, -7)
+SWEP.CustomizePos = Vector(18.5, 22, 5.5)
+SWEP.CustomizeRotateAnchor = Vector(18, -4, -5)
 
 -------------------------------------------------------------------------------------------------------
 -- Visuals & Effects ----------------------------------------------------------------------------------
@@ -300,7 +286,7 @@ SWEP.DropMagazinePos 			= Vector(-0, 0, -0) -- offsets
 SWEP.DropMagazineAng 			= Angle(0, 0, 0)
 SWEP.DropMagazineVelocity 		= Vector(50, -110, 0) -- Put something here if your anim throws the mag with force
 
-SWEP.DropMagazineModel 			= "models/weapons/arc9/stalker2/ar_ak74/w_ar_ak74_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
+SWEP.DropMagazineModel 			= "models/weapons/arc9/stalker2/pt_pm/w_pt_pm_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds 		= {"physics/metal/weapon_impact_soft1.wav",
 								"physics/metal/weapon_impact_soft2.wav",
 								"physics/metal/weapon_impact_soft3.wav", } -- Table of sounds a dropped magazine should play.
@@ -317,7 +303,7 @@ SWEP.ShellModel 				= "models/shells/shell_9mm.mdl" -- shell_12gauge, shell_338m
 SWEP.MuzzleEffectQCA 			= 2 -- QC Attachment that controls muzzle effect.
 SWEP.AfterShotQCA 				= 2 -- QC Attachment that controls after shot particle.
 
-SWEP.MuzzleParticle 			= { "muzzleflash_4" } -- m79_smoke_c m79_shockwave
+SWEP.MuzzleParticle 			= { "muzzleflash_pistol" } -- m79_smoke_c m79_shockwave
 SWEP.AfterShotParticle 			= "barrel_smoke"
 
 -------------------------- TRACERS
@@ -369,62 +355,23 @@ SWEP.MalfunctionSound 			= { "Stalker2.Jam" }
 SWEP.DefaultBodygroups = "0000000000000000000000000000000000000"
 
 SWEP.AttachmentElements = {
-	["stalker2_ak74_handguard_blank"] = { Bodygroups = { {1, 1} } },
-	["stalker2_ak74_stock_blank"] = { Bodygroups = { {2, 1} } },
-	["stalker2_ak74_mag1_big"] = { Bodygroups = { {5, 1} } },
-	["stalker2_ak74_mag2_big"] = { Bodygroups = { {6, 1} } },
-	["stalker2_ak74_mag1_blank"] = { Bodygroups = { {5, 2} } },
-	["stalker2_ak74_mag2_blank"] = { Bodygroups = { {6, 2} } },
-	["stalker2_ak74_rail"] = { Bodygroups = { {7, 1} } },
+	["stalker2_pm_mag_ext"] = { Bodygroups = { {1, 1} } },
 }
 
 SWEP.Attachments = {
 	{
         PrintName = "Muzzle",
 		Bone = "jnt_offset",
-        Category = {"muzzle_scp5k", "muzzle", "cod2019_muzzle" },
-		Pos = Vector(24, 0, 2),
+        Category = {"scp5k_muzzle_pistol", "muzzle_pistols", "cod2019_muzzle" },
+		Pos = Vector(4.87, 0, 1.55),
         Ang = Angle(-0, 0, -0),
         Icon_Offset = Vector(0, 0, 0),
     },
 	{
-        PrintName = "Grip",
-        Category = {"grip","fas_ubgl", "scp5k_foregrip","cod2019_grip"},
-        Bone = "jnt_offset",
-		Icon_Offset = Vector(0, 0, 3),
-        Pos = Vector(13, -0, 1.2),
-        Ang = Angle(-180, 180, 0),
-		Scale = 1,
-    },
-	{
-        PrintName = "Tactical",
-        Category = {"cod2019_tac","csgo_tac", "scp5k_tactical"},
-        Bone = "jnt_offset",
-		Pos = Vector(16.5, -0.21, 3.03),
-        Ang = Angle(-0, 0, 90),
-		Scale = 0.8,
-    },
-    {
-        PrintName = "Optic",
-		Bone = "jnt_offset",
-        Category = {"scp5k_optic", "csgo_optic", "cod2019_optic" },
-		InstalledElements = {"stalker2_ak74_rail"},
-		CorrectiveAng = Angle(-0.47, 0.26, 0),
-		Pos = Vector(3.8, -0, 3.6),
-        Ang = Angle(-0, 0, -0),
-    },
-	{
         PrintName = "Magazine",
-		Bone = "jnt_magazine1",
-        Category = "stalker2_ak74_mag",
+		Bone = "jnt_clip_base",
+        Category = "stalker2_pm_mag",
 		Pos = Vector(0, -0, 0),
-    },
-	{
-        PrintName = "Stock",
-		Bone = "jnt_offset",
-		InstalledElements = {"stalker2_ak74_stock_blank"},
-        Category = {"cod2019_tube", "csgo_tube"},
-		Pos = Vector(-1.2, -0, 1.5),
     },
 	{
         PrintName = "Ammo",
@@ -437,49 +384,6 @@ SWEP.Attachments = {
         Category = {"universal_camo"},
         CosmeticOnly = true,
     },
-	{ 
-        PrintName = "Charm",
-        CosmeticOnly = true,
-        Category = "charm",
-        Bone = "jnt_offset",
-        Pos = Vector(-0.75, -1, 1.48),
-		Ang = Angle(-0, 0, -0),
-		Icon_Offset = Vector(0, 0, 0),
-		Scale = 1,
-    },
-    { 
-        PrintName = "Stats",
-        Category = "killcounter",
-        Bone = "jnt_offset",
-        Pos = Vector(7.8, -0.7, 1.8),
-		Ang = Angle(0, 0, -0),
-		Icon_Offset = Vector(-0, 0.0, 0.0),
-		CosmeticOnly = true,
-    },
-	{
-		PrintName = "Sticker 1",
-        StickerModel = "models/weapons/arc9/stalker2/ar_ak74/s_ar_ak74_1.mdl",
-        Category = "stickers",
-		Icon_Offset = Vector(-0, 999.0, 0.0),
-    },
-	{
-		PrintName = "Sticker 2",
-        StickerModel = "models/weapons/arc9/stalker2/ar_ak74/s_ar_ak74_2.mdl",
-        Category = "stickers",
-		Icon_Offset = Vector(-0, 999.0, 0.0),
-    },
-	{
-		PrintName = "Sticker 3",
-        StickerModel = "models/weapons/arc9/stalker2/ar_ak74/s_ar_ak74_3.mdl",
-        Category = "stickers",
-		Icon_Offset = Vector(-0, 999.0, 0.0),
-    },
-	{
-		PrintName = "Sticker 4",
-        StickerModel = "models/weapons/arc9/stalker2/ar_ak74/s_ar_ak74_4.mdl",
-        Category = "stickers",
-		Icon_Offset = Vector(-0, 999.0, 0.0),
-    },
 }
 
 -------------------------------------------------------------------------------------------------------
@@ -488,6 +392,7 @@ SWEP.Attachments = {
 SWEP.InstantSprintIdle = false -- Instantly go to idle_sprint instead of playing enter_sprint.
 SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
 SWEP.InstantSightIdle = false
+SWEP.NoInspect = true
 
 SWEP.Animations = {
     ["idle"] = {
@@ -591,7 +496,7 @@ SWEP.Animations = {
     --------------------------------------------------- Reload
     ["reload"] = {
         Source = {"reload"},
-        MinProgress = 0.7,
+        MinProgress = 0.8,
         FireASAP = false,
 		EventTable = {
 		    {s = "Stalker2.PmMagOutIntro", t = 10 / 30},
@@ -602,7 +507,7 @@ SWEP.Animations = {
     },
 	["reload_empty"] = {
         Source = {"reload_empty"},
-        MinProgress = 0.75,
+        MinProgress = 0.85,
         FireASAP = false,
 		EventTable = {
 			{s = "Stalker2.PmMagOutIntro", t = 10 / 30},
@@ -615,26 +520,27 @@ SWEP.Animations = {
 	
 	["reload_ext"] = {
         Source = {"reload_ext"},
-        MinProgress = 0.65,
+        MinProgress = 0.74,
         FireASAP = false,
 		EventTable = {
-		    {s = "Stalker2.AK74MagTap", t = 35 / 30},
-			{s = "Stalker2.AK74MagOut", t = 38 / 30},
-			{s = "Stalker2.AK74MagTap", t = 61 / 30},
-			{s = "Stalker2.AK74MagIn", t = 65 / 30},
+			{s = "Stalker2.PmMagPullIncreased", t = 4 / 30},
+		    {s = "Stalker2.PmMagOutIntro", t = 12 / 30},
+			{s = "Stalker2.PmMagOutOutro", t = 20 / 30},
+			{s = "Stalker2.PmMagIn", t = 47 / 30},
+			{s = "Stalker2.ARC9Cloth2", t = 57 / 30},
         },
     },
 	["reload_empty_ext"] = {
         Source = {"reload_ext_empty"},
-        MinProgress = 0.75,
+        MinProgress = 0.77,
         FireASAP = false,
 		EventTable = {
-			{s = "Stalker2.AK74MagTap", t = 35 / 30},
-			{s = "Stalker2.AK74MagOut", t = 38 / 30},
-			{s = "Stalker2.AK74MagTap", t = 61 / 30},
-			{s = "Stalker2.AK74MagIn", t = 65 / 30},
-			{s = "Stalker2.AK74SlideIn", t = 96 / 30},
-			{s = "Stalker2.AK74SlideOut", t = 108 / 30},
+			{s = "Stalker2.PmMagPullIncreased", t = 4 / 30},
+		    {s = "Stalker2.PmMagOutIntro", t = 12 / 30},
+			{s = "Stalker2.PmMagOutOutro", t = 20 / 30},
+			{s = "Stalker2.PmMagIn", t = 47 / 30},
+			{s = "Stalker2.PmSlideForward", t = 62 / 30},
+			{s = "Stalker2.ARC9Cloth2", t = 75 / 30},
         },
     },
     --------------------------------------------------- Tacticool
@@ -779,18 +685,19 @@ SWEP.Hook_PrimaryAttack = function(self)
 	local heatAmount = self:GetHeatAmount()
 	local owner = self:GetOwner()
 	
+	if self:Clip1() == 1 then return end
 	local heatPercentage = (heatAmount / heatCapacity) * 100
 	-- print("Heat Percentage: " .. heatPercentage .. "%")
 	if heatPercentage >= 75 then
-		if math.random(1, 100) <= 7.5 then
+		if math.random(1, 100) <= 10 then
 			self:SetJammed(true)	
 		end
 	elseif heatPercentage >= 50 then
-		if math.random(1, 100) <= 2.5 then
+		if math.random(1, 100) <= 5 then
 			self:SetJammed(true)
 		end
 	elseif heatPercentage >= 25 then
-		if math.random(1, 100) <= 0.5 then
+		if math.random(1, 100) <= 2.5 then
 			self:SetJammed(true)
 		end
 	end
