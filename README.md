@@ -3,7 +3,7 @@
 ## 🔽 Required Items
 [ARC9](https://steamcommunity.com/workshop/filedetails/?id=2910505837) **REQUIRED**
 ## 🔽 Links
-[Workshop Page]([https://steamcommunity.com/sharedfiles/filedetails/?id=3394681012)
+[Workshop Page](https://steamcommunity.com/sharedfiles/filedetails/?id=3394681012)
 
 [My Discord](https://discord.gg/2vwdkHzcYv)
 
