@@ -154,13 +154,13 @@ SWEP.RecoilKick 							= 0.5 -- Camera recoil
 SWEP.RecoilKickDamping 						= 0.25 -- Camera recoil damping
 
 -- Spread ---------------------------------------------------------------------------------------------
-SWEP.Spread 					= (0.056) * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
+SWEP.Spread 					= (0.066) * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
 
 SWEP.SpreadAddRecoil 			= 0.0568 / 5
 
 SWEP.SpreadAddMove 				= SWEP.Spread * 0.1
 SWEP.SpreadAddMidAir 			= SWEP.Spread * 3
-SWEP.SpreadAddCrouch 			= -SWEP.Spread * 0.35
+SWEP.SpreadAddCrouch 			= -SWEP.Spread * 0.15
 SWEP.SpreadAddSights 			= -SWEP.Spread * 0.1
 
 SWEP.RecoilModifierCap 			= SWEP.RecoilMax

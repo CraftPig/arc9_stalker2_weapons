@@ -446,12 +446,10 @@ SWEP.Animations = {
     },
 	["dryfire"] = {
         Source = {"dryfire"},
-		MinProgress = 0.033,
         FireASAP = true,
     },
 	["dryfire_sights"] = {
         Source = {"dryfire_ads"},
-		MinProgress = 0.033,
         FireASAP = true,
     },
     --------------------------------------------------- Draw & Holster

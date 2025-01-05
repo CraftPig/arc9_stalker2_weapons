@@ -154,13 +154,13 @@ SWEP.RecoilKick 							= 0.5 -- Camera recoil
 SWEP.RecoilKickDamping 						= 0.25 -- Camera recoil damping
 
 -- Spread ---------------------------------------------------------------------------------------------
-SWEP.Spread 					= (0.065) * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
+SWEP.Spread 					= (0.075) * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
 
 SWEP.SpreadAddRecoil 			= 0.0568 / 5
 
 SWEP.SpreadAddMove 				= SWEP.Spread * 0.1
 SWEP.SpreadAddMidAir 			= SWEP.Spread * 3
-SWEP.SpreadAddCrouch 			= -SWEP.Spread * 0.35
+SWEP.SpreadAddCrouch 			= -SWEP.Spread * 0.15
 SWEP.SpreadAddSights 			= -SWEP.Spread * 0.1
 
 SWEP.RecoilModifierCap 			= SWEP.RecoilMax
@@ -416,12 +416,10 @@ SWEP.Animations = {
     },
 	["dryfire"] = {
         Source = {"dryfire"},
-		MinProgress = 0.033,
         FireASAP = true,
     },
 	["dryfire_sights"] = {
         Source = {"dryfire_ads"},
-		MinProgress = 0.033,
         FireASAP = true,
     },
 	["bash"] = {
@@ -460,8 +458,8 @@ SWEP.Animations = {
     },
 	["reload_finish"] = {
         Source = {"reload_out"},
-        MinProgress = 0.5,
-        FireASAP = false,
+        MinProgress = 0.75,
+        FireASAP = true,
 		EventTable = {
 			{s = "Stalker2.ARC9Cloth2", t = 0 / 30},
         },
@@ -562,15 +560,15 @@ SWEP.Hook_PrimaryAttack = function(self)
 	local heatPercentage = (heatAmount / heatCapacity) * 100
 	-- print("Heat Percentage: " .. heatPercentage .. "%")
 	if heatPercentage >= 75 then
-		if math.random(1, 100) <= 15 then
+		if math.random(1, 100) <= 12 then
 			self:SetJammed(true)
 		end
 	elseif heatPercentage >= 50 then
-		if math.random(1, 100) <= 10 then
+		if math.random(1, 100) <= 8 then
 			self:SetJammed(true)
 		end
 	elseif heatPercentage >= 25 then
-		if math.random(1, 100) <= 5 then
+		if math.random(1, 100) <= 3 then
 			self:SetJammed(true)
 		end
 	end

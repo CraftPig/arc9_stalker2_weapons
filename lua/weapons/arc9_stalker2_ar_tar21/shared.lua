@@ -163,11 +163,11 @@ SWEP.RecoilRandomSide 						= 0.1
 SWEP.RecoilAutoControl 						= 0.0 -- Multiplier for automatic recoil control.
 
 SWEP.RecoilDissipationRate 					= 20
-SWEP.RecoilResetTime 						= 0.25
+SWEP.RecoilResetTime 						= 0.1
 SWEP.RecoilFullResetTime 					= 1
 
 SWEP.RecoilPerShot 							= 1
-SWEP.RecoilMax 								= SWEP.ClipSize / 2 -- MaxRadiusExtensionModifier
+SWEP.RecoilMax 								= SWEP.ClipSize / 1.5 --MaxRadiusExtensionModifier
 
 ---- Weapon Visual Recoil
 SWEP.UseVisualRecoil 						= true
@@ -513,12 +513,10 @@ SWEP.Animations = {
     },
 	["dryfire"] = {
         Source = {"dryfire"},
-		MinProgress = 0.033,
         FireASAP = true,
     },
 	["dryfire_sights"] = {
         Source = {"dryfire_ads"},
-		MinProgress = 0.033,
         FireASAP = true,
     },
     --------------------------------------------------- Draw & Holster

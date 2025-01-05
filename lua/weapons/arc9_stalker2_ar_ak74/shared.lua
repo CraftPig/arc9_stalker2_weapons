@@ -372,7 +372,7 @@ SWEP.MalfunctionSound 			= { "Stalker2.Jam" }
 -- Attachments ----------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
 
-SWEP.DefaultBodygroups = "0000000000000000000000000000000000000"
+SWEP.DefaultBodygroups = "00000000000000000"
 
 SWEP.AttachmentElements = {
 	["stalker2_ak74_handguard_blank"] = { Bodygroups = { {1, 1} } },
@@ -536,12 +536,10 @@ SWEP.Animations = {
     },
 	["dryfire"] = {
         Source = {"dryfire"},
-		MinProgress = 0.033,
         FireASAP = true,
     },
 	["dryfire_sights"] = {
         Source = {"dryfire_ads"},
-		MinProgress = 0.033,
         FireASAP = true,
     },
     --------------------------------------------------- Draw & Holster
