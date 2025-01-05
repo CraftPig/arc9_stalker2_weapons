@@ -1,6 +1,0 @@
-"UnlitGeneric"
-{
-	"$baseTexture" "vgui/hud/vgui_pm"
-	
-	"$translucent" "1"
-}
