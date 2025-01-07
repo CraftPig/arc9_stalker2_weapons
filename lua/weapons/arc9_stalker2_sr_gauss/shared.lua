@@ -20,7 +20,7 @@ SWEP.TrueName = "Gauss Gun"
 
 SWEP.Slot = 1
 
-SWEP.Class = "Pistol"
+SWEP.Class = "Coilgun"
 SWEP.Trivia = {
     Caliber = "Batteries",
 	Weight = "7kg",
@@ -37,7 +37,7 @@ SWEP.Description = [[Developed in the Zone and incorporating an electromagnetic 
 SWEP.ViewModel = "models/weapons/arc9/stalker2/sr_gauss/v_sr_gauss.mdl"
 SWEP.UseHands = true
 
-SWEP.WorldModel = "models/weapons/w_pist_p228.mdl" -- w_eq_fraggrenade_thrown, w_knife_t, w_pist_deagle, w_pist_glock18, w_pist_p228, w_pist_usp, w_pist_usp_silencer, w_rif_ak47, w_rif_aug, w_rif_famas, w_rif_galil, w_rif_m4a1, w_rif_m4a1_silencer, w_rif_sg552, w_shot_xm1014, w_smg_mac10, w_smg_mp5, w_smg_p90, w_smg_tmp, w_smg_ump45, w_snip_awp, w_snip_g3sg1, w_snip_scout, w_snip_sg550
+SWEP.WorldModel = "models/weapons/w_snip_awp.mdl" -- w_eq_fraggrenade_thrown, w_knife_t, w_pist_deagle, w_pist_glock18, w_pist_p228, w_pist_usp, w_pist_usp_silencer, w_rif_ak47, w_rif_aug, w_rif_famas, w_rif_galil, w_rif_m4a1, w_rif_m4a1_silencer, w_rif_sg552, w_shot_xm1014, w_smg_mac10, w_smg_mp5, w_smg_p90, w_smg_tmp, w_smg_ump45, w_snip_awp, w_snip_g3sg1, w_snip_scout, w_snip_sg550
 SWEP.MirrorVMWM = true 
  SWEP.WorldModelOffset = {
      Pos = Vector(-3, 2.5, -7), -- non tpik (while on ground, on npc etc)
@@ -180,7 +180,7 @@ SWEP.BarrelLength 			= 50
 SWEP.PushBackForce 			= 80
 SWEP.FreeAimRadius 			= 2
 
-SWEP.AimDownSightsTime 		= 0.3
+SWEP.AimDownSightsTime 		= 0.75
 SWEP.SprintToFireTime 		= 0.4
 SWEP.NoFireDuringSighting 	= true
 
@@ -190,8 +190,8 @@ SWEP.SpeedMultShooting = 0.75
 
 -- Malfunctions ----------------------------------------------------------------------------------------------
 SWEP.Overheat 			= true
-SWEP.HeatPerShot 		= 3.3 * (GetConVar("arc9_stalker2_mult_heat"):GetFloat())
-SWEP.HeatCapacity 		= 300
+SWEP.HeatPerShot 		= 12.5 * (GetConVar("arc9_stalker2_mult_heat"):GetFloat())
+SWEP.HeatCapacity 		= 3750
 SWEP.HeatDissipation 	= 0.5 -- rounds' worth of heat lost per second
 SWEP.HeatLockout 		= false 
 SWEP.HeatDelayTime 		= 1 -- Amount of time that passes before heat begins to dissipate.
@@ -445,13 +445,13 @@ SWEP.Animations = {
     --------------------------------------------------- Reload
     ["reload"] = {
         Source = {"reload"},
-        MinProgress = 0.8,
+        MinProgress = 0.65,
         FireASAP = false,
 		EventTable = {
 			{s = "Stalker2.GaussMagOutButton", t = 15 / 30},
-			{s = "Stalker2.GaussMagOut", t = 20 / 30},
-			{s = "Stalker2.GaussMagInIntro", t = 67 / 30},
-			{s = "Stalker2.GaussMagInOutro", t = 74 / 30},
+			{s = "Stalker2.GaussMagOut", t = 25 / 30},
+			{s = "Stalker2.GaussMagInIntro", t = 69 / 30},
+			{s = "Stalker2.GaussMagInOutro", t = 78 / 30},
         },
     },
 	["reload_empty"] = {
@@ -460,8 +460,8 @@ SWEP.Animations = {
         FireASAP = false,
 		EventTable = {
 			{s = "Stalker2.GaussMagOutButton", t = 15 / 30},
-			{s = "Stalker2.GaussMagOut", t = 20 / 30},
-			{s = "Stalker2.GaussMagInIntro", t = 67 / 30},
+			{s = "Stalker2.GaussMagOut", t = 25 / 30},
+			{s = "Stalker2.GaussMagInIntro", t = 69 / 30},
 			{s = "Stalker2.GaussMagInOutro", t = 74 / 30},
 			{s = "Stalker2.GaussCock", t = 90 / 30},
         },
@@ -567,39 +567,47 @@ SWEP.Hook_TranslateAnimation = function (self, anim)
 	end
 end	
 
-local heatCapacity = SWEP.HeatCapacity
 SWEP.Hook_PrimaryAttack = function(self)
-	local heatAmount = self:GetHeatAmount()
-	local owner = self:GetOwner()
-	
 	if self:Clip1() == 1 then
-		owner:EmitSound("Stalker2.GaussMechLast")
+		self:EmitSound("Stalker2.GaussMechLast")
 	end
 	
-	if self:Clip1() == 1 then return end
-	local heatPercentage = (heatAmount / heatCapacity) * 100
-	-- print("Heat Percentage: " .. heatPercentage .. "%")
-	if heatPercentage >= 75 then
-		if math.random(1, 100) <= 10 then
-			self:SetJammed(true)	
+	-- if self:Clip1() == 1 then return end
+	
+	local heatAmount = self:GetHeatAmount()
+	local heatCapacity = self.HeatCapacity
+
+	if heatCapacity > 0 then
+		local heatPercentage = (heatAmount / heatCapacity) * 100
+
+		local minHeat = 10 -- Minimum heat percentage where chance starts
+		local maxHeat = 65 -- Heat percentage where chance reaches full extent
+		local maxChance = 10 -- Maximum chance value
+
+		local chance = 0
+		if heatPercentage >= minHeat then
+			if heatPercentage <= maxHeat then
+				chance = ((heatPercentage - minHeat) / (maxHeat - minHeat)) * maxChance
+			else
+				chance = maxChance
+			end
 		end
-	elseif heatPercentage >= 50 then
-		if math.random(1, 100) <= 5 then
-			self:SetJammed(true)
-		end
-	elseif heatPercentage >= 25 then
-		if math.random(1, 100) <= 2.5 then
+		
+		-- print("Percentage: " .. heatPercentage .. "%")
+		-- print("Chance: " .. chance .. "%")
+			
+		if math.random(1, 100) <= chance then
 			self:SetJammed(true)
 		end
 	end
 	
 	if self:GetJammed() == true then
-		owner:EmitSound("Stalker2.Jam")
+		self:EmitSound("Stalker2.Jam")
 	end
-	
-	-- print(GetConVar("arc9_stalker2_mult_dmg"):GetFloat())
-	-- print(GetConVar("arc9_stalker2_bool_heat"):GetBool())
 end
+
+-- print(GetConVar("arc9_stalker2_mult_dmg"):GetFloat())
+-- print(GetConVar("arc9_stalker2_bool_heat"):GetBool())
 
 SWEP.CustomPoseParamsHandler = function (self, ent, iswm)
     local owner = self:GetOwner()
