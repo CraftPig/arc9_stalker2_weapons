@@ -18,7 +18,7 @@ SWEP.AdminOnly = false
 SWEP.PrintName = "Gauss Gun"
 SWEP.TrueName = "Gauss Gun"
 
-SWEP.Slot = 1
+SWEP.Slot = 3
 
 SWEP.Class = "Coilgun"
 SWEP.Trivia = {
@@ -78,7 +78,7 @@ SWEP.RangeMin 			 = SWEP.RangeMax / 3
 SWEP.Num 				 = 1
 SWEP.DamageType			 = DMG_SHOCK
 
-SWEP.ImpactForce		 = 1 
+SWEP.ImpactForce		 = 10 
 SWEP.ArmorPiercing		 = 0.8
 SWEP.Penetration		 = 1000/1000/0.0254
 
@@ -256,8 +256,8 @@ SWEP.NearWallPos = Vector(1, -5, -0.0)
 SWEP.NearWallAng = Angle(10, 0, -20) 
 
 SWEP.CustomizeAng = Angle(90, -0, 0)
-SWEP.CustomizePos = Vector(18.5, 22, 5.5)
-SWEP.CustomizeRotateAnchor = Vector(18, -4, -5)
+SWEP.CustomizePos = Vector(18.5, 38, 5.5)
+SWEP.CustomizeRotateAnchor = Vector(17, -3, -5)
 
 -------------------------------------------------------------------------------------------------------
 -- Visuals & Effects ----------------------------------------------------------------------------------
@@ -269,11 +269,11 @@ SWEP.ShouldDropMagEmpty 		= true
 
 SWEP.DropMagazineQCA 			= 4
 SWEP.DropMagazineAmount 		= 1 
-SWEP.DropMagazineTime 			= 1.2
+SWEP.DropMagazineTime 			= 1.45
 
 SWEP.DropMagazinePos 			= Vector(-0, 0, -0) -- offsets
 SWEP.DropMagazineAng 			= Angle(0, 0, 0)
-SWEP.DropMagazineVelocity 		= Vector(50, -110, 0) -- Put something here if your anim throws the mag with force
+SWEP.DropMagazineVelocity 		= Vector(0, -0, 0) -- Put something here if your anim throws the mag with force
 
 SWEP.DropMagazineModel 			= "models/weapons/arc9/stalker2/pt_pm/w_pt_pm_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds 		= {"physics/metal/weapon_impact_soft1.wav",
@@ -341,14 +341,22 @@ SWEP.MalfunctionSound 			= { "Stalker2.Jam" }
 SWEP.DefaultBodygroups = "000"
 
 SWEP.AttachmentElements = {
-	["stalker2_pm_mag_ext"] = { Bodygroups = { {1, 1} } },
+	-- ["stalker2_pm_mag_ext"] = { Bodygroups = { {1, 1} } },
 }
 
 SWEP.Attachments = {
 	{
+        PrintName = "Optic",
+		Bone = "jnt_offset",
+        Category = {"scp5k_optic", "csgo_optic", "cod2019_optic" },
+		CorrectiveAng = Angle(-1.55, 1.75, 0),
+		Pos = Vector(5.75, -0, 4.2),
+        Ang = Angle(-0, 0, -0),
+    },
+	{
         PrintName = "Magazine",
 		Bone = "jnt_clip_base",
-        Category = "stalker2_pm_mag",
+        Category = "",
 		Pos = Vector(0, -0, 0),
     },
 	{
@@ -474,23 +482,23 @@ SWEP.Animations = {
 		EventTable = {
             {s = "Stalker2.ARC9Cloth", t = 5 / 30},
 			{s = "Stalker2.GaussJamOff", t = 15 / 30},
-			{s = "Stalker2.GaussJamTeeth", t = 43 / 30},
-			{s = "Stalker2.GaussJamTeeth", t = 75 / 30},
+			{s = "Stalker2.GaussJamTeeth", t = 45 / 30},
+			{s = "Stalker2.GaussJamTeeth", t = 77 / 30},
 			{s = "Stalker2.GaussJamOn", t = 110 / 30},
         },
     },
-	["inspect"] = {
-        Source = {"malfunction"},
-        MinProgress = 0.97,
-        FireASAP = true,
-		EventTable = {
-            {s = "Stalker2.ARC9Cloth", t = 5 / 30},
-			{s = "Stalker2.GaussJamOff", t = 15 / 30},
-			{s = "Stalker2.GaussJamTeeth", t = 43 / 30},
-			{s = "Stalker2.GaussJamTeeth", t = 75 / 30},
-			{s = "Stalker2.GaussJamOn", t = 110 / 30},
-        },
-    },
+	-- ["inspect"] = {
+        -- Source = {"malfunction"},
+        -- MinProgress = 0.97,
+        -- FireASAP = true,
+		-- EventTable = {
+            -- {s = "Stalker2.ARC9Cloth", t = 5 / 30},
+			-- {s = "Stalker2.GaussJamOff", t = 15 / 30},
+			-- {s = "Stalker2.GaussJamTeeth", t = 45 / 30},
+			-- {s = "Stalker2.GaussJamTeeth", t = 77 / 30},
+			-- {s = "Stalker2.GaussJamOn", t = 110 / 30},
+        -- },
+    -- },
 	--------------------------------------------------- Movement
 	["jump_in"] = {
         Source = {"jump_start"},
@@ -593,8 +601,8 @@ SWEP.Hook_PrimaryAttack = function(self)
 			end
 		end
 		
-		-- print("Percentage: " .. heatPercentage .. "%")
-		-- print("Chance: " .. chance .. "%")
+		print("Percentage: " .. heatPercentage .. "%")
+		print("Chance: " .. chance .. "%")
 			
 		if math.random(1, 100) <= chance then
 			self:SetJammed(true)

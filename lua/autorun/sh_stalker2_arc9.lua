@@ -32,6 +32,7 @@ Sound Tables
 -- Sounds_Fora21
 -- Sounds_PM
 -- Sounds_Gauss
+-- Sounds_ASVAL
 
 ----------------------------------------------------------------------------------------------------- Sounds_Generic
 sound.Add( {
@@ -1251,5 +1252,148 @@ sound.Add( {
     pitch = {95, 105},
     sound = {
         "weapons/arc9/stalker2/sr_gauss/SFX_Gauss_JamSwitchOn.ogg",
+    }
+} )
+
+----------------------------------------------------------------------------------------------------- Sounds_ASVAL
+sound.Add( {
+    name = "Stalker2.ASVALFire",
+    channel = CHAN_STATIC,
+    volume = 1,
+    level = 115,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/ar_asval/fire_core_1.ogg",
+		"weapons/arc9/stalker2/ar_asval/fire_core_2.ogg",
+		"weapons/arc9/stalker2/ar_asval/fire_core_3.ogg",
+		"weapons/arc9/stalker2/ar_asval/fire_core_4.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ASVALOutdoors",
+    channel = CHAN_WEAPON,
+    volume = 0.5,
+    level = 115,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/ar_asval/outdoors_1.ogg",
+		"weapons/arc9/stalker2/ar_asval/outdoors_2.ogg",
+		"weapons/arc9/stalker2/ar_asval/outdoors_3.ogg",
+		"weapons/arc9/stalker2/ar_asval/outdoors_4.ogg",
+		"weapons/arc9/stalker2/ar_asval/outdoors_5.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ASVALIndoors",
+    channel = CHAN_WEAPON,
+    volume = 0.1,
+    level = 115,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/ar_asval/indoors_1.ogg",
+		"weapons/arc9/stalker2/ar_asval/indoors_2.ogg",
+		"weapons/arc9/stalker2/ar_asval/indoors_3.ogg",
+		"weapons/arc9/stalker2/ar_asval/indoors_4.ogg",
+		"weapons/arc9/stalker2/ar_asval/indoors_5.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.ASVALMagIn",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/ar_asval/SFX_ASVAL_MagIn_1.ogg",
+		"weapons/arc9/stalker2/ar_asval/SFX_ASVAL_MagIn_2.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ASVALMagOut",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/ar_asval/SFX_ASVAL_MagOut_1.ogg",
+		"weapons/arc9/stalker2/ar_asval/SFX_ASVAL_MagOut_2.ogg",
+		"weapons/arc9/stalker2/ar_asval/SFX_ASVAL_MagOut_3.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ASVALMagOutOutro",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/ar_asval/SFX_ASVAL_MagOut_Outro_1.ogg",
+		"weapons/arc9/stalker2/ar_asval/SFX_ASVAL_MagOut_Outro_2.ogg",
+		"weapons/arc9/stalker2/ar_asval/SFX_ASVAL_MagOut_Outro_3.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ASVALMagOutIntro",
+    channel = CHAN_ITEM,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/ar_asval/SFX_ASVAL_MagOut_Intro_1.ogg",
+		"weapons/arc9/stalker2/ar_asval/SFX_ASVAL_MagOut_Intro_2.ogg",
+		"weapons/arc9/stalker2/ar_asval/SFX_ASVAL_MagOut_Intro_3.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.ASVALSlideBack",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/ar_asval/SFX_ASVAL_SlideBack.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ASVALSlideForward",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/ar_asval/SFX_ASVAL_SlideForward.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.ASVALSlideJamBack",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/ar_asval/SFX_ASVAL_SlideJam_Back.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ASVALSlideJamHit",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/ar_asval/SFX_ASVAL_SlideHit.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ASVALBreakBullet",
+    channel = CHAN_ITEM,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/ar_asval/SFX_ASVAL_BreakBullet.ogg",
     }
 } )
