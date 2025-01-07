@@ -187,7 +187,7 @@ SWEP.ShotgunReload = true
 -- Malfunctions ----------------------------------------------------------------------------------------------
 SWEP.Overheat 			= true
 SWEP.HeatPerShot 		= 6 * (GetConVar("arc9_stalker2_mult_heat"):GetFloat())
-SWEP.HeatCapacity 		= 575
+SWEP.HeatCapacity 		= 2250
 SWEP.HeatDissipation 	= 0.5 -- rounds' worth of heat lost per second
 SWEP.HeatLockout 		= false 
 SWEP.HeatDelayTime 		= 1 -- Amount of time that passes before heat begins to dissipate.
@@ -552,29 +552,39 @@ SWEP.Hook_TranslateAnimation = function (self, anim)
 	end
 end	
 
-local heatCapacity = SWEP.HeatCapacity
 SWEP.Hook_PrimaryAttack = function(self)
-	local heatAmount = self:GetHeatAmount()
-	local owner = self:GetOwner()
 	
-	local heatPercentage = (heatAmount / heatCapacity) * 100
-	-- print("Heat Percentage: " .. heatPercentage .. "%")
-	if heatPercentage >= 75 then
-		if math.random(1, 100) <= 12 then
-			self:SetJammed(true)
+	-- if self:Clip1() == 1 then return end
+	
+	local heatAmount = self:GetHeatAmount()
+	local heatCapacity = self.HeatCapacity
+
+	if heatCapacity > 0 then
+		local heatPercentage = (heatAmount / heatCapacity) * 100
+
+		local minHeat = 10 -- Minimum heat percentage where chance starts
+		local maxHeat = 75 -- Heat percentage where chance reaches full extent
+		local maxChance = 15 -- Maximum chance value
+
+		local chance = 0
+		if heatPercentage >= minHeat then
+			if heatPercentage <= maxHeat then
+				chance = ((heatPercentage - minHeat) / (maxHeat - minHeat)) * maxChance
+			else
+				chance = maxChance
+			end
 		end
-	elseif heatPercentage >= 50 then
-		if math.random(1, 100) <= 8 then
-			self:SetJammed(true)
-		end
-	elseif heatPercentage >= 25 then
-		if math.random(1, 100) <= 3 then
+		
+		-- print("Percentage: " .. heatPercentage .. "%")
+		-- print("Chance: " .. chance .. "%")
+			
+		if math.random(1, 100) <= chance then
 			self:SetJammed(true)
 		end
 	end
 	
 	if self:GetJammed() == true then
-		owner:EmitSound("Stalker2.Jam")
+		self:EmitSound("Stalker2.Jam")
 	end
 end
 

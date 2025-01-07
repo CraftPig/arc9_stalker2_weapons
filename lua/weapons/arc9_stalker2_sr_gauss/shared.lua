@@ -456,7 +456,7 @@ SWEP.Animations = {
     },
 	["reload_empty"] = {
         Source = {"reload_empty"},
-        MinProgress = 0.85,
+        MinProgress = 0.75,
         FireASAP = false,
 		EventTable = {
 			{s = "Stalker2.GaussMagOutButton", t = 15 / 30},
