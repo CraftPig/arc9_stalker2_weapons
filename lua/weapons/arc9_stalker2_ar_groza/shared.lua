@@ -534,11 +534,11 @@ SWEP.Animations = {
         Source = {"fire_ads"},
     },
 	["dryfire"] = {
-        Source = {"dryfire"},
+        Source = {"walk_end"},
         FireASAP = true,
     },
 	["dryfire_sights"] = {
-        Source = {"dryfire_ads"},
+        Source = {"fire_scope"},
         FireASAP = true,
     },
 	--------------------------------------------------- UBGL

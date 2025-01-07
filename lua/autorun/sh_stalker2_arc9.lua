@@ -31,7 +31,7 @@ Sound Tables
 -- Sounds_SPSA
 -- Sounds_Fora21
 -- Sounds_PM
---
+-- Sounds_Gauss
 
 ----------------------------------------------------------------------------------------------------- Sounds_Generic
 sound.Add( {
@@ -47,7 +47,7 @@ sound.Add( {
 sound.Add( {
     name = "Stalker2.Jam",
     channel = CHAN_ITEM,
-    volume = 1,
+    volume = 1, 
     level = 70,
     pitch = {95, 110},
     sound = {
@@ -1057,5 +1057,199 @@ sound.Add( {
     pitch = {95, 100},
     sound = {
         "weapons/arc9/stalker2/pt_pm/SFX_PM_BreakBullet.ogg",
+    }
+} )
+
+----------------------------------------------------------------------------------------------------- Sounds_Gauss
+sound.Add( {
+    name = "Stalker2.GaussFire",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 150,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/sr_gauss/fire_core_1.ogg",
+		"weapons/arc9/stalker2/sr_gauss/fire_core_2.ogg",
+		"weapons/arc9/stalker2/sr_gauss/fire_core_3.ogg",
+		"weapons/arc9/stalker2/sr_gauss/fire_core_4.ogg",
+		"weapons/arc9/stalker2/sr_gauss/fire_core_5.ogg",
+		"weapons/arc9/stalker2/sr_gauss/fire_core_6.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.GaussFireOutdoors",
+    channel = CHAN_STATIC,
+    volume = 0.44,
+    level = 150,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/sr_gauss/outdoors_1.ogg",
+		"weapons/arc9/stalker2/sr_gauss/outdoors_2.ogg",
+		"weapons/arc9/stalker2/sr_gauss/outdoors_3.ogg",
+		"weapons/arc9/stalker2/sr_gauss/outdoors_4.ogg",
+		"weapons/arc9/stalker2/sr_gauss/outdoors_5.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.GaussFireIndoors",
+    channel = CHAN_STATIC,
+    volume = 0.44,
+    level = 150,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/sr_gauss/indoors_1.ogg",
+		"weapons/arc9/stalker2/sr_gauss/indoors_2.ogg",
+		"weapons/arc9/stalker2/sr_gauss/indoors_3.ogg",
+		"weapons/arc9/stalker2/sr_gauss/indoors_4.ogg",
+		"weapons/arc9/stalker2/sr_gauss/indoors_5.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.GaussFireWindup",
+    channel = CHAN_STREAM,
+    volume = 1,
+    level = 85,
+    pitch = {98, 103},
+    sound = {
+        "weapons/arc9/stalker2/sr_gauss/fire_windup_1.ogg",
+		"weapons/arc9/stalker2/sr_gauss/fire_windup_2.ogg",
+		"weapons/arc9/stalker2/sr_gauss/fire_windup_3.ogg",
+		"weapons/arc9/stalker2/sr_gauss/fire_windup_4.ogg",
+		"weapons/arc9/stalker2/sr_gauss/fire_windup_5.ogg",
+		"weapons/arc9/stalker2/sr_gauss/fire_windup_6.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.GaussMechLast",
+    channel = CHAN_ITEM,
+    volume = 1,
+    level = 75,
+    pitch = {100, 100},
+    sound = {
+        "weapons/arc9/stalker2/sr_gauss/SFX_Gauss_MechLast.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.GaussMagOutButton",
+    channel = CHAN_ITEM,
+    volume = 1,
+    level = 70,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/sr_gauss/SFX_Gauss_MagOut_Button.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.GaussMagOut",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 70,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/sr_gauss/SFX_Gauss_MagOut.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.GaussMagInIntro",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 70,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/sr_gauss/SFX_Gauss_MagIn_Intro.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.GaussMagInOutro",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 70,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/sr_gauss/SFX_Gauss_MagIn_Outro.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.GaussCock",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 70,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/sr_gauss/SFX_Gauss_Cock.ogg",
+    }
+} )
+
+
+sound.Add( {
+    name = "Stalker2.GaussTeethReload",
+    channel = CHAN_STATIC,
+    volume = 1,
+    level = 70,
+    pitch = {93, 112},
+    sound = {
+        "weapons/arc9/stalker2/sr_gauss/SFX_Gauss_TeethReload_1.ogg",
+		"weapons/arc9/stalker2/sr_gauss/SFX_Gauss_TeethReload_2.ogg",
+		"weapons/arc9/stalker2/sr_gauss/SFX_Gauss_TeethReload_3.ogg",
+		"weapons/arc9/stalker2/sr_gauss/SFX_Gauss_TeethReload_4.ogg",
+		"weapons/arc9/stalker2/sr_gauss/SFX_Gauss_TeethReload_5.ogg",
+		"weapons/arc9/stalker2/sr_gauss/SFX_Gauss_TeethReload_6.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.GaussTeethLast",
+    channel = CHAN_STATIC,
+    volume = 1,
+    level = 70,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/sr_gauss/SFX_Gauss_TeethLast_1.ogg",
+		"weapons/arc9/stalker2/sr_gauss/SFX_Gauss_TeethLast_2.ogg",
+		"weapons/arc9/stalker2/sr_gauss/SFX_Gauss_TeethLast_3.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.GaussTeethReset",
+    channel = CHAN_STATIC,
+    volume = 0.5,
+    level = 70,
+    pitch = {97, 105},
+    sound = {
+        "weapons/arc9/stalker2/sr_gauss/SFX_Gauss_TeethReset.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.GaussJamTeeth",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 70,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/sr_gauss/SFX_Gauss_JamTeeth_1.ogg",
+		"weapons/arc9/stalker2/sr_gauss/SFX_Gauss_JamTeeth_2.ogg",
+		"weapons/arc9/stalker2/sr_gauss/SFX_Gauss_JamTeeth_3.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.GaussJamOff",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 70,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/sr_gauss/SFX_Gauss_JamSwitchOff.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.GaussJamOn",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 70,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/sr_gauss/SFX_Gauss_JamSwitchOn.ogg",
     }
 } )
