@@ -17,23 +17,23 @@ SWEP.SubCategory = "Shotguns"
 -- SWEP.Category2 = "Special Weaponry"
 
 SWEP.AdminOnly = false
-SWEP.PrintName = "Saiga"
-SWEP.TrueName = "SPAS-12"
+SWEP.PrintName = "Saiga D-12"
+SWEP.TrueName = "Saiga-12K"
 
 SWEP.Slot = 3
 
 SWEP.Class = "Shotgun"
 SWEP.Trivia = {
     Caliber = "12/32 Gauge",
-	Origin = "Italy",
-	Year = "1979",
-	Weight = "4.4kg (9.7lbs)",
+	Origin = "Russia",
+	Year = "1994",
+	Weight = "3.6kg (7.9lbs)",
 }
 SWEP.Credits = { 
     Author = "Craft_Pig",
 	Assets = "S.T.A.L.K.E.R. 2: Heart of Chornobyl | GSC Game World", 
 }
-SWEP.Description = [[The SPAS-12 is a combat shotgun manufactured by Italian firearms company Franchi from 1979 to 2000. It is a dual-mode shotgun, adjustable for semi-automatic or pump-action operation at the push of a button.]]
+SWEP.Description = [[Based on the AKM-74, this shotgun is favored among stalkers and professional military alike for its prowess as a powerful assault weapon.]]
 --https://www.imfdb.org/wiki/S.T.A.L.K.E.R._2:_Heart_of_Chornobyl#IWI_Carmel
 
 -------------------------------------------------------------------------------------------------------
@@ -84,10 +84,10 @@ SWEP.Num 				 = 12
 SWEP.DamageType			 = DMG_BULLET
 
 SWEP.ImpactForce		 = 4 
-SWEP.ArmorPiercing		 = 0.48
-SWEP.Penetration		 = 200/1000/0.0254
+SWEP.ArmorPiercing		 = 0.6
+SWEP.Penetration		 = 220/1000/0.0254
 
-SWEP.PhysBulletMuzzleVelocity 	= 365 / 0.0254
+SWEP.PhysBulletMuzzleVelocity 	= 333 / 0.0254
 SWEP.RicochetChance 			= SWEP.PhysBulletMuzzleVelocity/100000
 
 SWEP.RPM = 600
@@ -110,7 +110,7 @@ SWEP.BodyDamageMults = {
 -- Magazine -------------------------------------------------------------------------------------------
 SWEP.Ammo 			= "buckshot" 
 
-SWEP.ChamberSize 	= 0 
+SWEP.ChamberSize 	= 1 
 SWEP.ClipSize 		= 8
 SWEP.SupplyLimit    = 8
 
@@ -119,12 +119,12 @@ SWEP.InfiniteAmmo   = false
 SWEP.BottomlessClip = false 
 
 -- Recoil -------------------------------------------------------------------------------------------
-SWEP.Recoil 								= (2.2 / 3) * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
+SWEP.Recoil 								= (8) * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
 
 SWEP.RecoilRandomUp 						= 0
 SWEP.RecoilRandomSide 						= 0.1
 
-SWEP.RecoilAutoControl 						= 0.0 -- Multiplier for automatic recoil control.
+SWEP.RecoilAutoControl 						= 3.0 -- Multiplier for automatic recoil control.
 
 SWEP.RecoilDissipationRate 					= 5
 SWEP.RecoilResetTime 						= 0.033
@@ -150,13 +150,13 @@ SWEP.VisualRecoilRoll 						= 150
 SWEP.VisualRecoilPunch 						= 8
 SWEP.VisualRecoilPunchMultSights 			= 1
 
-SWEP.RecoilKick 							= 0.5 -- Camera recoil
+SWEP.RecoilKick 							= 5 -- Camera recoil
 SWEP.RecoilKickDamping 						= 0.25 -- Camera recoil damping
 
 -- Spread ---------------------------------------------------------------------------------------------
-SWEP.Spread 					= (0.075) * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
+SWEP.Spread 					= (0.061) * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
 
-SWEP.SpreadAddRecoil 			= 0.0568 / 5
+SWEP.SpreadAddRecoil 			= 0.0611 / 5
 
 SWEP.SpreadAddMove 				= SWEP.Spread * 0.1
 SWEP.SpreadAddMidAir 			= SWEP.Spread * 3
@@ -170,7 +170,7 @@ SWEP.Sway 					= 0 -- How much the gun sways
 SWEP.SwayAddSighted 		= 0.35
 SWEP.SwayAddMidAir 			= 1.0 
 
-SWEP.BarrelLength 			= 32 
+SWEP.BarrelLength 			= 33
 SWEP.PushBackForce 			= 1
 SWEP.FreeAimRadius 			= 2
 
@@ -187,7 +187,7 @@ SWEP.ShotgunReload = false
 -- Malfunctions ----------------------------------------------------------------------------------------------
 SWEP.Overheat 			= true
 SWEP.HeatPerShot 		= 6 * (GetConVar("arc9_stalker2_mult_heat"):GetFloat())
-SWEP.HeatCapacity 		= 2250
+SWEP.HeatCapacity 		= 2700
 SWEP.HeatDissipation 	= 0.5 -- rounds' worth of heat lost per second
 SWEP.HeatLockout 		= false 
 SWEP.HeatDelayTime 		= 1 -- Amount of time that passes before heat begins to dissipate.
@@ -504,22 +504,22 @@ return end
 SWEP.Hook_Think = function(self)
 	local owner = self:GetOwner() 
 
-	-- if self:GetNextPrimaryFire() >= CurTime() then return end
-	-- if !self:CanReload() then return end
-	-- if self:GetInSights() == true then return end
-	-- if self:GetUBGL() == true then return end
+	if self:GetNextPrimaryFire() >= CurTime() then return end
+	if !self:CanReload() then return end
+	if self:GetInSights() == true then return end
+	if self:GetUBGL() == true then return end
 	
-	-- if (owner:KeyPressed(IN_JUMP)) and self.MidAir == 0 then
-		-- self:PlayAnimation("jump_in", 1, true)
-		-- self.MidAir = 1
-	-- end
-	-- if not owner:OnGround() then
-		-- self.MidAir = 1
-	-- end
-	-- if self.MidAir == 1 and owner:OnGround() then -- Jump End
-		-- self.MidAir = 0
-		-- self:PlayAnimation("jump_end", 1, false)
-	-- end
+	if (owner:KeyPressed(IN_JUMP)) and self.MidAir == 0 then
+		self:PlayAnimation("jump_in", 1, true)
+		self.MidAir = 1
+	end
+	if not owner:OnGround() then
+		self.MidAir = 1
+	end
+	if self.MidAir == 1 and owner:OnGround() then -- Jump End
+		self.MidAir = 0
+		self:PlayAnimation("jump_end", 1, false)
+	end
 return end
 
 SWEP.Hook_TranslateAnimation = function (self, anim)

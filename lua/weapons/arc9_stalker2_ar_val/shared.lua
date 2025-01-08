@@ -351,15 +351,15 @@ SWEP.HideBones = {
 -------------------------------------------------------------------------------------------------------
 SWEP.ShootSound               	= { "Stalker2.ASVALFire" }
 
-SWEP.ShootSoundIndoor 			= { "Stalker2.AK74FireIndoors" }  
-SWEP.DistantShootSound 			= { "Stalker2.ASVALIndoors" }  
+SWEP.ShootSoundIndoor 			= { "Stalker2.5K.SMGSilTailIndoor" }  
+SWEP.DistantShootSound 			= { "Stalker2.5K.RifleSilTailOutdoor" }  
 
 SWEP.DryFireSound 				= { "Stalker2.Dry" }  
 SWEP.TriggerDownSound 			= { "Stalker2.Trigger" }  
 SWEP.TriggerUpSound 			= { "Stalker2.Trigger" }  
 
-SWEP.EnterSightsSound 			= { "Stalker2.ARC9Cloth" }  
-SWEP.ExitSightsSound 			= { "Stalker2.ARC9Cloth" }  
+SWEP.EnterSightsSound 			= { "Stalker2.5K.AimIn" }  
+SWEP.ExitSightsSound 			= { "Stalker2.5K.AimOut" }  
 SWEP.MalfunctionSound 			= { "Stalker2.Jam" }  
 
 -------------------------------------------------------------------------------------------------------

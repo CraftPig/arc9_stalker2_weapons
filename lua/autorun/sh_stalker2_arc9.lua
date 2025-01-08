@@ -51,7 +51,7 @@ Sound Tables
 ----------------------------------------------------------------------------------------------------- Sounds_Generic
 sound.Add( {
     name = "Stalker2.Dry",
-    channel = CHAN_ITEM,
+    channel = CHAN_BODY,
     volume = 1,
     level = 60,
     pitch = {95, 110},
@@ -61,7 +61,7 @@ sound.Add( {
 } )
 sound.Add( {
     name = "Stalker2.Jam",
-    channel = CHAN_ITEM,
+    channel = CHAN_WEAPON,
     volume = 1, 
     level = 70,
     pitch = {95, 110},
@@ -74,7 +74,7 @@ sound.Add( {
 } )
 sound.Add( {
     name = "Stalker2.Trigger",
-    channel = CHAN_ITEM,
+    channel = CHAN_WEAPON,
     volume = 0.4,
     level = 60,
     pitch = {95, 110},
@@ -143,7 +143,7 @@ sound.Add( {
 ----------------------------------------------------------------------------------------------------- Sounds_TOZ34
 sound.Add( {
     name = "Stalker2.TOZFire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_STATIC,
     volume = 1,
     level = 125,
     pitch = {95, 110},
@@ -153,33 +153,10 @@ sound.Add( {
 		"weapons/arc9/stalker2/shot_toz/Fire_03.ogg",
     }
 } )
-sound.Add( {
-    name = "Stalker2.TOZFireOutdoors",
-    channel = CHAN_STREAM,
-    volume = 1,
-    level = 125,
-    pitch = {95, 110},
-    sound = {
-        "weapons/arc9/stalker2/shot_toz/Fire_Outdoors_01.ogg",
-		"weapons/arc9/stalker2/shot_toz/Fire_Outdoors_02.ogg",
-		"weapons/arc9/stalker2/shot_toz/Fire_Outdoors_03.ogg",
-    }
-} )
-sound.Add( {
-    name = "Stalker2.TOZFireIndoors",
-    channel = CHAN_STREAM,
-    volume = 1,
-    level = 125,
-    pitch = {95, 110},
-    sound = {
-        "weapons/arc9/stalker2/shot_toz/Fire_Indoors_01.ogg",
-		"weapons/arc9/stalker2/shot_toz/Fire_Indoors_02.ogg",
-		"weapons/arc9/stalker2/shot_toz/Fire_Indoors_03.ogg",
-    }
-} )
+
 sound.Add( {
     name = "Stalker2.TOZSlideBack",
-    channel = CHAN_ITEM,
+    channel = CHAN_WEAPON,
     volume = 1,
     level = 65,
     pitch = {95, 100},
@@ -190,7 +167,7 @@ sound.Add( {
 } )
 sound.Add( {
     name = "Stalker2.TOZSlideForward",
-    channel = CHAN_ITEM,
+    channel = CHAN_WEAPON,
     volume = 1,
     level = 65,
     pitch = {95, 100},
@@ -211,7 +188,7 @@ sound.Add( {
 } )
 sound.Add( {
     name = "Stalker2.TOZMagOut1",
-    channel = CHAN_WEAPON,
+    channel = CHAN_ITEM,
     volume = 1,
     level = 65,
     pitch = {95, 100},
@@ -222,7 +199,7 @@ sound.Add( {
 } )
 sound.Add( {
     name = "Stalker2.TOZMagIn1",
-    channel = CHAN_WEAPON,
+    channel = CHAN_ITEM,
     volume = 1,
     level = 65,
     pitch = {95, 100},
@@ -233,7 +210,7 @@ sound.Add( {
 } )
 sound.Add( {
     name = "Stalker2.TOZMagOut2",
-    channel = CHAN_WEAPON,
+    channel = CHAN_ITEM,
     volume = 1,
     level = 65,
     pitch = {95, 100},
@@ -279,34 +256,6 @@ sound.Add( {
         "weapons/arc9/stalker2/ar_ak74/fire_sil_1.ogg",
 		"weapons/arc9/stalker2/ar_ak74/fire_sil_2.ogg",
 		"weapons/arc9/stalker2/ar_ak74/fire_sil_3.ogg",
-    }
-} )
-sound.Add( {
-    name = "Stalker2.AK74FireOutdoors",
-    channel = CHAN_STREAM,
-    volume = 1,
-    level = 125,
-    pitch = {95, 110},
-    sound = {
-        "weapons/arc9/stalker2/ar_ak74/outdoors_1.ogg",
-		"weapons/arc9/stalker2/ar_ak74/outdoors_7.ogg",
-		"weapons/arc9/stalker2/ar_ak74/outdoors_5.ogg",
-		"weapons/arc9/stalker2/ar_ak74/outdoors_6.ogg",
-    }
-} )
-sound.Add( {
-    name = "Stalker2.AK74FireIndoors",
-    channel = CHAN_STREAM,
-    volume = 1,
-    level = 125,
-    pitch = {95, 110},
-    sound = {
-        "weapons/arc9/stalker2/ar_ak74/indoors_1.ogg",
-		"weapons/arc9/stalker2/ar_ak74/indoors_2.ogg",
-		"weapons/arc9/stalker2/ar_ak74/indoors_3.ogg",
-		"weapons/arc9/stalker2/ar_ak74/indoors_4.ogg",
-		"weapons/arc9/stalker2/ar_ak74/indoors_5.ogg",
-		"weapons/arc9/stalker2/ar_ak74/indoors_6.ogg",
     }
 } )
 
@@ -383,7 +332,7 @@ sound.Add( {
 } )
 sound.Add( {
     name = "Stalker2.AK74SlideJamIn",
-    channel = CHAN_BODY,
+    channel = CHAN_WEAPON,
     volume = 1,
     level = 70,
     pitch = {95, 110},
@@ -600,6 +549,7 @@ sound.Add( {
 } )
 sound.Add( {
     name = "Stalker2.M416FireSil",
+	channel = CHAN_STATIC,
     volume = 1,
     level = 125,
     pitch = {95, 110},
@@ -718,30 +668,6 @@ sound.Add( {
 		"weapons/arc9/stalker2/shot_spsa/fire_core_2.ogg",
 		"weapons/arc9/stalker2/shot_spsa/fire_core_3.ogg",
 		"weapons/arc9/stalker2/shot_spsa/fire_core_4.ogg",
-    }
-} )
-sound.Add( {
-    name = "Stalker2.SPSAFireOutdoors",
-    channel = CHAN_STREAM,
-    volume = 1,
-    level = 125,
-    pitch = {95, 110},
-    sound = {
-        "weapons/arc9/stalker2/shot_spsa/Fire_Outdoors_01.ogg",
-		"weapons/arc9/stalker2/shot_spsa/Fire_Outdoors_02.ogg",
-		"weapons/arc9/stalker2/shot_spsa/Fire_Outdoors_03.ogg",
-    }
-} )
-sound.Add( {
-    name = "Stalker2.SPSAFireIndoors",
-    channel = CHAN_STREAM,
-    volume = 1,
-    level = 125,
-    pitch = {95, 110},
-    sound = {
-        "weapons/arc9/stalker2/shot_spsa/Fire_Indoors_01.ogg",
-		"weapons/arc9/stalker2/shot_spsa/Fire_Indoors_02.ogg",
-		"weapons/arc9/stalker2/shot_spsa/Fire_Indoors_03.ogg",
     }
 } )
 
