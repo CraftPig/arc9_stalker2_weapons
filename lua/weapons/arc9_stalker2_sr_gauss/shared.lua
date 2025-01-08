@@ -85,7 +85,7 @@ SWEP.Penetration		 = 1000/1000/0.0254
 SWEP.PhysBulletMuzzleVelocity 	= 5600 / 0.0254
 SWEP.RicochetChance 			= 0
 
-SWEP.RPM = 27
+SWEP.RPM = 23
 SWEP.Firemodes = { -- -1: Automatic, 1: Semi, 2: Two-round burst, 3: Three-round burst
 	{
 	    Mode = 1,
@@ -399,12 +399,12 @@ SWEP.Animations = {
 			{e = "stalker2_effect_gauss_raiden", t = 0.0},
 			{s = "Stalker2.GaussFireWindup", t = 0 / 30},
 			{s = "Stalker2.GaussTeethReset", t = 15 / 30},
-			{s = "Stalker2.GaussTeethReload", t = 38 / 30},
-			{s = "Stalker2.GaussTeethReload", t = 41 / 30},
-			{s = "Stalker2.GaussTeethReload", t = 44 / 30},
-			{s = "Stalker2.GaussTeethReload", t = 47 / 30},
-			{s = "Stalker2.GaussTeethReload", t = 50 / 30},
-			{s = "Stalker2.GaussTeethLast", t = 53 / 30},	
+			{s = "Stalker2.GaussTeethReload", t = 59 / 30},
+			{s = "Stalker2.GaussTeethReload", t = 64 / 30},
+			{s = "Stalker2.GaussTeethReload", t = 68 / 30},
+			{s = "Stalker2.GaussTeethReload", t = 71 / 30},
+			{s = "Stalker2.GaussTeethReload", t = 73 / 30},
+			{s = "Stalker2.GaussTeethLast", t = 75 / 30},	
         },
     },
 	["fire_sights"] = {
@@ -413,12 +413,12 @@ SWEP.Animations = {
 			{e = "stalker2_effect_gauss_raiden", t = 0.0},
 			{s = "Stalker2.GaussFireWindup", t = 0 / 30},
 			{s = "Stalker2.GaussTeethReset", t = 15 / 30},
-			{s = "Stalker2.GaussTeethReload", t = 38 / 30},
-			{s = "Stalker2.GaussTeethReload", t = 41 / 30},
-			{s = "Stalker2.GaussTeethReload", t = 44 / 30},
-			{s = "Stalker2.GaussTeethReload", t = 47 / 30},
-			{s = "Stalker2.GaussTeethReload", t = 50 / 30},
-			{s = "Stalker2.GaussTeethLast", t = 53 / 30},
+			{s = "Stalker2.GaussTeethReload", t = 59 / 30},
+			{s = "Stalker2.GaussTeethReload", t = 64 / 30},
+			{s = "Stalker2.GaussTeethReload", t = 68 / 30},
+			{s = "Stalker2.GaussTeethReload", t = 71 / 30},
+			{s = "Stalker2.GaussTeethReload", t = 73 / 30},
+			{s = "Stalker2.GaussTeethLast", t = 75 / 30},	
         },
     },
 	["dryfire"] = {
@@ -456,8 +456,8 @@ SWEP.Animations = {
         MinProgress = 0.65,
         FireASAP = false,
 		EventTable = {
-			{s = "Stalker2.GaussMagOutButton", t = 15 / 30},
-			{s = "Stalker2.GaussMagOut", t = 25 / 30},
+			{s = "Stalker2.GaussMagOutButton", t = 19 / 30},
+			{s = "Stalker2.GaussMagOut", t = 27 / 30},
 			{s = "Stalker2.GaussMagInIntro", t = 69 / 30},
 			{s = "Stalker2.GaussMagInOutro", t = 78 / 30},
         },
@@ -467,11 +467,11 @@ SWEP.Animations = {
         MinProgress = 0.75,
         FireASAP = false,
 		EventTable = {
-			{s = "Stalker2.GaussMagOutButton", t = 15 / 30},
-			{s = "Stalker2.GaussMagOut", t = 25 / 30},
+			{s = "Stalker2.GaussMagOutButton", t = 19 / 30},
+			{s = "Stalker2.GaussMagOut", t = 27 / 30},
 			{s = "Stalker2.GaussMagInIntro", t = 69 / 30},
-			{s = "Stalker2.GaussMagInOutro", t = 74 / 30},
-			{s = "Stalker2.GaussCock", t = 90 / 30},
+			{s = "Stalker2.GaussMagInOutro", t = 78 / 30},
+			{s = "Stalker2.GaussCock", t = 93 / 30},
         },
     },
     --------------------------------------------------- Tacticool
@@ -482,8 +482,8 @@ SWEP.Animations = {
 		EventTable = {
             {s = "Stalker2.ARC9Cloth", t = 5 / 30},
 			{s = "Stalker2.GaussJamOff", t = 15 / 30},
-			{s = "Stalker2.GaussJamTeeth", t = 45 / 30},
-			{s = "Stalker2.GaussJamTeeth", t = 77 / 30},
+			{s = "Stalker2.GaussJamTeeth", t = 48 / 30},
+			{s = "Stalker2.GaussJamTeeth", t = 81 / 30},
 			{s = "Stalker2.GaussJamOn", t = 110 / 30},
         },
     },
