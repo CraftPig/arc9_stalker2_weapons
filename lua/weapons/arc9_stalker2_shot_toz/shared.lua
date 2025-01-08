@@ -319,15 +319,17 @@ SWEP.HideBones = {
 -------------------------------------------------------------------------------------------------------
 SWEP.ShootSound               	= { "Stalker2.TOZFire" } 
 
-SWEP.ShootSoundIndoor 			= { "Stalker2.AK74FireIndoors" }  
-SWEP.DistantShootSound 			= { "Stalker2.AK74FireOutdoors" }  
+SWEP.ShootSoundIndoor 			= { "Stalker2.5K.M1014TailIndoor" }  
+SWEP.DistantShootSound 			= { "Stalker2.5K.M1014TailOutdoor" }  
+SWEP.ShootSoundIndoorSilenced 	= { "Stalker2.5K.SMGSilTailIndoor" }  
+SWEP.DistantShootSoundSilenced  = { "Stalker2.5K.RifleSilTailOutdoor" }  
 
 SWEP.DryFireSound 				= { "Stalker2.Dry" }  
 SWEP.TriggerDownSound 			= { "Stalker2.Trigger" }  
 SWEP.TriggerUpSound 			= { "Stalker2.Trigger" }  
 
-SWEP.EnterSightsSound 			= { "Stalker2.ARC9Cloth" }  
-SWEP.ExitSightsSound 			= { "Stalker2.ARC9Cloth" }  
+SWEP.EnterSightsSound 			= { "Stalker2.5K.AimIn" }  
+SWEP.ExitSightsSound 			= { "Stalker2.5K.AimOut" }  
 SWEP.MalfunctionSound 			= { "Stalker2.Jam" }  
 
 -------------------------------------------------------------------------------------------------------
@@ -530,8 +532,8 @@ SWEP.Hook_PrimaryAttack = function(self)
 	if heatCapacity > 0 then
 		local heatPercentage = (heatAmount / heatCapacity) * 100
 
-		local minHeat = 0.1 -- Minimum heat percentage where chance starts
-		local maxHeat = 0.75 -- Heat percentage where chance reaches full extent
+		local minHeat = 1 -- Minimum heat percentage where chance starts
+		local maxHeat = 75 -- Heat percentage where chance reaches full extent
 		local maxChance = 15 -- Maximum chance value
 
 		local chance = 0

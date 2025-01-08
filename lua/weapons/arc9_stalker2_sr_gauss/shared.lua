@@ -329,9 +329,11 @@ SWEP.ShootSoundIndoor 			= { "Stalker2.GaussFireIndoors" }
 SWEP.DistantShootSound 			= { "Stalker2.GaussFireOutdoors" }  
 
 SWEP.DryFireSound 				= { "Stalker2.Dry" }  
+SWEP.TriggerDownSound 			= { "Stalker2.Trigger" }  
+SWEP.TriggerUpSound 			= { "Stalker2.Trigger" }  
 
-SWEP.EnterSightsSound 			= { "Stalker2.ARC9Cloth" }  
-SWEP.ExitSightsSound 			= { "Stalker2.ARC9Cloth" }  
+SWEP.EnterSightsSound 			= { "Stalker2.5K.AimIn" }  
+SWEP.ExitSightsSound 			= { "Stalker2.5K.AimOut" }  
 SWEP.MalfunctionSound 			= { "Stalker2.Jam" }  
 
 -------------------------------------------------------------------------------------------------------

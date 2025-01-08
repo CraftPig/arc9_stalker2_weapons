@@ -143,3 +143,28 @@ sound.Add( {
 		"weapons/arc9/stalker2/5K/tail/AK762_Tail_Indoor_v2_5.ogg",
     }
 } )
+
+sound.Add( {
+    name = "Stalker2.5K.M1014TailIndoor",
+    channel = CHAN_STREAM,
+    volume = 0.6,
+    level = 125,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/5K/tail/M1014_Tail_Indoor_1.ogg",
+		"weapons/arc9/stalker2/5K/tail/M1014_Tail_Indoor_2.ogg",
+		"weapons/arc9/stalker2/5K/tail/M1014_Tail_Indoor_3.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.5K.M1014TailOutdoor",
+    channel = CHAN_STREAM,
+    volume = 0.5,
+    level = 125,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/5K/tail/M1014_Tail_Outdoor_1.ogg",
+		"weapons/arc9/stalker2/5K/tail/M1014_Tail_Outdoor_2.ogg",
+		"weapons/arc9/stalker2/5K/tail/M1014_Tail_Outdoor_3.ogg",
+    }
+} )

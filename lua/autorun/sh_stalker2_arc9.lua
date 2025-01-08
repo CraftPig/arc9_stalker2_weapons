@@ -115,14 +115,10 @@ sound.Add( {
         "weapons/arc9/stalker2/cloth/SFX_PlayerClothes_01.ogg",
 		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_02.ogg",
 		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_03.ogg",
-		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_04.ogg",
 		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_05.ogg",
-		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_06.ogg",
 		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_07.ogg",
-		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_08.ogg",
 		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_09.ogg",
 		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_10.ogg",
-		"weapons/arc9/stalker2/cloth/SFX_PlayerClothes_11.ogg",
     }
 } )
 sound.Add( {
