@@ -18,6 +18,20 @@ Subcategories
 
 --[[
 -----------------------------------------------------------------------------------------------------
+Particle Cache
+-----------------------------------------------------------------------------------------------------
+]]
+
+	game.AddParticles("particles/gaus.pcf")
+   
+	PrecacheParticleSystem("gauss_gun_raiden_0")
+	PrecacheParticleSystem("gauss_gun_raiden_1")
+	PrecacheParticleSystem("gauss_gun_raiden_2")
+	PrecacheParticleSystem("gauss_muzzle")
+
+
+--[[
+-----------------------------------------------------------------------------------------------------
 Sound Tables
 -----------------------------------------------------------------------------------------------------
 ]]
@@ -243,6 +257,7 @@ sound.Add( {
 ----------------------------------------------------------------------------------------------------- Sounds_AK74
 sound.Add( {
     name = "Stalker2.AK74Fire",
+	channel = CHAN_STATIC,
     volume = 1,
     level = 125,
     pitch = {95, 110},
@@ -256,6 +271,7 @@ sound.Add( {
 } )
 sound.Add( {
     name = "Stalker2.AK74FireSil",
+	channel = CHAN_STATIC,
     volume = 1,
     level = 125,
     pitch = {95, 110},
@@ -401,6 +417,7 @@ sound.Add( {
 ----------------------------------------------------------------------------------------------------- Sounds_GROZA
 sound.Add( {
     name = "Stalker2.GrozaFire",
+	channel = CHAN_STATIC,
     volume = 1,
     level = 125,
     pitch = {95, 110},
@@ -570,6 +587,7 @@ sound.Add( {
 ----------------------------------------------------------------------------------------------------- Sounds_M416
 sound.Add( {
     name = "Stalker2.M416Fire",
+	channel = CHAN_STATIC,
     volume = 1,
     level = 125,
     pitch = {95, 110},
@@ -691,7 +709,7 @@ sound.Add( {
 ----------------------------------------------------------------------------------------------------- Sounds_SPSA
 sound.Add( {
     name = "Stalker2.SPSAFire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_STATIC,
     volume = 1,
     level = 125,
     pitch = {95, 110},
@@ -841,7 +859,7 @@ sound.Add( {
 ----------------------------------------------------------------------------------------------------- Sounds_Fora21
 sound.Add( {
     name = "Stalker2.ForaFire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_STATIC,
     volume = 1,
     level = 125,
     pitch = {95, 110},
@@ -951,7 +969,7 @@ sound.Add( {
 ----------------------------------------------------------------------------------------------------- Sounds_Pm21
 sound.Add( {
     name = "Stalker2.PmFire",
-    channel = CHAN_WEAPON,
+    channel = CHAN_STATIC,
     volume = 1,
     level = 125,
     pitch = {95, 110},
@@ -1271,7 +1289,7 @@ sound.Add( {
 } )
 sound.Add( {
     name = "Stalker2.ASVALOutdoors",
-    channel = CHAN_WEAPON,
+    channel = CHAN_STREAM,
     volume = 0.5,
     level = 115,
     pitch = {95, 110},
@@ -1285,7 +1303,7 @@ sound.Add( {
 } )
 sound.Add( {
     name = "Stalker2.ASVALIndoors",
-    channel = CHAN_WEAPON,
+    channel = CHAN_STREAM,
     volume = 0.1,
     level = 115,
     pitch = {95, 110},

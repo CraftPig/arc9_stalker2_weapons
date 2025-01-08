@@ -513,6 +513,7 @@ SWEP.Animations = {
         MinProgress = 0.75,
         FireASAP = false,
 		EventTable = {
+			{e = "cod2019_725_smoke", t = 0.0},
 			{s = "Stalker2.ARC9Cloth", t = 3 / 30},
 			{s = "Stalker2.ASVALMagOutIntro", t = 28 / 30},
 			{s = "Stalker2.ASVALMagOutOutro", t = 33 / 30},

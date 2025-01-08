@@ -187,7 +187,7 @@ SWEP.Sway 					= 0 -- How much the gun sways
 SWEP.SwayAddSighted 		= 0.35
 SWEP.SwayAddMidAir 			= 1.0 
 
-SWEP.BarrelLength 			= 32 
+SWEP.BarrelLength 			= 10 
 SWEP.PushBackForce 			= 1
 SWEP.FreeAimRadius 			= 2
 

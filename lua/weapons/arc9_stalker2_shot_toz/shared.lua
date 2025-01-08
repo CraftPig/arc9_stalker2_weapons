@@ -344,7 +344,6 @@ SWEP.Attachments = {
 	{
         PrintName = "Barrel",
         Category = "stalker2_toz_barrel",
-        Installed = "stalker2_toz_barrel_short",
         Bone = "jnt_barrel",
         Pos = Vector(15, 0, 1.3),
     },

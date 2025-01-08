@@ -292,7 +292,7 @@ SWEP.ShellModel 				= "models/shells/shell_762nato.mdl" -- shell_12gauge, shell_
 SWEP.MuzzleEffectQCA 			= 2 -- QC Attachment that controls muzzle effect.
 SWEP.AfterShotQCA 				= 2 -- QC Attachment that controls after shot particle.
 
-SWEP.MuzzleParticle 			= { "barrel_smoke_3", "muzzleflash_pistol_red" } -- m79_smoke_c m79_shockwave
+SWEP.MuzzleParticle 			= {"gauss_muzzle"} -- m79_smoke_c m79_shockwave
 SWEP.AfterShotParticle 			= "barrel_smoke"
 
 -------------------------- TRACERS
@@ -396,6 +396,7 @@ SWEP.Animations = {
     ["fire"] = {
         Source = {"fire"},
 		EventTable = {
+			{e = "stalker2_effect_gauss_raiden", t = 0.0},
 			{s = "Stalker2.GaussFireWindup", t = 0 / 30},
 			{s = "Stalker2.GaussTeethReset", t = 15 / 30},
 			{s = "Stalker2.GaussTeethReload", t = 38 / 30},
@@ -403,13 +404,13 @@ SWEP.Animations = {
 			{s = "Stalker2.GaussTeethReload", t = 44 / 30},
 			{s = "Stalker2.GaussTeethReload", t = 47 / 30},
 			{s = "Stalker2.GaussTeethReload", t = 50 / 30},
-			{s = "Stalker2.GaussTeethLast", t = 53 / 30},
-			
+			{s = "Stalker2.GaussTeethLast", t = 53 / 30},	
         },
     },
 	["fire_sights"] = {
         Source = {"fire_ads"},
 		EventTable = {
+			{e = "stalker2_effect_gauss_raiden", t = 0.0},
 			{s = "Stalker2.GaussFireWindup", t = 0 / 30},
 			{s = "Stalker2.GaussTeethReset", t = 15 / 30},
 			{s = "Stalker2.GaussTeethReload", t = 38 / 30},
@@ -418,7 +419,6 @@ SWEP.Animations = {
 			{s = "Stalker2.GaussTeethReload", t = 47 / 30},
 			{s = "Stalker2.GaussTeethReload", t = 50 / 30},
 			{s = "Stalker2.GaussTeethLast", t = 53 / 30},
-			
         },
     },
 	["dryfire"] = {
