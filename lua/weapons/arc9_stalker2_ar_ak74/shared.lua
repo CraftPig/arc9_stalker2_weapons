@@ -564,10 +564,10 @@ SWEP.Animations = {
         MinProgress = 0.7,
         FireASAP = false,
 		EventTable = {
-		    {s = "Stalker2.AK74MagTap", t = 34 / 30},
-			{s = "Stalker2.AK74MagOut", t = 35 / 30},
-			{s = "Stalker2.AK74MagIn", t = 54 / 30},
-			{s = "Stalker2.AK74MagTap", t = 57 / 30},
+		    {s = "Stalker2.AK74MagTap", t = 35 / 30},
+			{s = "Stalker2.AK74MagOut", t = 36 / 30},
+			{s = "Stalker2.AK74MagIn", t = 58 / 30},
+			-- {s = "Stalker2.AK74MagTap", t = 75 / 30},
         },
 		IKTimeLine = {
             {
@@ -597,12 +597,11 @@ SWEP.Animations = {
         MinProgress = 0.75,
         FireASAP = false,
 		EventTable = {
-			{s = "Stalker2.AK74MagTap", t = 34 / 30},
-			{s = "Stalker2.AK74MagOut", t = 35 / 30},
-			{s = "Stalker2.AK74MagIn", t = 54 / 30},
-			{s = "Stalker2.AK74MagTap", t = 57 / 30},
+			{s = "Stalker2.AK74MagTap", t = 35 / 30},
+			{s = "Stalker2.AK74MagOut", t = 36 / 30},
+			{s = "Stalker2.AK74MagIn", t = 58 / 30},
 			{s = "Stalker2.AK74SlideIn", t = 84 / 30},
-			{s = "Stalker2.AK74SlideOut", t = 92 / 30},
+			{s = "Stalker2.AK74SlideOut", t = 95 / 30},
         },
 		IKTimeLine = {
             {

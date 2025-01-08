@@ -214,3 +214,28 @@ ATT.Hook_TranslateAnimation = function (self, anim)
 end
 
 ARC9.LoadAttachment(ATT, "stalker2_pm_mag_ext")
+
+
+--[[ -----------------------------------------------------------------------------------------------------------
+--------- ASVAL
+]] -------------------------------------------------------------------------------------------------------------
+ATT = {}
+
+ATT.PrintName = "High-Capacity AS Lavina Magazine"
+ATT.CompactName = "Extended Mag"
+ATT.Icon = Material("entities/attachments/wrench.png", "mips smooth") 
+ATT.Description = "Increased magazine capacity at the cost of longer reload time."
+
+ATT.SortOrder = 1
+ATT.MenuCategory = "ARC9 - S.T.A.L.K.E.R. 2"
+ATT.Category = {"stalker2_asval_mag"}
+
+ATT.ActivateElements = {"stalker2_asval_mag_ext_1", "stalker2_asval_mag_ext_2"}
+
+ATT.ClipSizeMult = 1.5
+
+ATT.Hook_TranslateAnimation = function (self, anim)
+	return anim .. "_ext"
+end
+
+ARC9.LoadAttachment(ATT, "stalker2_asval_mag_ext")

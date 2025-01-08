@@ -562,9 +562,9 @@ SWEP.Animations = {
         MinProgress = 0.75,
         FireASAP = false,
 		EventTable = {
-			{s = "Stalker2.M416MagOut", t = 11 / 30},
-			{s = "Stalker2.M416MagIn", t = 47 / 30},
-			{s = "Stalker2.M416MagInOutro", t = 57 / 30},
+			{s = "Stalker2.M416MagOut", t = 12 / 30},
+			{s = "Stalker2.M416MagIn", t = 49 / 30},
+			{s = "Stalker2.M416MagInOutro", t = 59 / 30},
         },
 		IKTimeLine = {
             {
@@ -594,9 +594,9 @@ SWEP.Animations = {
         MinProgress = 0.8,
         FireASAP = false,
 		EventTable = {
-			{s = "Stalker2.M416MagOut", t = 11 / 30},
-			{s = "Stalker2.M416MagIn", t = 47 / 30},
-			{s = "Stalker2.M416MagInOutro", t = 57 / 30},
+			{s = "Stalker2.M416MagOut", t = 12 / 30},
+			{s = "Stalker2.M416MagIn", t = 49 / 30},
+			{s = "Stalker2.M416MagInOutro", t = 59 / 30},
 			{s = "Stalker2.M416SlideHit", t = 71 / 30},
         },
 		IKTimeLine = {
@@ -628,7 +628,7 @@ SWEP.Animations = {
         MinProgress = 0.75,
         FireASAP = false,
 		EventTable = {
-		    {s = "Stalker2.M416MagOutBig", t = 11 / 30},
+		    {s = "Stalker2.M416MagOutBig", t = 13 / 30},
 			{s = "Stalker2.M416MagInBig", t = 57 / 30},
 			{s = "Stalker2.M416MagInOutroBig", t = 66 / 30},
         },
@@ -660,7 +660,7 @@ SWEP.Animations = {
         MinProgress = 0.8,
         FireASAP = false,
 		EventTable = {
-			{s = "Stalker2.M416MagOutBig", t = 11 / 30},
+			{s = "Stalker2.M416MagOutBig", t = 13 / 30},
 			{s = "Stalker2.M416MagInBig", t = 57 / 30},
 			{s = "Stalker2.M416MagInOutroBig", t = 66 / 30},
 			{s = "Stalker2.M416SlideHit", t = 82 / 30},

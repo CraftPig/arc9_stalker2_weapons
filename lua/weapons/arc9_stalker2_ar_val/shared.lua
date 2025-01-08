@@ -366,11 +366,11 @@ SWEP.MalfunctionSound 			= { "Stalker2.Jam" }
 -- Attachments ----------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
 
-SWEP.DefaultBodygroups = "00000000000000"
+SWEP.DefaultBodygroups = "000000000000000"
 
 SWEP.AttachmentElements = {
-	-- ["stalker2_m416_mag_drum"] = { Bodygroups = { {5, 1} } },
-	-- ["stalker2_m416_stock_blank"] = { Bodygroups = { {4, 1} } },
+	["stalker2_asval_mag_ext_1"] = { Bodygroups = { {2, 1} } },
+	["stalker2_asval_mag_ext_2"] = { Bodygroups = { {3, 1} } },
 	-- ["stalker2_m416_front_blank"] = { Bodygroups = { {6, 1} } },
 	-- ["stalker2_m416_rear_blank"] = { Bodygroups = { {7, 1} } },
 }
@@ -379,7 +379,7 @@ SWEP.Attachments = {
 	{
         PrintName = "Magazine",
 		Bone = "jnt_clip_second",
-        Category = "stalker2_m416_mag",
+        Category = "stalker2_asval_mag",
 		Pos = Vector(0, -0, 0),
     },
 	{
@@ -513,7 +513,6 @@ SWEP.Animations = {
         MinProgress = 0.75,
         FireASAP = false,
 		EventTable = {
-			{e = "cod2019_725_smoke", t = 0.0},
 			{s = "Stalker2.ARC9Cloth", t = 3 / 30},
 			{s = "Stalker2.ASVALMagOutIntro", t = 28 / 30},
 			{s = "Stalker2.ASVALMagOutOutro", t = 33 / 30},
@@ -540,9 +539,11 @@ SWEP.Animations = {
         MinProgress = 0.75,
         FireASAP = false,
 		EventTable = {
-		    {s = "Stalker2.M416MagOutBig", t = 11 / 30},
-			{s = "Stalker2.M416MagInBig", t = 57 / 30},
-			{s = "Stalker2.M416MagInOutroBig", t = 66 / 30},
+		    {s = "Stalker2.ARC9Cloth", t = 3 / 30},
+			{s = "Stalker2.ASVALMagOutIntro", t = 33 / 30},
+			{s = "Stalker2.ASVALMagOutOutro", t = 37 / 30},
+			{s = "Stalker2.ASVALMagIn", t = 67 / 30},
+			{s = "Stalker2.ARC9Cloth2", t = 83 / 30},
         },
     },
 	["reload_empty_ext"] = {
@@ -550,10 +551,13 @@ SWEP.Animations = {
         MinProgress = 0.8,
         FireASAP = false,
 		EventTable = {
-			{s = "Stalker2.M416MagOutBig", t = 11 / 30},
-			{s = "Stalker2.M416MagInBig", t = 57 / 30},
-			{s = "Stalker2.M416MagInOutroBig", t = 66 / 30},
-			{s = "Stalker2.M416SlideHit", t = 82 / 30},
+			{s = "Stalker2.ARC9Cloth", t = 3 / 30},
+			{s = "Stalker2.ASVALMagOutIntro", t = 33 / 30},
+			{s = "Stalker2.ASVALMagOutOutro", t = 37 / 30},
+			{s = "Stalker2.ASVALMagIn", t = 67 / 30},
+			{s = "Stalker2.ARC9Cloth2", t = 83 / 30},
+			{s = "Stalker2.ASVALSlideBack", t = 103 / 30},
+			{s = "Stalker2.ASVALSlideForward", t = 112 / 30},
         },
     },
     --------------------------------------------------- Tacticool
