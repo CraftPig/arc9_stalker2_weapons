@@ -9,7 +9,7 @@ SWEP.Spawnable = true
 -------------------------------------------------------------------------------------------------------
 -- Hud and Spawn Menu Elements ------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
-SWEP.CustomSelectIcon = Material("vgui/hud/vgui_spsa")
+SWEP.CustomSelectIcon = Material("vgui/hud/vgui_saiga")
 
 SWEP.Category = "ARC9 - S.T.A.L.K.E.R. 2"
 SWEP.SubCategory = "Shotguns"
@@ -47,7 +47,7 @@ SWEP.MirrorVMWM = true
  SWEP.WorldModelOffset = {
      Pos = Vector(-4, 4, -6.5), -- non tpik (while on ground, on npc etc)
      Ang = Angle(-5, 0, 180),
-     TPIKPos = Vector(-3, 8, -15), -- arc9_tpik 1, you can make cool poses with it
+     TPIKPos = Vector(2, 8, -15), -- arc9_tpik 1, you can make cool poses with it
      TPIKAng = Angle(0, -0, 180),
      Scale = 1
  }
@@ -252,27 +252,26 @@ SWEP.NearWallPos = Vector(1, -1, -8.0)
 SWEP.NearWallAng = Angle(0, 35, -10) 
 
 SWEP.CustomizeAng = Angle(90, -0, 0)
-SWEP.CustomizePos = Vector(18, 44, 7)
-SWEP.CustomizeRotateAnchor = Vector(18, -3, -4)
+SWEP.CustomizePos = Vector(14, 33, 7)
+SWEP.CustomizeRotateAnchor = Vector(14, -3, -5)
 
 -------------------------------------------------------------------------------------------------------
 -- Visuals & Effects ----------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
 
 -- Magazine Drop --------------------------------------------------------------------------------------
-SWEP.ShouldDropMag 				= false
-SWEP.ShouldDropMagEmpty 		= false
+SWEP.ShouldDropMag 				= true
+SWEP.ShouldDropMagEmpty 		= true
 
-SWEP.DropMagazineQCA 			= 5
+SWEP.DropMagazineQCA 			= 4
 SWEP.DropMagazineAmount 		= 1 
-SWEP.DropMagazineTime 			= 1.3
+SWEP.DropMagazineTime 			= 1.25
 
 SWEP.DropMagazinePos 			= Vector(-0, 0, -0) -- offsets
 SWEP.DropMagazineAng 			= Angle(0, 0, 0)
 SWEP.DropMagazineVelocity 		= Vector(0, -0, 0) -- Put something here if your anim throws the mag with force
 
-SWEP.DropMagazineModelUBGL 			= "models/weapons/arc9/stalker2/ar_ak74/w_ar_ak74_ma.mdl" -- Set to a string or table to drop this magazine when reloading.
-SWEP.DropMagazineModel 			= "models/weapons/arc9/stalker2/ar_groza/w_ar_groza_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
+SWEP.DropMagazineModel 			= "models/weapons/arc9/stalker2/shot_saiga/w_shot_saiga_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds 		= {"physics/metal/weapon_impact_soft1.wav",
 								"physics/metal/weapon_impact_soft2.wav",
 								"physics/metal/weapon_impact_soft3.wav", } -- Table of sounds a dropped magazine should play.
@@ -289,7 +288,7 @@ SWEP.ShellModel 				= "models/shells/shell_12gauge.mdl" -- shell_12gauge, shell_
 SWEP.MuzzleEffectQCA 			= 2 -- QC Attachment that controls muzzle effect.
 SWEP.AfterShotQCA 				= 2 -- QC Attachment that controls after shot particle.
 
-SWEP.MuzzleParticle 			= { "muzzleflash_lmg", "barrel_smoke_2" } -- m79_smoke_c m79_shockwave
+SWEP.MuzzleParticle 			= { "muzzleflash_lmg"} -- m79_smoke_c m79_shockwave
 SWEP.AfterShotParticle 			= "barrel_smoke"
 
 -------------------------- TRACERS
@@ -319,7 +318,7 @@ SWEP.HideBones = {
 -------------------------------------------------------------------------------------------------------
 -- Sounds ---------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
-SWEP.ShootSound               	= { "Stalker2.SPSAFire" } 
+SWEP.ShootSound               	= { "Stalker2.SaigaFire" } 
 
 SWEP.ShootSoundIndoor 			= { "Stalker2.5K.M1014TailIndoor" }  
 SWEP.DistantShootSound 			= { "Stalker2.5K.M1014TailOutdoor" }  
@@ -327,8 +326,8 @@ SWEP.ShootSoundIndoorSilenced 	= { "Stalker2.5K.SMGSilTailIndoor" }
 SWEP.DistantShootSoundSilenced  = { "Stalker2.5K.RifleSilTailOutdoor" }  
 
 SWEP.DryFireSound 				= { "Stalker2.Dry" }  
-SWEP.TriggerDownSound 			= { "Stalker2.Trigger" }  
-SWEP.TriggerUpSound 			= { "Stalker2.Trigger" }  
+-- SWEP.TriggerDownSound 			= { "Stalker2.Trigger" }  
+-- SWEP.TriggerUpSound 			= { "Stalker2.Trigger" }  
 
 SWEP.EnterSightsSound 			= { "Stalker2.5K.AimIn" }  
 SWEP.ExitSightsSound 			= { "Stalker2.5K.AimOut" }  
@@ -338,51 +337,116 @@ SWEP.MalfunctionSound 			= { "Stalker2.Jam" }
 -- Attachments ----------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
 
-SWEP.DefaultBodygroups = "000"
+SWEP.DefaultBodygroups = "0000000000000000"
 
 SWEP.AttachmentElements = {
-	["stalker2_spsa_rail"] = { Bodygroups = { {2, 1} } },
+	["stalker2_saiga_stock_blank"] = { Bodygroups = { {2, 1} } },
+	["stalker2_saiga_mag_ext"] = { Bodygroups = { {4, 1} } },
+	["stalker2_saiga_railtop"] = { Bodygroups = { {5, 1} } },
+	["stalker2_saiga_railside"] = { Bodygroups = { {6, 1} } },
+	["stalker2_saiga_railbottom"] = { Bodygroups = { {7, 1} } },
 }
 
 SWEP.Attachments = {
 	{
+        PrintName = "Muzzle",
+		Bone = "jnt_offset",
+        Category = {"scp5k_muzzle", "muzzle", "cod2019_muzzle" },
+		Pos = Vector(24, 0, 2),
+        Ang = Angle(-0, 0, -0),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+	{
+        PrintName = "Grip",
+        Category = {"grip","fas_ubgl", "scp5k_foregrip","cod2019_grip"},
+        Bone = "jnt_offset",
+		InstalledElements = {"stalker2_saiga_railbottom"},
+		Icon_Offset = Vector(0, 0, 3),
+        Pos = Vector(12.4, -0, 0.7),
+        Ang = Angle(-180, 180, 0),
+		Scale = 1,
+    },
+	{
+        PrintName = "Tactical",
+        Category = {"cod2019_tac","csgo_tac", "scp5k_tactical"},
+		InstalledElements = {"stalker2_saiga_railside"},
+        Bone = "jnt_offset",
+		Pos = Vector(16.25, 1.1, 2.3),
+        Ang = Angle(-0, 0, -90),
+		Scale = 1,
+    },
+    {
         PrintName = "Optic",
 		Bone = "jnt_offset",
         Category = {"scp5k_optic", "csgo_optic", "cod2019_optic" },
-		InstalledElements = {"stalker2_spsa_rail"},
+		InstalledElements = {"stalker2_saiga_railtop"},
 		CorrectiveAng = Angle(-0.0, 0.0, 0),
-		Pos = Vector(6.2, -0, 2.9),
+		Pos = Vector(3.55, -0, 4),
         Ang = Angle(-0, 0, -0),
     },
 	{
+        PrintName = "Magazine",
+		Bone = "jnt_clip_base",
+        Category = "stalker2_saiga_mag",
+		Pos = Vector(0, -0, 0),
+    },
+	{
+        PrintName = "Stock",
+		Bone = "jnt_offset",
+		InstalledElements = {"stalker2_saiga_stock_blank"},
+        Category = {"cod2019_tube", "csgo_tube"},
+		Pos = Vector(-1.2, -0, 1.6),
+		Scale = 1,
+    },
+	{
         PrintName = "Ammo",
-        Bone = "jnt_bullet1",
+        Bone = "jnt_bullet",
         Category = "go_ammo_sg",
-        Pos = Vector(0, -0, -0),
+		Pos = Vector(0, -0, 0),
     },
 	{
         PrintName = "Cosmetic",
         Category = {"universal_camo"},
         CosmeticOnly = true,
     },
-	{
-		PrintName = "Sticker",
-        StickerModel = "models/weapons/arc9/stalker2/shot_toz/s_shot_toz_1.mdl",
-        Category = "stickers",
-    },
-	{
-		PrintName = "Sticker",
-        StickerModel = "models/weapons/arc9/stalker2/shot_toz/s_shot_toz_2.mdl",
-        Category = "stickers",
+	{ 
+        PrintName = "Charm",
+        CosmeticOnly = true,
+        Category = "charm",
+        Bone = "jnt_offset",
+        Pos = Vector(0.13, -0.8, 1.77),
+		Ang = Angle(-0, 0, -0),
+		Icon_Offset = Vector(0, 0, 0),
+		Scale = 1,
     },
     { 
         PrintName = "Stats",
         Category = "killcounter",
         Bone = "jnt_offset",
-        Pos = Vector(6.7, -0.95, 1.1),
+        Pos = Vector(7.8, -0.7, 1.8),
 		Ang = Angle(0, 0, -0),
 		Icon_Offset = Vector(-0, 0.0, 0.0),
 		CosmeticOnly = true,
+    },
+	{
+		PrintName = "Sticker 1",
+        StickerModel = "models/weapons/arc9/stalker2/shot_saiga/s_shot_saiga_1.mdl",
+        Category = "stickers",
+    },
+	{
+		PrintName = "Sticker 2",
+        StickerModel = "models/weapons/arc9/stalker2/shot_saiga/s_shot_saiga_2.mdl",
+        Category = "stickers",
+    },
+	{
+		PrintName = "Sticker 3",
+        StickerModel = "models/weapons/arc9/stalker2/shot_saiga/s_shot_saiga_3.mdl",
+        Category = "stickers",
+    },
+	{
+		PrintName = "Sticker 4",
+        StickerModel = "models/weapons/arc9/stalker2/shot_saiga/s_shot_saiga_4.mdl",
+        Category = "stickers",
     },
 }
 
@@ -437,6 +501,40 @@ SWEP.Animations = {
 			{s = "Stalker2.ARC9Cloth2", t = 22 / 30},
         },
     },
+	["ready"] = {
+        Source = {"ready"},
+        MinProgress = 0.8,
+        FireASAP = true,
+		EventTable = {
+			{s = "Stalker2.ARC9Cloth2", t = 0 / 30},
+			{s = "Stalker2.SaigaMagInIntro", t = 5 / 30},
+			{s = "Stalker2.SaigaMagInOutro", t = 16 / 30},
+			{s = "Stalker2.SaigaSlideBack", t = 33 / 30},
+			{s = "Stalker2.SaigaSlideForward", t = 42 / 30},
+        },
+		IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.05,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.77,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.92,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+    },
 	["holster"] = {
         Source = {"holster"},
 		Time = 0.5,
@@ -444,18 +542,51 @@ SWEP.Animations = {
     --------------------------------------------------- Reload
     ["reload"] = {
         Source = {"reload"},
-        MinProgress = 0.5,
+        MinProgress = 0.75,
         FireASAP = false,
 		EventTable = {
 		    {s = "Stalker2.ARC9Cloth2", t = 0 / 30},
+			{s = "Stalker2.SaigaMagOut", t = 7 / 30},
+			{s = "Stalker2.SaigaMagInIntro", t = 47 / 30},
+			{s = "Stalker2.SaigaMagInOutro", t = 60 / 30},
         },
     },
 	["reload_empty"] = {
         Source = {"reload_empty"},
-        MinProgress = 0.5,
+        MinProgress = 0.78,
         FireASAP = false,
 		EventTable = {
-			{s = "Stalker2.SPSAMagInTac", t = 3 / 30},
+			{s = "Stalker2.ARC9Cloth2", t = 0 / 30},
+			{s = "Stalker2.SaigaMagOut", t = 7 / 30},
+			{s = "Stalker2.SaigaMagInIntro", t = 47 / 30},
+			{s = "Stalker2.SaigaMagInOutro", t = 60 / 30},
+			{s = "Stalker2.SaigaSlideBack", t = 75 / 30},
+			{s = "Stalker2.SaigaSlideForward", t = 84 / 30},
+        },
+    },
+	
+	["reload_ext"] = {
+        Source = {"reload_ext"},
+        MinProgress = 0.75,
+        FireASAP = false,
+		EventTable = {
+		    {s = "Stalker2.ARC9Cloth2", t = 0 / 30},
+			{s = "Stalker2.SaigaMagOut", t = 7 / 30},
+			{s = "Stalker2.SaigaMagInIntro", t = 52 / 30},
+			{s = "Stalker2.SaigaMagInOutro", t = 66 / 30},
+        },
+    },
+	["reload_empty_ext"] = {
+        Source = {"reload_ext_empty"},
+        MinProgress = 0.78,
+        FireASAP = false,
+		EventTable = {
+			{s = "Stalker2.ARC9Cloth2", t = 0 / 30},
+			{s = "Stalker2.SaigaMagOut", t = 7 / 30},
+			{s = "Stalker2.SaigaMagInIntro", t = 52 / 30},
+			{s = "Stalker2.SaigaMagInOutro", t = 66 / 30},
+			{s = "Stalker2.SaigaSlideBack", t = 80 / 30},
+			{s = "Stalker2.SaigaSlideForward", t = 89 / 30},
         },
     },
     --------------------------------------------------- Tacticool
@@ -465,13 +596,33 @@ SWEP.Animations = {
         FireASAP = true,
 		EventTable = {
             {s = "Stalker2.ARC9Cloth2", t = 2 / 30},
-			{s = "Stalker2.SPSASlideHit", t = 40 / 30},
-			{s = "Stalker2.SPSASlideEffort", t = 45 / 30},
-			{s = "Stalker2.SPSASlideEffort", t = 58 / 30},
-			{s = "Stalker2.ARC9Cloth2", t = 62 / 30},
-			{s = "Stalker2.SPSASlideJamBack", t = 95 / 30},
-			{s = "Stalker2.SPSABreakBullet", t = 103 / 30},
-			{s = "Stalker2.SPSASlideForward", t = 100 / 30},
+			{s = "Stalker2.SaigaSlideJamEffort", t = 32 / 30},
+			{s = "Stalker2.SaigaBreakBullet", t = 64 / 30},
+			{s = "Stalker2.ARC9Cloth", t = 75 / 30},
+			{s = "Stalker2.SaigaSlideBack", t = 105 / 30},
+			{s = "Stalker2.SaigaSlideForward", t = 116 / 30},
+        },
+		IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.05,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.83,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
         },
     },
 	--------------------------------------------------- Movement

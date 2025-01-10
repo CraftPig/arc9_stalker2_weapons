@@ -47,6 +47,7 @@ Sound Tables
 -- Sounds_PM
 -- Sounds_Gauss
 -- Sounds_ASVAL
+-- Sounds_Saiga
 
 ----------------------------------------------------------------------------------------------------- Sounds_Generic
 sound.Add( {
@@ -1335,5 +1336,97 @@ sound.Add( {
     pitch = {95, 100},
     sound = {
         "weapons/arc9/stalker2/ar_asval/SFX_ASVAL_BreakBullet.ogg",
+    }
+} )
+
+----------------------------------------------------------------------------------------------------- Sounds_Saiga
+sound.Add( {
+    name = "Stalker2.SaigaFire",
+    channel = CHAN_STATIC,
+    volume = 1,
+    level = 125,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/shot_saiga/fire_core_1.ogg",
+		"weapons/arc9/stalker2/shot_saiga/fire_core_2.ogg",
+		"weapons/arc9/stalker2/shot_saiga/fire_core_3.ogg",
+		"weapons/arc9/stalker2/shot_saiga/fire_core_4.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.SaigaMagInIntro",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/shot_saiga/SFX_Saiga_MagIn_Intro_1.ogg",
+		"weapons/arc9/stalker2/shot_saiga/SFX_Saiga_MagIn_Intro_2.ogg",
+		"weapons/arc9/stalker2/shot_saiga/SFX_Saiga_MagIn_Intro_3.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.SaigaMagInOutro",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/shot_saiga/SFX_Saiga_MagIn_Outro.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.SaigaMagOut",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/shot_saiga/SFX_Saiga_MagOut_1.ogg",
+		"weapons/arc9/stalker2/shot_saiga/SFX_Saiga_MagOut_2.ogg",
+		"weapons/arc9/stalker2/shot_saiga/SFX_Saiga_MagOut_3.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.SaigaSlideBack",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/shot_saiga/SFX_Saiga_SlideBack.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.SaigaSlideForward",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/shot_saiga/SFX_Saiga_SlideForward.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.SaigaSlideJamEffort",
+    channel = CHAN_WEAPON,
+    volume = 0.5,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/shot_saiga/SFX_Saiga_JamShake.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.SaigaBreakBullet",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/shot_saiga/SFX_Saiga_BreakBullet.ogg",
     }
 } )

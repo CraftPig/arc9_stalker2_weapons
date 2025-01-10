@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	"$baseTexture" "vgui/hud/vgui_saiga"
+	
+	"$translucent" "1"
+}

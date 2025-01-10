@@ -239,3 +239,27 @@ ATT.Hook_TranslateAnimation = function (self, anim)
 end
 
 ARC9.LoadAttachment(ATT, "stalker2_asval_mag_ext")
+
+--[[ -----------------------------------------------------------------------------------------------------------
+--------- Saiga
+]] -------------------------------------------------------------------------------------------------------------
+ATT = {}
+
+ATT.PrintName = "High-Capacity Saiga D-12 Magazine"
+ATT.CompactName = "Extended Mag"
+ATT.Icon = Material("entities/attachments/wrench.png", "mips smooth") 
+ATT.Description = "Increased magazine capacity at the cost of longer reload time."
+
+ATT.SortOrder = 1
+ATT.MenuCategory = "ARC9 - S.T.A.L.K.E.R. 2"
+ATT.Category = {"stalker2_saiga_mag"}
+
+ATT.ActivateElements = {"stalker2_saiga_mag_ext"}
+
+ATT.ClipSizeMult = 1.5
+
+ATT.Hook_TranslateAnimation = function (self, anim)
+	return anim .. "_ext"
+end
+
+ARC9.LoadAttachment(ATT, "stalker2_saiga_mag_ext")

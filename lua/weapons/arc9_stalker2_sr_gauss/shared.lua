@@ -9,7 +9,7 @@ SWEP.Spawnable = true
 -------------------------------------------------------------------------------------------------------
 -- Hud and Spawn Menu Elements ------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
-SWEP.CustomSelectIcon = Material("vgui/hud/vgui_pm")
+SWEP.CustomSelectIcon = Material("vgui/hud/vgui_gauss")
 
 SWEP.Category = "ARC9 - S.T.A.L.K.E.R. 2"
 SWEP.SubCategory = "Sniper Rifles"
@@ -637,32 +637,32 @@ SWEP.CustomPoseParamsHandler = function (self, ent, iswm)
         self.blend_walk_bwd = 0
     end
 
-    if owner:KeyDown(IN_FORWARD) then
-        self.blend_walk = math.Approach(self.blend_walk, 0.7, speed * FrameTime())
+    if owner:KeyDown(IN_FORWARD) or owner:KeyDown(IN_MOVERIGHT) or owner:KeyDown(IN_MOVELEFT) or owner:KeyDown(IN_BACK) then
+        self.blend_walk = math.Approach(self.blend_walk, 0.35, speed * FrameTime())
     else
         self.blend_walk = math.Approach(self.blend_walk, 0, speed * FrameTime())
     end
 
-    if owner:KeyDown(IN_MOVERIGHT) then
-        self.blend_walk_right = math.Approach(self.blend_walk_right, 1, speed * FrameTime())
-    else
-        self.blend_walk_right = math.Approach(self.blend_walk_right, 0, speed * FrameTime())
-    end
+    -- if owner:KeyDown(IN_MOVERIGHT) then
+        -- self.blend_walk_right = math.Approach(self.blend_walk_right, 1, speed * FrameTime())
+    -- else
+        -- self.blend_walk_right = math.Approach(self.blend_walk_right, 0, speed * FrameTime())
+    -- end
 
-    if owner:KeyDown(IN_MOVELEFT) then
-        self.blend_walk_left = math.Approach(self.blend_walk_left, 1, speed * FrameTime())
-    else
-        self.blend_walk_left = math.Approach(self.blend_walk_left, 0, speed * FrameTime())
-    end
+    -- if owner:KeyDown(IN_MOVELEFT) then
+        -- self.blend_walk_left = math.Approach(self.blend_walk_left, 1, speed * FrameTime())
+    -- else
+        -- self.blend_walk_left = math.Approach(self.blend_walk_left, 0, speed * FrameTime())
+    -- end
 
-    if owner:KeyDown(IN_BACK) then
-        self.blend_walk_bwd = math.Approach(self.blend_walk_bwd, 1, speed * FrameTime())
-    else
-        self.blend_walk_bwd = math.Approach(self.blend_walk_bwd, 0, speed * FrameTime())
-    end
+    -- if owner:KeyDown(IN_BACK) then
+        -- self.blend_walk_bwd = math.Approach(self.blend_walk_bwd, 1, speed * FrameTime())
+    -- else
+        -- self.blend_walk_bwd = math.Approach(self.blend_walk_bwd, 0, speed * FrameTime())
+    -- end
 
     vm:SetPoseParameter("blend_walk", self.blend_walk)
-    vm:SetPoseParameter("blend_walk_right", self.blend_walk_right)
-    vm:SetPoseParameter("blend_walk_left", self.blend_walk_left)
-    vm:SetPoseParameter("blend_walk_bwd", self.blend_walk_bwd)
+    -- vm:SetPoseParameter("blend_walk_right", self.blend_walk_right)
+    -- vm:SetPoseParameter("blend_walk_left", self.blend_walk_left)
+    -- vm:SetPoseParameter("blend_walk_bwd", self.blend_walk_bwd)
 end

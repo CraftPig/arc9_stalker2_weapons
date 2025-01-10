@@ -354,7 +354,7 @@ SWEP.MalfunctionSound 			= { "Stalker2.Jam" }
 -- Attachments ----------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
 
-SWEP.DefaultBodygroups = "0000000000000000000000000000000000000"
+SWEP.DefaultBodygroups = "0000"
 
 SWEP.AttachmentElements = {
 	["stalker2_pm_mag_ext"] = { Bodygroups = { {1, 1} } },

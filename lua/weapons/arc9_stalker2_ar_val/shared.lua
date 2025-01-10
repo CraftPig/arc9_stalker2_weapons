@@ -9,7 +9,7 @@ SWEP.Spawnable = true
 -------------------------------------------------------------------------------------------------------
 -- Hud and Spawn Menu Elements ------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
-SWEP.CustomSelectIcon = Material("vgui/hud/vgui_m416")
+SWEP.CustomSelectIcon = Material("vgui/hud/vgui_asval")
 
 SWEP.Category = "ARC9 - S.T.A.L.K.E.R. 2"
 SWEP.SubCategory = "Assault Rifles"
@@ -366,7 +366,7 @@ SWEP.MalfunctionSound 			= { "Stalker2.Jam" }
 -- Attachments ----------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
 
-SWEP.DefaultBodygroups = "000000000000000"
+SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentElements = {
 	["stalker2_asval_mag_ext_1"] = { Bodygroups = { {2, 1} } },
