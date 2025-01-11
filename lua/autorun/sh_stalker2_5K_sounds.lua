@@ -132,7 +132,7 @@ sound.Add( {
 sound.Add( {
     name = "Stalker2.5K.AK762TailIndoor",
     channel = CHAN_STREAM,
-    volume = 0.5,
+    volume = 0.35,
     level = 125,
     pitch = {95, 105},
     sound = {

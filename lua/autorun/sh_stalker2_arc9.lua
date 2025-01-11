@@ -48,6 +48,7 @@ Sound Tables
 -- Sounds_Gauss
 -- Sounds_ASVAL
 -- Sounds_Saiga
+-- Sounds_Boomstick
 
 ----------------------------------------------------------------------------------------------------- Sounds_Generic
 sound.Add( {
@@ -1428,5 +1429,97 @@ sound.Add( {
     pitch = {95, 100},
     sound = {
         "weapons/arc9/stalker2/shot_saiga/SFX_Saiga_BreakBullet.ogg",
+    }
+} )
+
+----------------------------------------------------------------------------------------------------- Sounds_Boomstick
+sound.Add( {
+    name = "Stalker2.BoomstickFire",
+    channel = CHAN_STATIC,
+    volume = 1,
+    level = 125,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/shot_boomstick/fire_core_1.ogg",
+		"weapons/arc9/stalker2/shot_boomstick/fire_core_2.ogg",
+		"weapons/arc9/stalker2/shot_boomstick/fire_core_3.ogg",
+		"weapons/arc9/stalker2/shot_boomstick/fire_core_4.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.BoomstickMagIn",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/shot_boomstick/SFX_Boomstick_MagIn_1.ogg",
+		"weapons/arc9/stalker2/shot_boomstick/SFX_Boomstick_MagIn_2.ogg",
+		"weapons/arc9/stalker2/shot_boomstick/SFX_Boomstick_MagIn_3.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.BoomstickSlideBack",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/shot_boomstick/SFX_Boomstick_SlideBack_1.ogg",
+		"weapons/arc9/stalker2/shot_boomstick/SFX_Boomstick_SlideBack_2.ogg",
+		"weapons/arc9/stalker2/shot_boomstick/SFX_Boomstick_SlideBack_3.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.BoomstickSlideForward",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/shot_boomstick/SFX_Boomstick_SlideForward.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.BoomstickSlideHit",
+    channel = CHAN_ITEM,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/shot_boomstick/SFX_Boomstick_SlideHit.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.BoomstickSlideJamBack",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/shot_boomstick/SFX_Boomstick_SlideJamBack.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.BoomstickSlideJamForward",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/shot_boomstick/SFX_Boomstick_SlideJamForward.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.BoomstickBreakBullet",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/shot_boomstick/SFX_Boomstick_BreakBullet.ogg",
     }
 } )
