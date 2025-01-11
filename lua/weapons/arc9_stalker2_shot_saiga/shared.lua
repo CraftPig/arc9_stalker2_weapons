@@ -47,7 +47,7 @@ SWEP.MirrorVMWM = true
  SWEP.WorldModelOffset = {
      Pos = Vector(-4, 4, -6.5), -- non tpik (while on ground, on npc etc)
      Ang = Angle(-5, 0, 180),
-     TPIKPos = Vector(2, 8, -15), -- arc9_tpik 1, you can make cool poses with it
+     TPIKPos = Vector(-1, 5, -15), -- arc9_tpik 1, you can make cool poses with it
      TPIKAng = Angle(0, -0, 180),
      Scale = 1
  }
@@ -98,13 +98,13 @@ SWEP.Firemodes = { -- -1: Automatic, 1: Semi, 2: Two-round burst, 3: Three-round
 }
 
 SWEP.BodyDamageMults = {
-    [HITGROUP_HEAD] = 3,
+    [HITGROUP_HEAD] = 2,
     [HITGROUP_CHEST] = 1,
-    [HITGROUP_STOMACH] = 0.9,
-    [HITGROUP_LEFTARM] = 0.6,
-    [HITGROUP_RIGHTARM] = 0.6,
-    [HITGROUP_LEFTLEG] = 0.4,
-    [HITGROUP_RIGHTLEG] = 0.4,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 0.7,
+    [HITGROUP_RIGHTARM] = 0.7,
+    [HITGROUP_LEFTLEG] = 0.7,
+    [HITGROUP_RIGHTLEG] = 0.7,
 }
 
 -- Magazine -------------------------------------------------------------------------------------------
@@ -119,68 +119,72 @@ SWEP.InfiniteAmmo   = false
 SWEP.BottomlessClip = false 
 
 -- Recoil -------------------------------------------------------------------------------------------
-SWEP.Recoil 								= (8) * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
+SWEP.Recoil 								= (1) * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
+SWEP.RecoilMultSights                       = 0.8
 
-SWEP.RecoilRandomUp 						= 0
-SWEP.RecoilRandomSide 						= 0.1
+SWEP.RecoilRandomUp 						= 0.1
+SWEP.RecoilRandomSide 						= 0.33
 
-SWEP.RecoilAutoControl 						= 3.0 -- Multiplier for automatic recoil control.
+SWEP.RecoilAutoControl 						= 1.7
+SWEP.RecoilAutoControlMultShooting       	= 0.25
 
-SWEP.RecoilDissipationRate 					= 5
+SWEP.RecoilDissipationRate 					= 5 
 SWEP.RecoilResetTime 						= 0.033
-SWEP.RecoilFullResetTime 					= 1
+SWEP.RecoilFullResetTime 					= 0.35
 
 SWEP.RecoilPerShot 							= 1
-SWEP.RecoilMax 								= SWEP.ClipSize / 2 -- MaxRadiusExtensionModifier
+SWEP.RecoilMax 								= SWEP.ClipSize
 
 ---- Weapon Visual Recoil
 SWEP.UseVisualRecoil 						= true
 SWEP.PhysicalVisualRecoil 					= false 
 
 SWEP.VisualRecoilMultHipFire 				= 0.1
-SWEP.VisualRecoilMultSights 				= 0.03
-SWEP.VisualRecoilMultCrouch 				= 0.0
+SWEP.VisualRecoilMultSights 				= 0.005
+SWEP.VisualRecoilMultCrouch 				= 1
 
 SWEP.VisualRecoilUp 						= 1 
-SWEP.VisualRecoilUpAddSighted 				= -1
-SWEP.VisualRecoilSide 						= 3
-SWEP.VisualRecoilSideAddSighted 			= -3
-SWEP.VisualRecoilRoll 						= 150
+SWEP.VisualRecoilSide 						= 1.5
+SWEP.VisualRecoilRoll 						= 100
 
-SWEP.VisualRecoilPunch 						= 8
-SWEP.VisualRecoilPunchMultSights 			= 1
+SWEP.VisualRecoilPunch 						= 20
+SWEP.VisualRecoilPunchMultSights 			= 8
 
-SWEP.RecoilKick 							= 5 -- Camera recoil
-SWEP.RecoilKickDamping 						= 0.25 -- Camera recoil damping
+SWEP.RecoilKick 							= 1.0 -- Camera recoil
+SWEP.RecoilKickDamping 						= 25.0 -- Camera recoil damping
 
 -- Spread ---------------------------------------------------------------------------------------------
-SWEP.Spread 					= (0.061) * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
+SWEP.Spread 					= (0.1800 / 3) * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
 
-SWEP.SpreadAddRecoil 			= 0.0611 / 5
-
-SWEP.SpreadAddMove 				= SWEP.Spread * 0.1
-SWEP.SpreadAddMidAir 			= SWEP.Spread * 3
-SWEP.SpreadAddCrouch 			= -SWEP.Spread * 0.15
-SWEP.SpreadAddSights 			= -SWEP.Spread * 0.1
+SWEP.SpreadAddRecoil 			= 0.00611 -- Applied per unit of recoil.
+SWEP.SpreadMultSights			= 0.75
+SWEP.SpreadMultCrouch 			= 0.9
+SWEP.SpreadMultMove 			= 1.5
+SWEP.SpreadMultMidAir 			= 2.5
 
 SWEP.RecoilModifierCap 			= SWEP.RecoilMax
+SWEP.RecoilModifierCapSights 	= 0
 
 -- Weapon Handling ------------------------------------------------------------------------------------
-SWEP.Sway 					= 0 -- How much the gun sways
-SWEP.SwayAddSighted 		= 0.35
-SWEP.SwayAddMidAir 			= 1.0 
+SWEP.Sway 						= 0 -- How much the gun sways
+SWEP.SwayAddSighted 			= 0.35
+SWEP.SwayAddMidAir 				= 1.0 
 
-SWEP.BarrelLength 			= 33
-SWEP.PushBackForce 			= 1
-SWEP.FreeAimRadius 			= 2
+SWEP.AimDownSightsTime 			= 0.5
+SWEP.SprintToFireTime 			= 0.37
+SWEP.NoFireDuringSighting 		= true
 
-SWEP.AimDownSightsTime 		= 0.3
-SWEP.SprintToFireTime 		= 0.4
-SWEP.NoFireDuringSighting 	= true
+SWEP.TriggerDelay 				= true 
+SWEP.TriggerDelayCancellable 	= false
+SWEP.TriggerDelayTime 			= 0.02
 
-SWEP.Speed = 1
-SWEP.SpeedMultSights = 0.5
-SWEP.SpeedMultShooting = 0.9
+SWEP.Speed 						= 1
+SWEP.SpeedMultSights 			= 0.92
+SWEP.SpeedMultShooting			= 1
+
+SWEP.BarrelLength 				= 34 
+SWEP.PushBackForce 				= 1
+SWEP.FreeAimRadius 				= 2
 
 SWEP.ShotgunReload = false
 
@@ -216,7 +220,7 @@ SWEP.ViewModelFOVBase = 60
 
 SWEP.IronSights = {
     Pos = Vector(-0, -0, 0.85),
-    Ang = Angle(-0, -0.0, 0),
+    Ang = Angle(-0, 0.2, 0),
     Magnification = 1.1,
     CrosshairInSights = false,
     Blur = true, 
