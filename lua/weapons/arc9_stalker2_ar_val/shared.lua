@@ -296,13 +296,13 @@ SWEP.ShouldDropMagEmpty 		= true
 
 SWEP.DropMagazineQCA 			= 4
 SWEP.DropMagazineAmount 		= 1 
-SWEP.DropMagazineTime 			= 2.0
+SWEP.DropMagazineTime 			= 2.25
 
 SWEP.DropMagazinePos 			= Vector(-0, 0, -0) -- offsets
 SWEP.DropMagazineAng 			= Angle(0, 0, 0)
 SWEP.DropMagazineVelocity 		= Vector(0, -0, 0) -- Put something here if your anim throws the mag with force
 
-SWEP.DropMagazineModel 			= "models/weapons/arc9/stalker2/ar_ak74/w_ar_ak74_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
+SWEP.DropMagazineModel 			= "models/weapons/arc9/stalker2/ar_val/w_ar_val_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds 		= {"physics/metal/weapon_impact_soft1.wav",
 								"physics/metal/weapon_impact_soft2.wav",
 								"physics/metal/weapon_impact_soft3.wav", } -- Table of sounds a dropped magazine should play.

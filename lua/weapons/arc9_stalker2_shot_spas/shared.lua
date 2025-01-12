@@ -119,7 +119,7 @@ SWEP.InfiniteAmmo   = false
 SWEP.BottomlessClip = false 
 
 -- Recoil ---------------------------------------------------------------------------------------------
-SWEP.Recoil 								= (1.5) * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
+SWEP.Recoil 								= (1.3) * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
 SWEP.RecoilMultSights                       = 0.8
 
 SWEP.RecoilUp 								= 5
@@ -157,7 +157,7 @@ SWEP.RecoilKick 							= 1.0 -- Camera recoil
 SWEP.RecoilKickDamping 						= 25.0 -- Camera recoil damping
 
 -- Spread ---------------------------------------------------------------------------------------------
-SWEP.Spread 					= (0.2200 / 3) * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
+SWEP.Spread 					= (0.2200 / 4) * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
 
 SWEP.SpreadAddRecoil 			= 0.00668 -- Applied per unit of recoil.
 SWEP.SpreadMultSights			= 0.75
@@ -616,7 +616,7 @@ SWEP.CustomPoseParamsHandler = function (self, ent, iswm)
     end
 
     if owner:KeyDown(IN_FORWARD) then
-        self.blend_walk = math.Approach(self.blend_walk, 0.5, speed * FrameTime())
+        self.blend_walk = math.Approach(self.blend_walk, 0.25, speed * FrameTime())
     else
         self.blend_walk = math.Approach(self.blend_walk, 0, speed * FrameTime())
     end
