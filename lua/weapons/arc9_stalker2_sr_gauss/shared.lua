@@ -223,7 +223,7 @@ SWEP.BashImpact = true -- Creates a Impact effect that leaves a bullet hole.
 SWEP.ViewModelFOVBase = 70
 
 SWEP.IronSights = {
-    Pos = Vector(-2.78, -5, 1.45),
+    Pos = Vector(-2.78, -3, 1.45),
     Ang = Angle(-1.6, 0.0, 1),
     Magnification = 1,
     CrosshairInSights = false,
@@ -234,7 +234,7 @@ SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
     Ang = Angle(0, 0, -0),
 }
 
-SWEP.ActivePos = Vector(-0.0, -0, 1.0) 
+SWEP.ActivePos = Vector(-0.3, -0.7, 1.0) 
 SWEP.ActiveAng = Angle(0, 1, 0)
 
 SWEP.MovingPos =  Vector(-0, -0, -0)

@@ -155,7 +155,7 @@ SWEP.RecoilLookupTable =
 	-23,
 }
 
-SWEP.Recoil 								= (1) * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
+SWEP.Recoil 								= (0.6) * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
 SWEP.RecoilMultSights                       = 0.8
 
 SWEP.RecoilRandomUp 						= 0.1
@@ -183,7 +183,7 @@ SWEP.VisualRecoilUp 						= 1
 SWEP.VisualRecoilSide 						= 1.5
 SWEP.VisualRecoilRoll 						= 100
 
-SWEP.VisualRecoilPunch 						= 20
+SWEP.VisualRecoilPunch 						= 3
 SWEP.VisualRecoilPunchMultSights 			= 8
 
 SWEP.RecoilKick 							= 1.0 -- Camera recoil
@@ -253,7 +253,7 @@ SWEP.BashImpact = true -- Creates a Impact effect that leaves a bullet hole.
 SWEP.ViewModelFOVBase = 70
 
 SWEP.IronSights = {
-    Pos = Vector(-0, -2, 0.8),
+    Pos = Vector(-0, 0, 0.8),
     Ang = Angle(-0, 0.15, 0),
     Magnification = 1.17,
     CrosshairInSights = false,
@@ -264,7 +264,7 @@ SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
     Ang = Angle(0, 0, -0),
 }
 
-SWEP.ActivePos = Vector(-0.0, -1, 1.0) 
+SWEP.ActivePos = Vector(-0.0, -1, 0.7) 
 SWEP.ActiveAng = Angle(0, 1, 0)
 
 SWEP.MovingPos =  Vector(-0, -0, -0)

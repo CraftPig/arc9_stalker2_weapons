@@ -111,7 +111,7 @@ SWEP.BodyDamageMults = {
 SWEP.Ammo 			= "buckshot" 
 
 SWEP.ChamberSize 	= 0 
-SWEP.ClipSize 		= 8
+SWEP.ClipSize 		= 9999
 SWEP.SupplyLimit    = 8
 
 SWEP.AmmoPerShot    = 1 
@@ -119,14 +119,17 @@ SWEP.InfiniteAmmo   = false
 SWEP.BottomlessClip = false 
 
 -- Recoil ---------------------------------------------------------------------------------------------
-SWEP.Recoil 								= (1) * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
+SWEP.Recoil 								= (1.5) * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
 SWEP.RecoilMultSights                       = 0.8
 
-SWEP.RecoilRandomUp 						= 0.1
-SWEP.RecoilRandomSide 						= 0.33
+SWEP.RecoilUp 								= 5
+SWEP.RecoilSide 							= 0
 
-SWEP.RecoilAutoControl 						= 1.7
-SWEP.RecoilAutoControlMultShooting       	= 0.25
+SWEP.RecoilRandomUp 						= 0.5
+SWEP.RecoilRandomSide 						= 2.5
+
+SWEP.RecoilAutoControl 						= 3
+SWEP.RecoilAutoControlMultShooting       	= 0.1
 
 SWEP.RecoilDissipationRate 					= 5 
 SWEP.RecoilResetTime 						= 0.033
@@ -147,8 +150,8 @@ SWEP.VisualRecoilUp 						= 1
 SWEP.VisualRecoilSide 						= 1.5
 SWEP.VisualRecoilRoll 						= 100
 
-SWEP.VisualRecoilPunch 						= 20
-SWEP.VisualRecoilPunchMultSights 			= 8
+SWEP.VisualRecoilPunch 						= 10
+SWEP.VisualRecoilPunchMultSights 			= 15
 
 SWEP.RecoilKick 							= 1.0 -- Camera recoil
 SWEP.RecoilKickDamping 						= 25.0 -- Camera recoil damping
@@ -230,7 +233,7 @@ SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
     Ang = Angle(0, 0, -0),
 }
 
-SWEP.ActivePos = Vector(-0.0, -1, 1.0) 
+SWEP.ActivePos = Vector(-0.4, -1, 0.7) 
 SWEP.ActiveAng = Angle(0, 1, 0)
 
 SWEP.MovingPos =  Vector(-0, -0, -0)

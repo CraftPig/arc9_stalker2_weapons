@@ -89,7 +89,7 @@ SWEP.Penetration		 = 250/1000/0.0254
 SWEP.PhysBulletMuzzleVelocity 	= 300 / 0.0254
 SWEP.RicochetChance 			= SWEP.PhysBulletMuzzleVelocity/100000
 
-SWEP.RPM = 120
+SWEP.RPM = 320
 SWEP.Firemodes = { -- -1: Automatic, 1: Semi, 2: Two-round burst, 3: Three-round burst
 	{
 	    Mode = 1,
@@ -122,11 +122,13 @@ SWEP.BottomlessClip = false
 SWEP.Recoil 								= (1) * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
 SWEP.RecoilMultSights                       = 0.8
 
-SWEP.RecoilRandomUp 						= 0.1
-SWEP.RecoilRandomSide 						= 0.33
+SWEP.RecoilUp 								= 10
 
-SWEP.RecoilAutoControl 						= 1.7
-SWEP.RecoilAutoControlMultShooting       	= 0.25
+SWEP.RecoilRandomUp 						= 0.1
+SWEP.RecoilRandomSide 						= 5
+
+SWEP.RecoilAutoControl 						= 8
+SWEP.RecoilAutoControlMultShooting       	= 0.5
 
 SWEP.RecoilDissipationRate 					= 5 
 SWEP.RecoilResetTime 						= 0.033
@@ -147,11 +149,11 @@ SWEP.VisualRecoilUp 						= 1
 SWEP.VisualRecoilSide 						= 1.5
 SWEP.VisualRecoilRoll 						= 100
 
-SWEP.VisualRecoilPunch 						= 20
-SWEP.VisualRecoilPunchMultSights 			= 8
+SWEP.VisualRecoilPunch 						= 10
+SWEP.VisualRecoilPunchMultSights 			= 15
 
 SWEP.RecoilKick 							= 1.0 -- Camera recoil
-SWEP.RecoilKickDamping 						= 25.0 -- Camera recoil damping
+SWEP.RecoilKickDamping 						= 45.0 -- Camera recoil damping
 
 -- Spread ---------------------------------------------------------------------------------------------
 SWEP.Spread 					= (0.2200 / 3) * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
@@ -214,10 +216,10 @@ SWEP.BashImpact = true -- Creates a Impact effect that leaves a bullet hole.
 -------------------------------------------------------------------------------------------------------
 -- Viewmodel ------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
-SWEP.ViewModelFOVBase = 70
+SWEP.ViewModelFOVBase = 55
 
 SWEP.IronSights = {
-    Pos = Vector(-3.15, -4, 2),
+    Pos = Vector(-3.15, -2, 2),
     Ang = Angle(-1.7, -1.0, 0),
     Magnification = 1.1,
     CrosshairInSights = false,
@@ -228,7 +230,7 @@ SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
     Ang = Angle(0, 0, -0),
 }
 
-SWEP.ActivePos = Vector(-0.0, 0.5, 0.5) 
+SWEP.ActivePos = Vector(-0.0, 2.5, 0.5) 
 SWEP.ActiveAng = Angle(0, 1, 0)
 
 SWEP.MovingPos =  Vector(-0, -0, -0)

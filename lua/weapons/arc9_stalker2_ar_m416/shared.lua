@@ -184,7 +184,7 @@ SWEP.VisualRecoilUp 						= 1
 SWEP.VisualRecoilSide 						= 1.5
 SWEP.VisualRecoilRoll 						= 100
 
-SWEP.VisualRecoilPunch 						= 20
+SWEP.VisualRecoilPunch 						= 10
 SWEP.VisualRecoilPunchMultSights 			= 8
 
 SWEP.RecoilKick 							= 1.0 -- Camera recoil
@@ -254,7 +254,7 @@ SWEP.BashImpact = true -- Creates a Impact effect that leaves a bullet hole.
 SWEP.ViewModelFOVBase = 70
 
 SWEP.IronSights = {
-    Pos = Vector(-0.03, -1, 0.8),
+    Pos = Vector(-0.03, 0, 0.8),
     Ang = Angle(-0.1, 0.5, 0),
     Magnification = 1,
     CrosshairInSights = false,
@@ -265,7 +265,7 @@ SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
     Ang = Angle(0, 0, -0),
 }
 
-SWEP.ActivePos = Vector(-0.0, -0, 0.6) 
+SWEP.ActivePos = Vector(-0.0, -0.5, 0.7) 
 SWEP.ActiveAng = Angle(0, 1, 0)
 
 SWEP.MovingPos =  Vector(-0, -0, -0)

@@ -148,7 +148,7 @@ SWEP.RecoilLookupTable =
 	-15,
 }
 
-SWEP.Recoil 								= (1) * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
+SWEP.Recoil 								= (0.6) * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
 SWEP.RecoilMultSights                       = 0.8
 
 SWEP.RecoilRandomUp 						= 0.1
@@ -246,7 +246,7 @@ SWEP.BashImpact = true -- Creates a Impact effect that leaves a bullet hole.
 SWEP.ViewModelFOVBase = 70
 
 SWEP.IronSights = {
-    Pos = Vector(-0, -2, 0.8),
+    Pos = Vector(-0, -0.5, 0.8),
     Ang = Angle(-0, 0.15, 0),
     Magnification = 1.17,
     CrosshairInSights = false,
