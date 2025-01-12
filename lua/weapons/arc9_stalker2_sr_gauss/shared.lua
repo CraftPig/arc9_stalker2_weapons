@@ -27,6 +27,7 @@ SWEP.Trivia = {
 }
 SWEP.Credits = { 
     Author = "Craft_Pig",
+	Particles = "Matin",
 	Assets = "S.T.A.L.K.E.R. 2: Heart of Chornobyl | GSC Game World", 
 }
 SWEP.Description = [[Developed in the Zone and incorporating an electromagnetic bullet acceleration system, this sniper rifle is used exclusively within the Zone.]]
@@ -295,7 +296,7 @@ SWEP.ShellModel 				= "models/shells/shell_762nato.mdl" -- shell_12gauge, shell_
 SWEP.MuzzleEffectQCA 			= 2 -- QC Attachment that controls muzzle effect.
 SWEP.AfterShotQCA 				= 2 -- QC Attachment that controls after shot particle.
 
-SWEP.MuzzleParticle 			= {"gauss_muzzle"} -- m79_smoke_c m79_shockwave
+SWEP.MuzzleParticle 			= {"gauss_muzzle_glow", "gauss_muzzle", "matin_ga_warp"} -- m79_smoke_c m79_shockwave
 SWEP.AfterShotParticle 			= "barrel_smoke"
 
 -------------------------- TRACERS

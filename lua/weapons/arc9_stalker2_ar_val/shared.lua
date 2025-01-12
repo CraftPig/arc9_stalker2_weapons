@@ -456,6 +456,8 @@ SWEP.Animations = {
     ------------------------------------------------ Sights
 	["enter_sights"] = {
         Source = {"idle_to_ads"},
+		MinProgress = 0.1,
+        FireASAP = true,
     },
 	["idle_sights"] = {
         Source = {"idle_ads"},

@@ -27,8 +27,12 @@ Particle Cache
 	PrecacheParticleSystem("gauss_gun_raiden_0")
 	PrecacheParticleSystem("gauss_gun_raiden_1")
 	PrecacheParticleSystem("gauss_gun_raiden_2")
+	PrecacheParticleSystem("gauss_gun_raiden_3")
+	PrecacheParticleSystem("gauss_gun_raiden_4")
+	PrecacheParticleSystem("gauss_gun_raiden_5")
 	PrecacheParticleSystem("gauss_muzzle")
-
+	PrecacheParticleSystem("gauss_muzzle_glow")
+	PrecacheParticleSystem("matin_ga_warp")
 
 --[[
 -----------------------------------------------------------------------------------------------------
