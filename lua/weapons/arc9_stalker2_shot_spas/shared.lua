@@ -111,7 +111,7 @@ SWEP.BodyDamageMults = {
 SWEP.Ammo 			= "buckshot" 
 
 SWEP.ChamberSize 	= 0 
-SWEP.ClipSize 		= 9999
+SWEP.ClipSize 		= 8
 SWEP.SupplyLimit    = 8
 
 SWEP.AmmoPerShot    = 1 
