@@ -9,7 +9,7 @@ SWEP.Spawnable = true
 -------------------------------------------------------------------------------------------------------
 -- Hud and Spawn Menu Elements ------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
-SWEP.CustomSelectIcon = Material("vgui/hud/vgui_toz")
+SWEP.CustomSelectIcon = Material("vgui/hud/vgui_boomstick")
 
 SWEP.Category = "ARC9 - S.T.A.L.K.E.R. 2"
 SWEP.SubCategory = "Shotguns"
@@ -18,22 +18,20 @@ SWEP.SubCategory = "Shotguns"
 
 SWEP.AdminOnly = false
 SWEP.PrintName = "Boomstick"
-SWEP.TrueName = "TOZ-34"
+SWEP.TrueName = "Sawed-off DB"
 
 SWEP.Slot = 3
 
-SWEP.Class = "Over/Under Shotgun"
+SWEP.Class = "Double Barreled Shotgun"
 SWEP.Trivia = {
     Caliber = "12/32 Gauge",
-	Origin = "Soviet Union",
-	Year = "1964",
-	Weight = "3.3kg",
+	Weight = "1.94kg",
 }
 SWEP.Credits = { 
     Author = "Craft_Pig",
 	Assets = "S.T.A.L.K.E.R. 2: Heart of Chornobyl | GSC Game World", 
 }
-SWEP.Description = [[The TOZ-34 is a double-barreled over and under shotgun produced by the Tula Arms Plant (or Tulsky Oruzheiny Zavod) in Russia.]]
+SWEP.Description = [[This small and lightweight sawed-off hunting shotgun proved itself surprisingly useful in the ever-changing environment of the Zone. Very efficient in close quarters and omfortable for concealed carry.]]
 
 -------------------------------------------------------------------------------------------------------
 -- Viewmodel & Worldmodel -----------------------------------------------------------------------------
@@ -261,8 +259,8 @@ SWEP.NearWallPos = Vector(0, -0, -10.0)
 SWEP.NearWallAng = Angle(-5, 50, 10) 
 
 SWEP.CustomizeAng = Angle(90, -0, 0)
-SWEP.CustomizePos = Vector(18, 44, 7)
-SWEP.CustomizeRotateAnchor = Vector(18, -3, -4)
+SWEP.CustomizePos = Vector(15, 32, 6)
+SWEP.CustomizeRotateAnchor = Vector(14, -3, -4)
 
 -------------------------------------------------------------------------------------------------------
 -- Visuals & Effects ----------------------------------------------------------------------------------
@@ -356,37 +354,14 @@ SWEP.AttachmentElements = {
 SWEP.Attachments = {
 	{
         PrintName = "Ammo",
-        Bone = "jnt_bullet1",
+        Bone = "Smoke1",
         Category = "go_ammo_sg",
-        Pos = Vector(0, -0, -0),
+        Pos = Vector(0, 0.8, -0),
     },
 	{
         PrintName = "Cosmetic",
         Category = {"universal_camo"},
         CosmeticOnly = true,
-    },
-	{
-		PrintName = "Sticker",
-        StickerModel = "models/weapons/arc9/stalker2/shot_toz/s_shot_toz_1.mdl",
-        Category = "stickers",
-        Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, 0),
-    },
-	{
-		PrintName = "Sticker",
-        StickerModel = "models/weapons/arc9/stalker2/shot_toz/s_shot_toz_2.mdl",
-        Category = "stickers",
-        Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, 0),
-    },
-    { 
-        PrintName = "Stats",
-        Category = "killcounter",
-        Bone = "jnt_offset",
-        Pos = Vector(6.7, -0.95, 1.1),
-		Ang = Angle(0, 0, -0),
-		Icon_Offset = Vector(-0, 0.0, 0.0),
-		CosmeticOnly = true,
     },
 }
 
@@ -413,7 +388,6 @@ SWEP.Animations = {
 		MinProgress = 0.55,
         FireASAP = true,
     },
-    ---
     --------------------------------------------------- Fire
     ["fire"] = {
         Source = {"fire"},
