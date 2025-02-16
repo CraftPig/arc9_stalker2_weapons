@@ -80,7 +80,7 @@ if CLIENT then
     timer.Simple(1, function()
     
         local stalker2settings = {
-            TabName = "S.T.A.L.K.E.R. 2",
+            TabName = "Addon - STALKER 2",
             sv = true,
             { type = "label", text = "Settings for S.T.A.L.K.E.R. 2: Heart of Chornobyl weapons" },
 			{ sv = true, type = "button", text = "Reset", desc = "Resets all S.T.A.L.K.E.R. 2 related ConVars to their default values.", func = function(self2)
@@ -95,7 +95,7 @@ if CLIENT then
 			{ sv = true, type = "slider", text = "Heat", desc = "Multiplies the rate at which heat (durability) is gained.", convar = "stalker2_mult_heat", min = 0.1, max = 10, decimals = 2 },
         }
         
-        table.insert(ARC9.SettingsTable, 3, stalker2settings)
+        table.insert(ARC9.SettingsTable, 13, stalker2settings)
     
     end)
 end

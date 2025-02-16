@@ -583,25 +583,25 @@ SWEP.CustomPoseParamsHandler = function (self, ent, iswm)
     end
 
     if owner:KeyDown(IN_FORWARD) then
-        self.blend_walk = math.Approach(self.blend_walk, 0.35, speed * FrameTime())
+        self.blend_walk = math.Approach(self.blend_walk, 0.3, speed * FrameTime())
     else
         self.blend_walk = math.Approach(self.blend_walk, 0, speed * FrameTime())
     end
 
     if owner:KeyDown(IN_MOVERIGHT) then
-        self.blend_walk_right = math.Approach(self.blend_walk_right, 1, speed * FrameTime())
+        self.blend_walk_right = math.Approach(self.blend_walk_right, 0.7, speed * FrameTime())
     else
         self.blend_walk_right = math.Approach(self.blend_walk_right, 0, speed * FrameTime())
     end
 
     if owner:KeyDown(IN_MOVELEFT) then
-        self.blend_walk_left = math.Approach(self.blend_walk_left, 1, speed * FrameTime())
+        self.blend_walk_left = math.Approach(self.blend_walk_left, 0.7, speed * FrameTime())
     else
         self.blend_walk_left = math.Approach(self.blend_walk_left, 0, speed * FrameTime())
     end
 
     if owner:KeyDown(IN_BACK) then
-        self.blend_walk_bwd = math.Approach(self.blend_walk_bwd, 1, speed * FrameTime())
+        self.blend_walk_bwd = math.Approach(self.blend_walk_bwd, 0.7, speed * FrameTime())
     else
         self.blend_walk_bwd = math.Approach(self.blend_walk_bwd, 0, speed * FrameTime())
     end
