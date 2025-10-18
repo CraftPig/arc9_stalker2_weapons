@@ -2,6 +2,46 @@ AddCSLuaFile()
 
 --[[
 -----------------------------------------------------------------------------------------------------
+Hooks
+-----------------------------------------------------------------------------------------------------
+]]
+
+local WeaponTable = {
+	"arc9_stalker2_ar_ak74",
+	"arc9_stalker2_ar_dnipro",
+	"arc9_stalker2_ar_grom",
+	"arc9_stalker2_ar_m416",
+	"arc9_stalker2_ar_tar21",
+	"arc9_stalker2_ar_val",
+	
+	"arc9_stalker2_pt_pm",
+	"arc9_stalker2_pt_rhino",
+	
+	"arc9_stalker2_shot_boomstick",
+	"arc9_stalker2_shot_m860",
+	"arc9_stalker2_shot_spas",
+}
+	
+hook.Add("PlayerCanPickupWeapon", "HookStalker2ResetGunHealth", function(ply, wep)
+    if not IsValid(wep) or not IsValid(ply) then return true end
+	
+	local class = wep:GetClass()
+	for _, classname in pairs(WeaponTable) do
+		if class == classname then
+			if ply:HasWeapon(class) then
+				local CurWpn = ply:GetWeapon(class)
+				if IsValid(CurWpn) then
+				 CurWpn.GunHealth = CurWpn.GunHealthMax
+				end
+			end
+		end
+	end
+	
+    return true
+end)
+
+--[[
+-----------------------------------------------------------------------------------------------------
 Subcategories
 -----------------------------------------------------------------------------------------------------
 ]]
@@ -42,6 +82,7 @@ Sound Tables
 
 -- Sounds_Generic
 -- Sounds_Cloth
+-- Sounds_Tails
 -- Sounds_TOZ34
 -- Sounds_AK74
 -- Sounds_GROZA
@@ -53,6 +94,9 @@ Sound Tables
 -- Sounds_ASVAL
 -- Sounds_Saiga
 -- Sounds_Boomstick
+-- Sounds_DniPro
+-- Sounds_M860
+-- Sounds_Rhino
 
 ----------------------------------------------------------------------------------------------------- Sounds_Generic
 sound.Add( {
@@ -79,36 +123,149 @@ sound.Add( {
     }
 } )
 sound.Add( {
-    name = "Stalker2.Trigger",
-    channel = CHAN_WEAPON,
-    volume = 0.4,
+    name = "Stalker2.ARTrigger",
+    channel = CHAN_ITEM,
+    volume = 0.5,
     level = 60,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/generic/SFX_Trigger_01.ogg",
-		"weapons/arc9/stalker2/generic/SFX_Trigger_02.ogg",
-		"weapons/arc9/stalker2/generic/SFX_Trigger_03.ogg",
-		"weapons/arc9/stalker2/generic/SFX_Trigger_04.ogg",
+        "weapons/arc9/stalker2/generic/S_AR_Trigger_01 (SFX).ogg",
+		"weapons/arc9/stalker2/generic/S_AR_Trigger_02 (SFX).ogg",
+		"weapons/arc9/stalker2/generic/S_AR_Trigger_03 (SFX).ogg",
+		"weapons/arc9/stalker2/generic/S_AR_Trigger_04 (SFX).ogg",
     }
 } )
 sound.Add( {
-    name = "Stalker2.RattleHeavy",
+    name = "Stalker2.ARChangelevel",
     channel = CHAN_ITEM,
+    volume = 0.5,
+    level = 60,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/generic/S_AR_ChangeLevel_01 (SFX).ogg",
+		"weapons/arc9/stalker2/generic/S_AR_ChangeLevel_02 (SFX).ogg",
+		"weapons/arc9/stalker2/generic/S_AR_ChangeLevel_03 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ArRattleWeak",
+    channel = CHAN_STATIC,
     volume = 0.1,
     level = 60,
     pitch = {95, 110},
     sound = {
-        "weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_01.ogg",
-		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_02.ogg",
-		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_03.ogg",
-		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_04.ogg",
-		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_05.ogg",
-		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_06.ogg",
-		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_07.ogg",
-		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_08.ogg",
-		"weapons/arc9/stalker2/generic/SFX_Rattle_Heavy_09.ogg",
+        "weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Weak_01 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Weak_02 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Weak_03 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Weak_04 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Weak_05 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Weak_06 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Weak_07 (SFX).ogg",
     }
 } )
+sound.Add( {
+    name = "Stalker2.ArRattleMedium",
+    channel = CHAN_STATIC,
+    volume = 0.1,
+    level = 60,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Medium_01 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Medium_02 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Medium_03 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Medium_04 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Medium_05 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Medium_06 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Medium_07 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Medium_08 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Medium_09 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Medium_10 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Medium_11 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Medium_12 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ArRattleStrong",
+    channel = CHAN_STATIC,
+    volume = 0.1,
+    level = 60,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Strong_01 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Strong_02 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Strong_03 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Strong_04 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Strong_05 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Strong_06 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Strong_07 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Strong_08 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Strong_09 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Strong_10 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Strong_11 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Strong_12 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Strong_13 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Strong_14 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/ar/S_AR_SU_Rattle_Strong_15 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.SgRattleWeak",
+    channel = CHAN_STATIC,
+    volume = 0.2,
+    level = 60,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Weak_01 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Weak_02 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Weak_03 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Weak_04 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Weak_05 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Weak_06 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Weak_07 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Weak_08 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Weak_09 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Weak_10 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.SgRattleMedium",
+    channel = CHAN_STATIC,
+    volume = 0.5,
+    level = 60,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Medium_01 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Medium_02 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Medium_03 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Medium_04 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Medium_05 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Medium_06 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Medium_07 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Medium_08 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Medium_09 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Medium_10 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.SgRattleStrong",
+    channel = CHAN_STATIC,
+    volume = 0.2,
+    level = 60,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Strong_01 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Strong_02 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Strong_03 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Strong_04 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Strong_05 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Strong_06 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Strong_07 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Strong_08 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Strong_09 (SFX).ogg",
+		"weapons/arc9/stalker2/rattle/sg/S_SG_Rattle_Strong_10 (SFX).ogg",
+    }
+} )
+
 
 ----------------------------------------------------------------------------------------------------- Sounds_Cloth
 sound.Add( {
@@ -129,8 +286,8 @@ sound.Add( {
 } )
 sound.Add( {
     name = "Stalker2.ARC9Cloth2",
-    channel = CHAN_ITEM,
-    volume = 0.35,
+    channel = CHAN_STREAM,
+    volume = 1,
     level = 65,
     pitch = {95, 110},
     sound = {
@@ -142,6 +299,175 @@ sound.Add( {
     }
 } )
 
+----------------------------------------------------------------------------------------------------- Sounds_Tails
+
+sound.Add( {
+    name = "Stalker2.ExtArAClose",
+    channel = CHAN_STREAM,
+    volume = 0.35,
+    level = 125,
+    pitch = {95, 115},
+    sound = {
+        "weapons/arc9/stalker2/tails/S_AR_Tail_Ext_A_Close_01 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_AR_Tail_Ext_A_Close_02 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_AR_Tail_Ext_A_Close_03 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_AR_Tail_Ext_A_Close_04 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ExtArBClose",
+    channel = CHAN_STREAM,
+    volume = 0.35,
+    level = 125,
+    pitch = {95, 115},
+    sound = {
+        "weapons/arc9/stalker2/tails/S_AR_Tail_Ext_B_Close_01 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_AR_Tail_Ext_B_Close_02 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_AR_Tail_Ext_B_Close_03 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_AR_Tail_Ext_B_Close_04 (SFX).ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.ExtArCClose",
+    channel = CHAN_STREAM,
+    volume = 0.35,
+    level = 125,
+    pitch = {95, 115},
+    sound = {
+        "weapons/arc9/stalker2/tails/S_AR_Tail_Ext_C_Close_01 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_AR_Tail_Ext_C_Close_02 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_AR_Tail_Ext_C_Close_03 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_AR_Tail_Ext_C_Close_04 (SFX).ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.IntArMedium",
+    channel = CHAN_STREAM,
+    volume = 0.5,
+    level = 125,
+    pitch = {95, 115},
+    sound = {
+        "weapons/arc9/stalker2/tails/Tail_Int_AR_Medium_01 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/Tail_Int_AR_Medium_02 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/Tail_Int_AR_Medium_03 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/Tail_Int_AR_Medium_04 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/Tail_Int_AR_Medium_05 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/Tail_Int_AR_Medium_06 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/Tail_Int_AR_Medium_07 (SFX).ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.TailArSilenced",
+    channel = CHAN_STREAM,
+    volume = 0.5,
+    level = 115,
+    pitch = {95, 115},
+    sound = {
+        "weapons/arc9/stalker2/tails/S_AR_Tail_Silenced_01 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_AR_Tail_Silenced_02 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_AR_Tail_Silenced_03 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_AR_Tail_Silenced_04 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_AR_Tail_Silenced_05 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_AR_Tail_Silenced_06 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_AR_Tail_Silenced_07 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_AR_Tail_Silenced_08 (SFX).ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.ExtHGAClose",
+    channel = CHAN_STREAM,
+    volume = 0.35,
+    level = 125,
+    pitch = {95, 115},
+    sound = {
+        "weapons/arc9/stalker2/tails/S_HG_Tail_Outdoor_A_Close_01 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_Outdoor_A_Close_02 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_Outdoor_A_Close_03 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_Outdoor_A_Close_04 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ExtHGBClose",
+    channel = CHAN_STREAM,
+    volume = 0.35,
+    level = 125,
+    pitch = {95, 115},
+    sound = {
+        "weapons/arc9/stalker2/tails/S_HG_Tail_Outdoor_B_Close_01 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_Outdoor_B_Close_02 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_Outdoor_B_Close_03 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_Outdoor_B_Close_04 (SFX).ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.ExtHGDClose",
+    channel = CHAN_STREAM,
+    volume = 0.35,
+    level = 125,
+    pitch = {95, 115},
+    sound = {
+        "weapons/arc9/stalker2/tails/S_HG_Tail_Outdoor_D_Close_01 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_Outdoor_D_Close_02 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_Outdoor_D_Close_03 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_Outdoor_D_Close_04 (SFX).ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.ExtHGEClose",
+    channel = CHAN_STREAM,
+    volume = 0.35,
+    level = 125,
+    pitch = {95, 115},
+    sound = {
+        "weapons/arc9/stalker2/tails/S_HG_Tail_Outdoor_E_Close_01 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_Outdoor_E_Close_02 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_Outdoor_E_Close_03 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_Outdoor_E_Close_04 (SFX).ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.IntHGMedium",
+    channel = CHAN_STREAM,
+    volume = 0.5,
+    level = 125,
+    pitch = {95, 115},
+    sound = {
+        "weapons/arc9/stalker2/tails/Tail_Int_SMG_HG_Large_01 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/Tail_Int_SMG_HG_Large_02 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/Tail_Int_SMG_HG_Large_03 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/Tail_Int_SMG_HG_Large_04 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/Tail_Int_SMG_HG_Large_05 (SFX).ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.TailHGSilenced",
+    channel = CHAN_STREAM,
+    volume = 0.5,
+    level = 115,
+    pitch = {95, 115},
+    sound = {
+        "weapons/arc9/stalker2/tails/S_HG_Tail_B_Outdoor_Silenced_01 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_B_Outdoor_Silenced_02 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_B_Outdoor_Silenced_03 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_B_Outdoor_Silenced_04 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_B_Outdoor_Silenced_05 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_B_Outdoor_Silenced_06 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_B_Outdoor_Silenced_07 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_B_Outdoor_Silenced_08 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_B_Outdoor_Silenced_09 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_B_Outdoor_Silenced_10 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_B_Outdoor_Silenced_11 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_HG_Tail_B_Outdoor_Silenced_12 (SFX).ogg",
+    }
+} )
 ----------------------------------------------------------------------------------------------------- Sounds_TOZ34
 sound.Add( {
     name = "Stalker2.TOZFire",
@@ -245,7 +571,6 @@ sound.Add( {
 		"weapons/arc9/stalker2/ar_ak74/fire_core_2.ogg",
 		"weapons/arc9/stalker2/ar_ak74/fire_core_3.ogg",
 		"weapons/arc9/stalker2/ar_ak74/fire_core_4.ogg",
-		"weapons/arc9/stalker2/ar_ak74/fire_core_5.ogg",
     }
 } )
 sound.Add( {
@@ -377,20 +702,20 @@ sound.Add( {
 		"weapons/arc9/stalker2/ar_Groza/fire_core_2.ogg",
 		"weapons/arc9/stalker2/ar_Groza/fire_core_3.ogg",
 		"weapons/arc9/stalker2/ar_Groza/fire_core_4.ogg",
-		"weapons/arc9/stalker2/ar_Groza/fire_core_5.ogg",
     }
 } )
--- sound.Add( {
-    -- name = "Stalker2.GrozaFireSil",
-    -- volume = 1,
-    -- level = 125,
-    -- pitch = {95, 110},
-    -- sound = {
-        -- "weapons/arc9/stalker2/ar_Groza/fire_sil_1.ogg",
-		-- "weapons/arc9/stalker2/ar_Groza/fire_sil_2.ogg",
-		-- "weapons/arc9/stalker2/ar_Groza/fire_sil_3.ogg",
-    -- }
--- } )
+sound.Add( {
+    name = "Stalker2.GrozaFireSil",
+    volume = 1,
+    level = 125,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/ar_Groza/fire_sil_1.ogg",
+		"weapons/arc9/stalker2/ar_Groza/fire_sil_2.ogg",
+		"weapons/arc9/stalker2/ar_Groza/fire_sil_3.ogg",
+		"weapons/arc9/stalker2/ar_Groza/fire_sil_4.ogg",
+    }
+} )
 
 sound.Add( {
     name = "Stalker2.GrozaMagInOutro",
@@ -534,6 +859,73 @@ sound.Add( {
         "weapons/arc9/stalker2/ar_Groza/SFX_Grim_GP_In.ogg",
     }
 } )
+
+sound.Add( {
+    name = "Stalker2.GLLaunch",
+    channel = CHAN_STATIC,
+    volume = 1,
+    level = 95,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/attachments/S_GLaunch_Shot_01 (SFX).ogg",
+		"weapons/arc9/stalker2/attachments/S_GLaunch_Shot_02 (SFX).ogg",
+		"weapons/arc9/stalker2/attachments/S_GLaunch_Shot_03 (SFX).ogg",
+		"weapons/arc9/stalker2/attachments/S_GLaunch_Shot_04 (SFX).ogg",
+		"weapons/arc9/stalker2/attachments/S_GLaunch_Shot_05 (SFX).ogg",
+		"weapons/arc9/stalker2/attachments/S_GLaunch_Shot_06 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.M320Intro",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 70,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/attachments/S_Attachments_M320_Intro_01 (SFX).ogg",
+		"weapons/arc9/stalker2/attachments/S_Attachments_M320_Intro_02 (SFX).ogg",
+		"weapons/arc9/stalker2/attachments/S_Attachments_M320_Intro_03 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.M320Outro",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 70,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/attachments/S_Attachments_M320_Outro_01 (SFX).ogg",
+		"weapons/arc9/stalker2/attachments/S_Attachments_M320_Outro_02 (SFX).ogg",
+		"weapons/arc9/stalker2/attachments/S_Attachments_M320_Outro_03 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.M320Pin",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 70,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/attachments/S_Attachments_M320_Pin_01 (SFX).ogg",
+		"weapons/arc9/stalker2/attachments/S_Attachments_M320_Pin_02 (SFX).ogg",
+		"weapons/arc9/stalker2/attachments/S_Attachments_M320_Pin_03 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.M320Shell",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 70,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/attachments/S_Attachments_M320_Shell_01 (SFX).ogg",
+		"weapons/arc9/stalker2/attachments/S_Attachments_M320_Shell_02 (SFX).ogg",
+		"weapons/arc9/stalker2/attachments/S_Attachments_M320_Shell_03 (SFX).ogg",
+    }
+} )
+
+
+
 
 ----------------------------------------------------------------------------------------------------- Sounds_M416
 sound.Add( {
@@ -798,6 +1190,19 @@ sound.Add( {
 		"weapons/arc9/stalker2/ar_tar21/fire_core_4.ogg",
     }
 } )
+sound.Add( {
+    name = "Stalker2.ForaFireSil",
+    channel = CHAN_STATIC,
+    volume = 1,
+    level = 125,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/ar_tar21/fire_sil_1.ogg",
+		"weapons/arc9/stalker2/ar_tar21/fire_sil_2.ogg",
+		"weapons/arc9/stalker2/ar_tar21/fire_sil_3.ogg",
+		"weapons/arc9/stalker2/ar_tar21/fire_sil_4.ogg",
+    }
+} )
 
 sound.Add( {
     name = "Stalker2.ForaMagInIntro",
@@ -894,7 +1299,7 @@ sound.Add( {
     }
 } )
 
------------------------------------------------------------------------------------------------------ Sounds_Pm21
+----------------------------------------------------------------------------------------------------- Sounds_PM
 sound.Add( {
     name = "Stalker2.PmFire",
     channel = CHAN_STATIC,
@@ -1215,38 +1620,10 @@ sound.Add( {
 		"weapons/arc9/stalker2/ar_asval/fire_core_4.ogg",
     }
 } )
-sound.Add( {
-    name = "Stalker2.ASVALOutdoors",
-    channel = CHAN_STREAM,
-    volume = 0.5,
-    level = 115,
-    pitch = {95, 110},
-    sound = {
-        "weapons/arc9/stalker2/ar_asval/outdoors_1.ogg",
-		"weapons/arc9/stalker2/ar_asval/outdoors_2.ogg",
-		"weapons/arc9/stalker2/ar_asval/outdoors_3.ogg",
-		"weapons/arc9/stalker2/ar_asval/outdoors_4.ogg",
-		"weapons/arc9/stalker2/ar_asval/outdoors_5.ogg",
-    }
-} )
-sound.Add( {
-    name = "Stalker2.ASVALIndoors",
-    channel = CHAN_STREAM,
-    volume = 0.1,
-    level = 115,
-    pitch = {95, 110},
-    sound = {
-        "weapons/arc9/stalker2/ar_asval/indoors_1.ogg",
-		"weapons/arc9/stalker2/ar_asval/indoors_2.ogg",
-		"weapons/arc9/stalker2/ar_asval/indoors_3.ogg",
-		"weapons/arc9/stalker2/ar_asval/indoors_4.ogg",
-		"weapons/arc9/stalker2/ar_asval/indoors_5.ogg",
-    }
-} )
 
 sound.Add( {
     name = "Stalker2.ASVALMagIn",
-    channel = CHAN_WEAPON,
+    channel = CHAN_STATIC,
     volume = 1,
     level = 65,
     pitch = {95, 105},
@@ -1257,7 +1634,7 @@ sound.Add( {
 } )
 sound.Add( {
     name = "Stalker2.ASVALMagOut",
-    channel = CHAN_WEAPON,
+    channel = CHAN_STATIC,
     volume = 1,
     level = 65,
     pitch = {95, 105},
@@ -1269,7 +1646,7 @@ sound.Add( {
 } )
 sound.Add( {
     name = "Stalker2.ASVALMagOutOutro",
-    channel = CHAN_WEAPON,
+    channel = CHAN_STATIC,
     volume = 1,
     level = 65,
     pitch = {95, 105},
@@ -1281,7 +1658,7 @@ sound.Add( {
 } )
 sound.Add( {
     name = "Stalker2.ASVALMagOutIntro",
-    channel = CHAN_ITEM,
+    channel = CHAN_STATIC,
     volume = 1,
     level = 65,
     pitch = {95, 105},
@@ -1525,5 +1902,432 @@ sound.Add( {
     pitch = {95, 100},
     sound = {
         "weapons/arc9/stalker2/shot_boomstick/SFX_Boomstick_BreakBullet.ogg",
+    }
+} )
+
+----------------------------------------------------------------------------------------------------- Sounds_DniPro
+sound.Add( {
+    name = "Stalker2.DniProFire",
+    channel = CHAN_STATIC,
+    volume = 1,
+    level = 125,
+    pitch = {90, 120},
+    sound = {
+        "weapons/arc9/stalker2/ar_dnipro/fire_1.ogg",
+		"weapons/arc9/stalker2/ar_dnipro/fire_2.ogg",
+		"weapons/arc9/stalker2/ar_dnipro/fire_3.ogg",
+		"weapons/arc9/stalker2/ar_dnipro/fire_4.ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.DniProFireSil",
+    channel = CHAN_STATIC,
+    volume = 1,
+    level = 125,
+    pitch = {90, 120},
+    sound = {
+        "weapons/arc9/stalker2/ar_dnipro/sil_1.ogg",
+		"weapons/arc9/stalker2/ar_dnipro/sil_2.ogg",
+		"weapons/arc9/stalker2/ar_dnipro/sil_3.ogg",
+		"weapons/arc9/stalker2/ar_dnipro/sil_4.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.DniProMagOut",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/ar_dnipro/S_Dnipro_Mag_Out_01 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_Mag_Out_02 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_Mag_Out_03 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.DniProMagInIntro",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/ar_dnipro/S_Dnipro_Mag_In_Intro_01 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_Mag_In_Intro_02 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_Mag_In_Intro_03 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_Mag_In_Intro_04 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.DniProMagInOutro",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/ar_dnipro/S_Dnipro_Mag_In_Outro_01 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_Mag_In_Outro_02 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_Mag_In_Outro_03 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_Mag_In_Outro_04 (SFX).ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.DniProSlideBack",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/ar_dnipro/S_Dnipro_Slide_Back_01 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_Slide_Back_02 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_Slide_Back_03 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_Slide_Back_04 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.DniProSlideForward",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/ar_dnipro/S_Dnipro_Slide_Forward_01 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_Slide_Forward_02 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_Slide_Forward_03 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_Slide_Forward_04 (SFX).ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.DniProJamBack",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/ar_dnipro/S_Dnipro_SlideJam_Back_01 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_SlideJam_Back_02 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_SlideJam_Back_03 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_SlideJam_Back_04 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_SlideJam_Back_05 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_SlideJam_Back_06 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_SlideJam_Back_07 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_SlideJam_Back_08 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.DniProJamBreakBullet",
+    channel = CHAN_ITEM,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/ar_dnipro/S_Dnipro_SlideJam_BreakBullet_01 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_SlideJam_BreakBullet_02 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_SlideJam_BreakBullet_03 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_SlideJam_BreakBullet_04 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.DniProSlideJam",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/ar_dnipro/S_Dnipro_SlideJam_Effort_01 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_SlideJam_Effort_02 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_SlideJam_Effort_03 (SFX).ogg",
+		"weapons/arc9/stalker2/ar_dnipro/S_Dnipro_SlideJam_Effort_04 (SFX).ogg",
+    }
+} )
+
+----------------------------------------------------------------------------------------------------- Sounds_M860
+sound.Add( {
+    name = "Stalker2.M860Fire",
+    channel = CHAN_STATIC,
+    volume = 1,
+    level = 125,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/shot_m860/fire_core_1.ogg",
+		"weapons/arc9/stalker2/shot_m860/fire_core_2.ogg",
+		"weapons/arc9/stalker2/shot_m860/fire_core_3.ogg",
+		"weapons/arc9/stalker2/shot_m860/fire_core_4.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.M860MagIn",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/shot_m860/S_M860_Mag_In_01 (SFX).ogg",
+		"weapons/arc9/stalker2/shot_m860/S_M860_Mag_In_02 (SFX).ogg",
+		"weapons/arc9/stalker2/shot_m860/S_M860_Mag_In_03 (SFX).ogg",
+		"weapons/arc9/stalker2/shot_m860/S_M860_Mag_In_04 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.M860MagInTac",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/shot_m860/S_M860_Mag_In_Tactical_01 (SFX).ogg",
+		"weapons/arc9/stalker2/shot_m860/S_M860_Mag_In_Tactical_02 (SFX).ogg",
+		"weapons/arc9/stalker2/shot_m860/S_M860_Mag_In_Tactical_03 (SFX).ogg",
+		"weapons/arc9/stalker2/shot_m860/S_M860_Mag_In_Tactical_04 (SFX).ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.M860SlideBack",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/shot_m860/S_M860_Slide_Back_01 (SFX).ogg",
+		"weapons/arc9/stalker2/shot_m860/S_M860_Slide_Back_02 (SFX).ogg",
+		"weapons/arc9/stalker2/shot_m860/S_M860_Slide_Back_03 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.M860SlideForward",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/shot_m860/S_M860_Slide_Forward_01 (SFX).ogg",
+		"weapons/arc9/stalker2/shot_m860/S_M860_Slide_Forward_02 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.M860SlideJamBack",
+    channel = CHAN_ITEM,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/shot_m860/S_M860_SlideJam_Back_01 (SFX).ogg",
+		"weapons/arc9/stalker2/shot_m860/S_M860_SlideJam_Back_02 (SFX).ogg",
+		"weapons/arc9/stalker2/shot_m860/S_M860_SlideJam_Back_03 (SFX).ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.M860SlideEffort",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/shot_m860/S_M860_SlideJam_Effort_01 (SFX).ogg",
+		"weapons/arc9/stalker2/shot_m860/S_M860_SlideJam_Effort_02 (SFX).ogg",
+		"weapons/arc9/stalker2/shot_m860/S_M860_SlideJam_Effort_03 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.M860BreakBullet",
+    channel = CHAN_ITEM,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/shot_m860/S_M860_SlideJam_BreakBullet_01 (SFX).ogg",
+		"weapons/arc9/stalker2/shot_m860/S_M860_SlideJam_BreakBullet_02 (SFX).ogg",
+		"weapons/arc9/stalker2/shot_m860/S_M860_SlideJam_BreakBullet_03 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.M860Shake",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/shot_m860/S_M860_SlideJam_Shake_01 (SFX).ogg",
+		"weapons/arc9/stalker2/shot_m860/S_M860_SlideJam_Shake_02 (SFX).ogg",
+		"weapons/arc9/stalker2/shot_m860/S_M860_SlideJam_Shake_03 (SFX).ogg",
+		"weapons/arc9/stalker2/shot_m860/S_M860_SlideJam_Shake_04 (SFX).ogg",
+    }
+} )
+
+----------------------------------------------------------------------------------------------------- Sounds_Rhino
+sound.Add( {
+    name = "Stalker2.rhinoFire",
+    channel = CHAN_STATIC,
+    volume = 1,
+    level = 125,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/pt_rhino/fire_core_1.ogg",
+		"weapons/arc9/stalker2/pt_rhino/fire_core_2.ogg",
+		"weapons/arc9/stalker2/pt_rhino/fire_core_3.ogg",
+		"weapons/arc9/stalker2/pt_rhino/fire_core_4.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.RhinoBulletInColision",
+    channel = CHAN_ITEM,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Bullet_Colision_In_001 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Bullet_Colision_In_002 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Bullet_Colision_In_003 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Bullet_Colision_In_004 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Bullet_Colision_In_005 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Bullet_Colision_In_006 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.RhinoCylinderRoll",
+    channel = CHAN_ITEM,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Bullet_Cylinder_Roll_Short_01 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Bullet_Cylinder_Roll_Short_02 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Bullet_Cylinder_Roll_Short_03 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.RhinoBulletIn",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Bullet_In_Cylinder_001 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Bullet_In_Cylinder_002 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Bullet_In_Cylinder_003 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Bullet_In_Cylinder_004 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Bullet_In_Cylinder_005 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Bullet_In_Cylinder_006 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.RhinoBulletOut",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 105},
+    sound = {
+        "weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Bullets_Out_Calm_01 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Bullets_Out_Calm_02 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Bullets_Out_Calm_03 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Bullets_Out_Calm_04 (SFX).ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.RhinoCylinderIn",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Cylinder_In_01 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Cylinder_In_02 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Cylinder_In_03 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Cylinder_In_04 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.RhinoCylinderOut",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Cylinder_Out_01 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Cylinder_Out_02 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Cylinder_Out_03 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Cylinder_Out_04 (SFX).ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.RhinoCylinderRollLong",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {85, 90},
+    sound = {
+        "weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Cylinder_Roll_Long (SFX).ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.RhinoBulletInCalm",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Mag_In_Calm_01 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Mag_In_Calm_02 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Mag_In_Calm_03 (SFX).ogg",
+		"weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Mag_In_Calm_04 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.RhinoBulletOutEmpty",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {90, 105},
+    sound = {
+        "weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Mag_Out_Empty_Calm (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.RhinoMagTap",
+    channel = CHAN_ITEM,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Mag_Tap (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.RhinoTriggerOut",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Trigger_Out (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.RhinoTriggerTap",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_Trigger_Tap (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.RhinoTriggerJam",
+    channel = CHAN_ITEM,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_TriggerJam (SFX).ogg",
     }
 } )

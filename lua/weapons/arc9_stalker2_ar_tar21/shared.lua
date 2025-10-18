@@ -1,20 +1,12 @@
 AddCSLuaFile()
 
 -------------------------------------------------------------------------------------------------------
--- Define Base ----------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------
-SWEP.Base = "arc9_base"
-SWEP.Spawnable = true
-
--------------------------------------------------------------------------------------------------------
 -- Hud and Spawn Menu Elements ------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
 SWEP.CustomSelectIcon = Material("vgui/hud/vgui_fora")
 
-SWEP.Category = "ARC9 - S.T.A.L.K.E.R. 2"
 SWEP.SubCategory = "Assault Rifles"
 
-SWEP.AdminOnly = false
 SWEP.PrintName = "Fora-221"
 SWEP.TrueName = "IWI Tavor SAR TSB16"
 
@@ -53,13 +45,13 @@ SWEP.NoTPIK			 = false
 SWEP.TPIKnolefthand	 = false
 SWEP.NoTPIKVMPos	 = false
  -- Hold Types -----------------------------------------------------------------------------------------
-SWEP.HoldType                = "revolver"
-SWEP.HoldTypeSprint          = "revolver"
+SWEP.HoldType                = "ar2"
+SWEP.HoldTypeSprint          = "ar2"
 SWEP.HoldTypeHolstered       = nil
-SWEP.HoldTypeSights       	 = "revolver"
+SWEP.HoldTypeSights       	 = "ar2"
 SWEP.HoldTypeCustomize 		 = "slam"
-SWEP.HoldTypeBlindfire		 = "revolver"
-SWEP.HoldTypeNPC 			 = "revolver"
+SWEP.HoldTypeBlindfire		 = "ar2"
+SWEP.HoldTypeNPC 			 = "ar2"
 
 SWEP.AnimShoot 				 = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 SWEP.AnimReload 			 = ACT_HL2MP_GESTURE_RELOAD_MAGIC -- While in TPIK only -- Tip: if you dont want any additional anim put ACT_HL2MP_GESTURE_RELOAD_MAGIC here instead!
@@ -72,19 +64,20 @@ SWEP.NonTPIKAnimMelee		 = ACT_GMOD_GESTURE_MELEE_SHOVE_2HAND
 -- Weapon Stats ---------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
 SWEP.DamageMax			 = 17 * (GetConVar("arc9_stalker2_mult_dmg"):GetFloat())
-SWEP.DamageMin 			 = SWEP.DamageMax / 1.5
+SWEP.DamageMin 			 = SWEP.DamageMax / 3
 
-SWEP.RangeMax			 = 220 / 0.0254
-SWEP.RangeMin 			 = SWEP.RangeMax / 3
+SWEP.RangeMin 			 = 22 / 0.0254
+SWEP.RangeMax			 = SWEP.RangeMin * 6
+SWEP.CurvedDamageScaling = false
 
 SWEP.Num 				 = 1
 SWEP.DamageType			 = DMG_BULLET
 
 SWEP.ImpactForce		 = 1 
 SWEP.ArmorPiercing		 = 0.4
-SWEP.Penetration		 = 400/1000/0.0254
+SWEP.Penetration		 = 300/1000/0.0254
 
-SWEP.PhysBulletMuzzleVelocity 	= 670 / 0.0254
+SWEP.PhysBulletMuzzleVelocity 	= 711 / 0.0254
 SWEP.RicochetChance 			= SWEP.PhysBulletMuzzleVelocity/100000
 
 SWEP.RPM = 800
@@ -97,15 +90,9 @@ SWEP.Firemodes = { -- -1: Automatic, 1: Semi, 2: Two-round burst, 3: Three-round
     },
 }
 
-SWEP.BodyDamageMults = {
-    [HITGROUP_HEAD] = 2,
-    [HITGROUP_CHEST] = 1,
-    [HITGROUP_STOMACH] = 1,
-    [HITGROUP_LEFTARM] = 0.7,
-    [HITGROUP_RIGHTARM] = 0.7,
-    [HITGROUP_LEFTLEG] = 0.7,
-    [HITGROUP_RIGHTLEG] = 0.7,
-}
+SWEP.GunHealth 			= 2250
+SWEP.GunHealthMax 		= SWEP.GunHealth
+SWEP.GunDamagePerShot 	= 1.39 * (GetConVar("arc9_stalker2_mult_heat"):GetFloat())
 
 -- Magazine -------------------------------------------------------------------------------------------
 SWEP.Ammo 			= "ar2" 
@@ -113,10 +100,6 @@ SWEP.Ammo 			= "ar2"
 SWEP.ChamberSize 	= 1 
 SWEP.ClipSize 		= 30
 SWEP.SupplyLimit    = 4
-
-SWEP.AmmoPerShot    = 1 
-SWEP.InfiniteAmmo   = false 
-SWEP.BottomlessClip = false 
 
 -- Recoil ---------------------------------------------------------------------------------------------
 SWEP.RecoilSeed = 421
@@ -155,11 +138,11 @@ SWEP.RecoilLookupTable =
 	-23,
 }
 
-SWEP.Recoil 								= (0.6) * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
-SWEP.RecoilMultSights                       = 0.8
+SWEP.Recoil 								= (1) * (GetConVar("arc9_stalker2_mult_recoil"):GetFloat())
+SWEP.RecoilMultSights                       = 0.5
 
 SWEP.RecoilRandomUp 						= 0.1
-SWEP.RecoilRandomSide 						= 0.33
+SWEP.RecoilRandomSide 						= 0.5
 
 SWEP.RecoilAutoControl 						= 1.7
 SWEP.RecoilAutoControlMultShooting       	= 0.25
@@ -171,28 +154,10 @@ SWEP.RecoilFullResetTime 					= 0.35
 SWEP.RecoilPerShot 							= 1
 SWEP.RecoilMax 								= SWEP.ClipSize
 
----- Weapon Visual Recoil
-SWEP.UseVisualRecoil 						= true
-SWEP.PhysicalVisualRecoil 					= false 
-
-SWEP.VisualRecoilMultHipFire 				= 0.1
-SWEP.VisualRecoilMultSights 				= 0.005
-SWEP.VisualRecoilMultCrouch 				= 1
-
-SWEP.VisualRecoilUp 						= 1 
-SWEP.VisualRecoilSide 						= 1.5
-SWEP.VisualRecoilRoll 						= 100
-
-SWEP.VisualRecoilPunch 						= 3
-SWEP.VisualRecoilPunchMultSights 			= 8
-
-SWEP.RecoilKick 							= 1.0 -- Camera recoil
-SWEP.RecoilKickDamping 						= 25.0 -- Camera recoil damping
-
 -- Spread ---------------------------------------------------------------------------------------------
-SWEP.Spread 					= 0.0198 * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
+SWEP.Spread 					= 0.0108 * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
 
-SWEP.SpreadAddRecoil 			= 0.00108 -- Applied per unit of recoil.
+SWEP.SpreadAddRecoil 			= 0.001 -- Applied per unit of recoil.
 SWEP.SpreadMultSights			= -SWEP.Spread
 SWEP.SpreadMultCrouch 			= 0.85
 SWEP.SpreadMultMove 			= 1.5
@@ -201,93 +166,50 @@ SWEP.SpreadMultMidAir 			= 2.5
 SWEP.RecoilModifierCap 			= SWEP.RecoilMax
 SWEP.RecoilModifierCapSights 	= 0
 
--- Weapon Handling ------------------------------------------------------------------------------------
-SWEP.Sway 						= 0 -- How much the gun sways
-SWEP.SwayAddSighted 			= 0.35
-SWEP.SwayAddMidAir 				= 1.0 
-
-SWEP.AimDownSightsTime 			= 0.45
-SWEP.SprintToFireTime 			= 0.37
-SWEP.NoFireDuringSighting 		= true
-
-SWEP.TriggerDelay 				= true 
-SWEP.TriggerDelayCancellable 	= false
-SWEP.TriggerDelayTime 			= 0.02
-
-SWEP.Speed 						= 1
-SWEP.SpeedMultSights 			= 0.92
-SWEP.SpeedMultShooting			= 1
-
-SWEP.BarrelLength 				= 26 
-SWEP.PushBackForce 				= 1
-SWEP.FreeAimRadius 				= 2
-
--- Malfunctions ----------------------------------------------------------------------------------------------
-SWEP.Overheat 			= true
-SWEP.HeatPerShot 		= 1.39 * (GetConVar("arc9_stalker2_mult_heat"):GetFloat())
-SWEP.HeatCapacity 		= 2250
-SWEP.HeatDissipation 	= 0.5 -- rounds' worth of heat lost per second
-SWEP.HeatLockout 		= false 
-SWEP.HeatDelayTime 		= 1 -- Amount of time that passes before heat begins to dissipate.
-SWEP.HeatFix 			= false
-
-if not GetConVar("arc9_stalker2_bool_heat"):GetBool() then
-	SWEP.Overheat 			= false
-end 
-
--- Melee ----------------------------------------------------------------------------------------------
-SWEP.Bash = true
-
-SWEP.BashDamage = 15
-SWEP.BashRange = 65
-SWEP.BashLungeRange = 0
-SWEP.PreBashTime = 0.27
-SWEP.PostBashTime = 0.4
-SWEP.BashDamageType = DMG_CLUB
-SWEP.BashDecal = "ExplosiveGunshot"
-SWEP.BashImpact = true -- Creates a Impact effect that leaves a bullet hole.
+SWEP.BarrelLength 				= 32 
 
 -------------------------------------------------------------------------------------------------------
 -- Viewmodel ------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
-SWEP.ViewModelFOVBase = 70
+SWEP.ViewModelFOVBase = 60
 
 SWEP.IronSights = {
-    Pos = Vector(-0, 0, 0.8),
-    Ang = Angle(-0, 0.15, 0),
-    Magnification = 1.17,
+    Pos = Vector(-0.0, -0.5, 2.12),
+    Ang = Angle(-0.0, 0.0, 0),
+    Magnification = 1.15,
     CrosshairInSights = false,
     Blur = true, 
 }
 SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
-    Pos = Vector(-0, 0, 0),
-    Ang = Angle(0, 0, -0),
+    Pos = Vector(-0, 15, -2),
+    Ang = Angle(-20, 0, 70),
 }
 
-SWEP.ActivePos = Vector(-0.0, -1, 0.7) 
-SWEP.ActiveAng = Angle(0, 1, 0)
+SWEP.ActivePos = Vector(-0.5, -0.0, 2.0) 
+SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.MovingPos =  Vector(-0, -0, -0)
 SWEP.MovingAng =  Angle(0, -2, -6)
 SWEP.MovingMidPoint = {
-    Pos = Vector(0, -0, -1),
-    Ang = Angle(0, 10, 0)
+    Pos = Vector(0, -0, -0),
+    Ang = Angle(0, 2, 0)
 }
 
-SWEP.CrouchPos = Vector(-0.8, -0, -0.75)
-SWEP.CrouchAng = Angle(-0, -0, -8)
+SWEP.CrouchPos = Vector(-1.0, -1, -0.5)
+SWEP.CrouchAng = Angle(-0, -0, -10)
 
 SWEP.SprintVerticalOffset = false -- Moves vm when looking up/down while sprinting (set to false if gun clips into camera)
 SWEP.ReloadNoSprintPos = false -- No sprintpos during reloads
-SWEP.SprintPos = Vector(1, -2, 0.35) 
-SWEP.SprintAng = Angle(35, 0, -30)
+SWEP.SprintPos = Vector(0, -0, 1) 
+SWEP.SprintAng = Angle(15, -10, -30)
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -0, -0),
-    Ang = Angle(10, -20, 0)
+    Ang = Angle(10, 5, -30)
 }
 
 SWEP.NearWallPos = Vector(0, -0, -10.0)
 SWEP.NearWallAng = Angle(-5, 50, 10) 
+
 
 SWEP.CustomizeAng = Angle(90, -0, 0)
 SWEP.CustomizePos = Vector(12, 32, 8)
@@ -303,7 +225,7 @@ SWEP.ShouldDropMagEmpty 		= true
 
 SWEP.DropMagazineQCA 			= 4
 SWEP.DropMagazineAmount 		= 1 
-SWEP.DropMagazineTime 			= 1.0
+SWEP.DropMagazineTime 			= 1
 
 SWEP.DropMagazinePos 			= Vector(-0, 0, -0) -- offsets
 SWEP.DropMagazineAng 			= Angle(0, 0, 0)
@@ -318,8 +240,7 @@ SWEP.DropMagazineSounds 		= {"physics/metal/weapon_impact_soft1.wav",
 SWEP.CaseEffectQCA 				= 3 -- QC Attachment for shell ejection.					 
 SWEP.NoShellEject 				= false
 SWEP.NoShellEjectManualAction 	= false -- Don't eject shell while cycling
-SWEP.ShellCorrectAng = Angle(0, -90, 0)
-
+SWEP.ShellCorrectAng 			= Angle(0, -90, 0)		 
 SWEP.ShellModel 				= "models/shells/shell_556.mdl" -- shell_12gauge, shell_338mag, shell_556, shell_57, shell_762nato, shell_9mm
 
 -- Muzzle Flash -----------------------------------------------------------------------------------------
@@ -328,24 +249,6 @@ SWEP.AfterShotQCA 				= 2 -- QC Attachment that controls after shot particle.
 
 SWEP.MuzzleParticle 			= { "muzzleflash_FAMAS" } -- m79_smoke_c m79_shockwave
 SWEP.AfterShotParticle 			= "barrel_smoke"
-
--------------------------- TRACERS
-SWEP.TracerNum 					= 1 -- Tracer every X
-SWEP.TracerFinalMag 			= 0 -- The last X bullets in a magazine are all tracers
-SWEP.TracerEffect 				= "ARC9_tracer" -- The effect to use for hitscan tracers
-SWEP.TracerColor 				= Color(255, 255, 210) -- Color of tracers. Only works if tracer effect supports it. For physical bullets, this is compressed down to 9-bit color.
-SWEP.TracerSize 				= 1
-
--- Camera ------------------------------------------------------------------------------------------------
-SWEP.CamQCA 					= 1 -- QC Attachment for camera movement.
-
-SWEP.CamQCA_Mult 				= 1 -- Intensity for QC camera movement.
-SWEP.CamQCA_Mult_ADS 			= nil -- Intensity for QC camera movement in ADS.
-SWEP.CamCoolView 				= false -- Enable to use procedural camera movement. Set CamQCA to muzzle QCA or something.
-SWEP.CamOffsetAng 				= Angle(0, 0, 0)
-
-SWEP.BobSprintMult 				= 0.033 -- 
-SWEP.BobWalkMult 				= 0.5 -- same but for all non sprint actions
 
 -- Bones -------------------------------------------------------------------------------------------------
 SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
@@ -357,32 +260,34 @@ SWEP.HideBones = {
 -------------------------------------------------------------------------------------------------------
 -- Sounds ---------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
-SWEP.ShootSound               	= { "Stalker2.ForaFire" }
-SWEP.ShootSoundSilenced       	= { "Stalker2.AK74FireSil" } 
+SWEP.ShootSound               	= { "Stalker2.ForaFire" } 
+SWEP.ShootSoundSilenced       	= { "Stalker2.ForaFireSil" } 
 
-SWEP.ShootSoundIndoor 			= { "Stalker2.5K.MK18TailIndoor" }  
-SWEP.DistantShootSound 			= { "Stalker2.5K.MK18TailOutdoor" }  
-SWEP.ShootSoundIndoorSilenced 	= { "Stalker2.5K.SMGSilTailIndoor" }  
-SWEP.DistantShootSoundSilenced  = { "Stalker2.5K.RifleSilTailOutdoor" }  
+SWEP.ShootSoundIndoor 			= { "Stalker2.IntArMedium" }  
+SWEP.DistantShootSound 			= { "Stalker2.ExtArAClose" }  
+SWEP.ShootSoundIndoorSilenced 	= { "Stalker2.TailArSilenced" }  
+SWEP.DistantShootSoundSilenced  = { "Stalker2.TailArSilenced" }  
 
 SWEP.DryFireSound 				= { "Stalker2.Dry" }  
-SWEP.TriggerDownSound 			= { "Stalker2.Trigger" }  
-SWEP.TriggerUpSound 			= { "Stalker2.Trigger" }  
+SWEP.TriggerDownSound 			= { "Stalker2.ARTrigger" }  
+SWEP.TriggerUpSound 			= { "Stalker2.ARTrigger" }  
 
 SWEP.EnterSightsSound 			= { "Stalker2.5K.AimIn" }  
 SWEP.ExitSightsSound 			= { "Stalker2.5K.AimOut" }  
 SWEP.MalfunctionSound 			= { "Stalker2.Jam" }  
 
+SWEP.FiremodeSound 				= { "Stalker2.ARChangelevel" }  
+
 -------------------------------------------------------------------------------------------------------
 -- Attachments ----------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
 
-SWEP.DefaultBodygroups = "00000000000"
+SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentElements = {
-	["stalker2_tar21_mag_big"] = { Bodygroups = { {4, 1} } },
-	["stalker2_tar21_front_blank"] = { Bodygroups = { {5, 1} } },
-	["stalker2_tar21_rear_blank"] = { Bodygroups = { {6, 1} } },
+	["stalker2_tar21_mag_big"] = { Bodygroups = { {5, 1} } },
+	["stalker2_tar21_front"] = { Bodygroups = { {6, 1} } },
+	["stalker2_tar21_rear"] = { Bodygroups = { {7, 1} } },
 }
 
 SWEP.Attachments = {
@@ -407,7 +312,7 @@ SWEP.Attachments = {
         PrintName = "Optic",
 		Bone = "jnt_offset",
         Category = {"scp5k_optic", "csgo_optic", "cod2019_optic" },
-		InstalledElements = {"stalker2_tar21_front_blank", "stalker2_tar21_rear_blank"},
+		InstalledElements = {"stalker2_tar21_front", "stalker2_tar21_rear"},
 		CorrectiveAng = Angle(-0.22, -0.29, 0),
 		Pos = Vector(2.5, -0, 4.55),
         Ang = Angle(-0, 0, -0),
@@ -479,7 +384,7 @@ SWEP.InstantSightIdle = false
 
 SWEP.Animations = {
     ["idle"] = {
-        Source = {"basepose"},
+        Source = {"idle"},
     },
     ------------------------------------------------ Sights
 	["enter_sights"] = {
@@ -513,6 +418,9 @@ SWEP.Animations = {
     ["fire"] = {
         Source = {"fire"},
     },
+	["fire_empty"] = {
+        Source = {"fire"},
+    },
 	["fire_sights"] = {
         Source = {"fire_ads"},
     },
@@ -530,13 +438,12 @@ SWEP.Animations = {
         MinProgress = 0.8,
         FireASAP = true,
 		EventTable = {
-			{s = "Stalker2.ARC9Cloth", t = 3 / 30},
-			{s = "Stalker2.ARC9Cloth2", t = 22 / 30},
+			{s = "Stalker2.ArRattleStrong", t = 5 / 30},
         },
     },
 	["ready"] = {
         Source = {"ready"},
-        MinProgress = 0.8,
+        MinProgress = 0.9,
         FireASAP = true,
 		EventTable = {
 			{s = "Stalker2.ARC9Cloth2", t = 3 / 30},
@@ -547,42 +454,66 @@ SWEP.Animations = {
 			{s = "Stalker2.ForaSlideBack", t = 55 / 30},
 			{s = "Stalker2.ForaSlideForward", t = 68 / 30},
         },
-    },
+		IKTimeLine = {
+            {
+                t = 0.84,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+	},
 	["holster"] = {
         Source = {"holster"},
-		Time = 0.5,
+		Time = 0.75,
+		EventTable = {
+			{s = "Stalker2.ArRattleStrong", t = 1 / 30},
+        },
     },
     --------------------------------------------------- Reload
     ["reload"] = {
         Source = {"reload"},
         MinProgress = 0.7,
+		MagSwapTime = 1,
         FireASAP = false,
 		EventTable = {
+			{s = "Stalker2.ArRattleMedium", t = 1 / 30},
 		    {s = "Stalker2.ForaMagInOut", t = 8 / 30},
+			{s = "Stalker2.ArRattleWeak", t = 12 / 30},
+			{s = "Stalker2.ArRattleMedium", t = 27 / 30},
 			{s = "Stalker2.ForaMagInIntro", t = 35 / 30},
-			{s = "Stalker2.ForaMagInOutro", t = 45 / 30},
+			{s = "Stalker2.ForaMagInOutro", t = 49 / 30},
         },
     },
 	["reload_empty"] = {
         Source = {"reload_empty"},
         MinProgress = 0.75,
+		MagSwapTime = 1,
         FireASAP = false,
 		EventTable = {
+			{s = "Stalker2.ArRattleMedium", t = 1 / 30},
 			{s = "Stalker2.ForaMagInOut", t = 8 / 30},
+			{s = "Stalker2.ArRattleWeak", t = 12 / 30},
+			{s = "Stalker2.ArRattleMedium", t = 27 / 30},
 			{s = "Stalker2.ForaMagInIntro", t = 35 / 30},
-			{s = "Stalker2.ForaMagInOutro", t = 45 / 30},
-			{s = "Stalker2.ForaSlideBack", t = 62 / 30},
+			{s = "Stalker2.ForaMagInOutro", t = 49 / 30},
+			{s = "Stalker2.ArRattleMedium", t = 58 / 30},
+			{s = "Stalker2.ForaSlideBack", t = 64 / 30},
 			{s = "Stalker2.ForaSlideForward", t = 75 / 30},
         },
     },
     --------------------------------------------------- Tacticool
 	["fix"] = {
         Source = {"malfunction"},
-        MinProgress = 0.88,
+        MinProgress = 0.9,
         FireASAP = true,
 		EventTable = {
-            {s = "Stalker2.ARC9Cloth", t = 5 / 30},
-			{s = "Stalker2.ARC9Cloth", t = 35 / 30},
+			{s = "Stalker2.ArRattleMedium", t = 5 / 30},
+			{s = "Stalker2.ArRattleWeak", t = 35 / 30},
 			{s = "Stalker2.ForaSlideJamBack", t = 57 / 30},
 			{s = "Stalker2.ForaSlideJamEffort", t = 60 / 30},
 			{s = "Stalker2.ForaSlideJamForward", t = 73 / 30},
@@ -590,14 +521,9 @@ SWEP.Animations = {
 			{s = "Stalker2.ForaSlideJamBack", t = 87 / 30},
 			{s = "Stalker2.ForaSlideJamEffort", t = 92 / 30},
 			{s = "Stalker2.ForaSlideJamForward", t = 96 / 30},
-			{s = "Stalker2.ARC9Cloth", t = 107 / 30},
+			{s = "Stalker2.ArRattleMedium", t = 107 / 30},
         },
     },
-	-- ["inspect"] = {
-        -- Source = {"malfunction"},
-        -- MinProgress = 0.97,
-        -- FireASAP = true,
-    -- },
 	--------------------------------------------------- Movement
 	["jump_in"] = {
         Source = {"jump_start"},
@@ -631,119 +557,5 @@ SWEP.Animations = {
     },
 }
 
-SWEP.Hook_Deploy = function(self)
-	self.MidAir = 0
-return end
 
-SWEP.Hook_Think = function(self)
-	local owner = self:GetOwner() 
-
-	if self:GetNextPrimaryFire() >= CurTime() then return end
-	if !self:CanReload() then return end
-	if self:GetInSights() == true then return end
-	if self:GetUBGL() == true then return end
-	
-	if (owner:KeyPressed(IN_JUMP)) and self.MidAir == 0 then
-		self:PlayAnimation("jump_in", 1, true)
-		self.MidAir = 1
-	end
-	if not owner:OnGround() then
-		self.MidAir = 1
-	end
-	if self.MidAir == 1 and owner:OnGround() then -- Jump End
-		self.MidAir = 0
-		self:PlayAnimation("jump_end", 1, false)
-	end
-return end
-
-SWEP.Hook_TranslateAnimation = function (self, anim)
-	if self.MidAir == 1 then
-	    if anim == "idle" then
-            return "jump_loop"
-		end
-	end
-end	
-
-SWEP.Hook_PrimaryAttack = function(self)
-	
-	if self:Clip1() == 1 then return end
-	
-	local heatAmount = self:GetHeatAmount()
-	local heatCapacity = self.HeatCapacity
-
-	if heatCapacity > 0 then
-		local heatPercentage = (heatAmount / heatCapacity) * 100
-
-		local minHeat = 10 -- Minimum heat percentage where chance starts
-		local maxHeat = 75 -- Heat percentage where chance reaches full extent
-		local maxChance = 4 -- Maximum chance value
-
-		local chance = 0
-		if heatPercentage >= minHeat then
-			if heatPercentage <= maxHeat then
-				chance = ((heatPercentage - minHeat) / (maxHeat - minHeat)) * maxChance
-			else
-				chance = maxChance
-			end
-		end
-		
-		-- print("Percentage: " .. heatPercentage .. "%")
-		-- print("Chance: " .. chance .. "%")
-			
-		if math.random(1, 100) <= chance then
-			self:SetJammed(true)
-		end
-	end
-	
-	if self:GetJammed() == true then
-		self:EmitSound("Stalker2.Jam")
-	end
-end
-
-SWEP.CustomPoseParamsHandler = function (self, ent, iswm)
-    local owner = self:GetOwner()
-    local vm = owner:GetViewModel()
-    local speed = 3
-	
-	if self:GetJammed() == true then
-		vm:SetPoseParameter("malfunction", 1)
-	else
-		vm:SetPoseParameter("malfunction", 0)
-	end
-	
-    if not self.blend_walk then
-        self.blend_walk = 0
-        self.blend_walk_right = 0
-        self.blend_walk_left = 0
-        self.blend_walk_bwd = 0
-    end
-
-    if owner:KeyDown(IN_FORWARD) then
-        self.blend_walk = math.Approach(self.blend_walk, 0.35, speed * FrameTime())
-    else
-        self.blend_walk = math.Approach(self.blend_walk, 0, speed * FrameTime())
-    end
-
-    if owner:KeyDown(IN_MOVERIGHT) then
-        self.blend_walk_right = math.Approach(self.blend_walk_right, 1, speed * FrameTime())
-    else
-        self.blend_walk_right = math.Approach(self.blend_walk_right, 0, speed * FrameTime())
-    end
-
-    if owner:KeyDown(IN_MOVELEFT) then
-        self.blend_walk_left = math.Approach(self.blend_walk_left, 1, speed * FrameTime())
-    else
-        self.blend_walk_left = math.Approach(self.blend_walk_left, 0, speed * FrameTime())
-    end
-
-    if owner:KeyDown(IN_BACK) then
-        self.blend_walk_bwd = math.Approach(self.blend_walk_bwd, 1, speed * FrameTime())
-    else
-        self.blend_walk_bwd = math.Approach(self.blend_walk_bwd, 0, speed * FrameTime())
-    end
-
-    vm:SetPoseParameter("blend_walk", self.blend_walk)
-    vm:SetPoseParameter("blend_walk_right", self.blend_walk_right)
-    vm:SetPoseParameter("blend_walk_left", self.blend_walk_left)
-    vm:SetPoseParameter("blend_walk_bwd", self.blend_walk_bwd)
-end
+include("weapon_template_stalker2_ar.lua")

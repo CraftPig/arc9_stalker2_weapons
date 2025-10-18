@@ -73,8 +73,8 @@ SWEP.NonTPIKAnimMelee		 = ACT_GMOD_GESTURE_MELEE_SHOVE_2HAND
 SWEP.DamageMax			 = 500 * (GetConVar("arc9_stalker2_mult_dmg"):GetFloat())
 SWEP.DamageMin 			 = SWEP.DamageMax / 1.5
 
-SWEP.RangeMax			 = 1000 / 0.0254
-SWEP.RangeMin 			 = SWEP.RangeMax / 3
+SWEP.RangeMin 			 = 100 / 0.0254
+SWEP.RangeMax			 = SWEP.RangeMin * 3
 
 SWEP.Num 				 = 1
 SWEP.DamageType			 = DMG_SHOCK
@@ -160,11 +160,11 @@ SWEP.RecoilKick 							= 14.0 -- Camera recoil
 SWEP.RecoilKickDamping 						= 5.0 -- Camera recoil damping
 
 -- Spread ---------------------------------------------------------------------------------------------
-SWEP.Spread 					= (0.0500 / 3) * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
+SWEP.Spread 					= 0.0083 * (GetConVar("arc9_stalker2_mult_spread"):GetFloat())
 
-SWEP.SpreadAddRecoil 			= 0.00083 -- Applied per unit of recoil.
-SWEP.SpreadMultSights			= 0.75
-SWEP.SpreadMultCrouch 			= 0.9
+SWEP.SpreadAddRecoil 			= 0.002 -- Applied per unit of recoil.
+SWEP.SpreadMultSights			= -SWEP.Spread
+SWEP.SpreadMultCrouch 			= 0.85
 SWEP.SpreadMultMove 			= 1.5
 SWEP.SpreadMultMidAir 			= 2.5
 
@@ -193,17 +193,17 @@ SWEP.PushBackForce 				= 1
 SWEP.FreeAimRadius 				= 2
 
 -- Malfunctions ----------------------------------------------------------------------------------------------
-SWEP.Overheat 			= true
-SWEP.HeatPerShot 		= 12.5 * (GetConVar("arc9_stalker2_mult_heat"):GetFloat())
-SWEP.HeatCapacity 		= 3750
-SWEP.HeatDissipation 	= 0.5 -- rounds' worth of heat lost per second
-SWEP.HeatLockout 		= false 
-SWEP.HeatDelayTime 		= 1 -- Amount of time that passes before heat begins to dissipate.
-SWEP.HeatFix 			= false
+SWEP.Overheat 			= false
+-- SWEP.HeatPerShot 		= 12.5 * (GetConVar("arc9_stalker2_mult_heat"):GetFloat())
+-- SWEP.HeatCapacity 		= 3750
+-- SWEP.HeatDissipation 	= 0.5 -- rounds' worth of heat lost per second
+-- SWEP.HeatLockout 		= false 
+-- SWEP.HeatDelayTime 		= 1 -- Amount of time that passes before heat begins to dissipate.
+-- SWEP.HeatFix 			= false
 
-if not GetConVar("arc9_stalker2_bool_heat"):GetBool() then
-	SWEP.Overheat 			= false
-end 
+-- if not GetConVar("arc9_stalker2_bool_heat"):GetBool() then
+	-- SWEP.Overheat 			= false
+-- end 
 
 -- Melee ----------------------------------------------------------------------------------------------
 SWEP.Bash = true
@@ -581,47 +581,56 @@ SWEP.Hook_TranslateAnimation = function (self, anim)
 	end
 end	
 
+SWEP.Hook_BlockHasAnimation = function(self, anim)
+	if self:Clip1() == 0 and not self.EmptyTime then
+        self.EmptyTime = CurTime() + 1
+    elseif self:Clip1() > 0 then
+        self.EmptyTime = nil
+    end
+	
+	if anim == "dryfire" then
+        if self.EmptyTime and CurTime() < self.EmptyTime then
+            return false
+        end
+    end
+return end
+
+SWEP.GunHealth = 3750
+SWEP.TotalGunHealth = 3750
+SWEP.GunDamagePerShot = 12.5 * (GetConVar("arc9_stalker2_mult_heat"):GetFloat())
 SWEP.Hook_PrimaryAttack = function(self)
-	if self:Clip1() == 1 then
-		self:EmitSound("Stalker2.GaussMechLast")
+	
+	if not GetConVar("arc9_stalker2_bool_heat"):GetBool() then return end
+	if self:Clip1() == 1 then return end
+	
+	if self.TotalGunHealth == nil then
+		self.TotalGunHealth = self.GunHealth
 	end
 	
-	-- if self:Clip1() == 1 then return end
+	self.GunHealth = self.GunHealth - self.GunDamagePerShot
 	
-	local heatAmount = self:GetHeatAmount()
-	local heatCapacity = self.HeatCapacity
-
-	if heatCapacity > 0 then
-		local heatPercentage = (heatAmount / heatCapacity) * 100
-
-		local minHeat = 10 -- Minimum heat percentage where chance starts
-		local maxHeat = 65 -- Heat percentage where chance reaches full extent
-		local maxChance = 10 -- Maximum chance value
-
-		local chance = 0
-		if heatPercentage >= minHeat then
-			if heatPercentage <= maxHeat then
-				chance = ((heatPercentage - minHeat) / (maxHeat - minHeat)) * maxChance
-			else
-				chance = maxChance
-			end
-		end
+	local MinDurability = self.TotalGunHealth * 0.1
+	local JamChance = 0
+	local GunDamageTaken = self.TotalGunHealth - self.GunHealth
 		
-		-- print("Percentage: " .. heatPercentage .. "%")
-		-- print("Chance: " .. chance .. "%")
-			
-		if math.random(1, 100) <= chance then
-			self:SetJammed(true)
-		end
+	if GunDamageTaken >= MinDurability  then
+		local JamChance = math.min(((((self.GunHealth / self.TotalGunHealth) * 100 ) - 100 ) * -1 ) - 10, 70) 
+	end
+	
+	local rnd = math.random(1,1000)
+	if rnd < JamChance then
+		self:SetJammed(true)	
 	end
 	
 	if self:GetJammed() == true then
 		self:EmitSound("Stalker2.Jam")
 	end
+	
+	-- print("Gun Health: " .. self.GunHealth)
+	-- print("Gun Dmage Taken: " .. GunDamageTaken)
+	-- print("Total Gun Health: " .. self.TotalGunHealth)
+	-- print("Jam Chance: " .. JamChance)
 end
-
--- print(GetConVar("arc9_stalker2_mult_dmg"):GetFloat())
--- print(GetConVar("arc9_stalker2_bool_heat"):GetBool())
 
 SWEP.CustomPoseParamsHandler = function (self, ent, iswm)
     local owner = self:GetOwner()

@@ -74,7 +74,7 @@ sound.Add( {
 sound.Add( {
     name = "Stalker2.5K.MK18TailIndoor",
     channel = CHAN_STREAM,
-    volume = 0.27,
+    volume = 0.24,
     level = 125,
     pitch = {95, 105},
     sound = {
@@ -103,7 +103,7 @@ sound.Add( {
 sound.Add( {
     name = "Stalker2.5K.GlockTailIndoor",
     channel = CHAN_STREAM,
-    volume = 0.5,
+    volume = 0.25,
     level = 125,
     pitch = {95, 105},
     sound = {
@@ -132,7 +132,7 @@ sound.Add( {
 sound.Add( {
     name = "Stalker2.5K.AK762TailIndoor",
     channel = CHAN_STREAM,
-    volume = 0.35,
+    volume = 0.25,
     level = 125,
     pitch = {95, 105},
     sound = {

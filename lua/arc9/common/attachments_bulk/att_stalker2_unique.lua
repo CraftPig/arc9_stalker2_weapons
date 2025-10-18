@@ -28,43 +28,43 @@ ARC9.LoadAttachment(ATT, "stalker2_toz_barrel_short")
 --[[ -----------------------------------------------------------------------------------------------------------
 --------- AK74
 ]] -------------------------------------------------------------------------------------------------------------
-ATT = {}
+-- ATT = {}
 
-ATT.PrintName = "Coupled AKM-74 Magazines"
-ATT.CompactName = "Coupled Mags"
-ATT.Icon = Material("entities/attachments/wrench.png", "mips smooth") 
-ATT.Description = "Coupled magazines for reduced reload time."
+-- ATT.PrintName = "Coupled AKM-74 Magazines"
+-- ATT.CompactName = "Coupled Mags"
+-- ATT.Icon = Material("entities/attachments/wrench.png", "mips smooth") 
+-- ATT.Description = "Coupled magazines for reduced reload time."
 
-ATT.SortOrder = 1
-ATT.MenuCategory = "ARC9 - S.T.A.L.K.E.R. 2"
-ATT.Category = {"stalker2_ak74_mag"}
+-- ATT.SortOrder = 1
+-- ATT.MenuCategory = "ARC9 - S.T.A.L.K.E.R. 2"
+-- ATT.Category = {"stalker2_ak74_mag"}
 
-ATT.Model = "models/weapons/arc9/stalker2/ar_ak74/att_ak74_twinmag.mdl"
-ATT.Scale = 1
-ATT.ModelOffset = Vector(-0.0, -0, -0)
-ATT.ModelAngleOffset = Angle(-0, 90, 0)
-ATT.ActivateElements = {"stalker2_ak74_mag1_blank", "stalker2_ak74_mag2_blank"}
+-- ATT.Model = "models/weapons/arc9/stalker2/ar_ak74/att_ak74_twinmag.mdl"
+-- ATT.Scale = 1
+-- ATT.ModelOffset = Vector(-0.0, -0, -0)
+-- ATT.ModelAngleOffset = Angle(-0, 90, 0)
+-- ATT.ActivateElements = {"stalker2_ak74_mag1_blank", "stalker2_ak74_mag2_blank"}
 
-ATT.ShouldDropMag 				= false
-ATT.ShouldDropMagEmpty 		= false
+-- ATT.ShouldDropMag 				= false
+-- ATT.ShouldDropMagEmpty 		= false
 
-ATT.Hook_EndReload = function(self)
-	if self.Aux == 0 then
-		self.Aux = 1
-	else
-		self.Aux = 0
-	end
-return end
+-- ATT.Hook_EndReload = function(self)
+	-- if self.Aux == 0 then
+		-- self.Aux = 1
+	-- else
+		-- self.Aux = 0
+	-- end
+-- return end
 
-ATT.Hook_TranslateAnimation = function (self, anim)
-	if self.Aux == 1 then
-		return anim .. "_aux"
-	elseif self.Aux == 0 then
-		return anim .. "_paired"
-	end
-end
+-- ATT.Hook_TranslateAnimation = function (self, anim)
+	-- if self.Aux == 1 then
+		-- return anim .. "_aux"
+	-- elseif self.Aux == 0 then
+		-- return anim .. "_paired"
+	-- end
+-- end
 
-ARC9.LoadAttachment(ATT, "stalker2_ak74_mag_twinmag")
+-- ARC9.LoadAttachment(ATT, "stalker2_ak74_mag_twinmag")
 --------------------------------------------------------------------------------------------------------------------------------
 ATT = {}
 
@@ -92,6 +92,38 @@ ATT.Hook_TranslateAnimation = function (self, anim)
 end
 
 ARC9.LoadAttachment(ATT, "stalker2_ak74_mag_ext")
+
+--[[ -----------------------------------------------------------------------------------------------------------
+--------- DniPro
+]] -------------------------------------------------------------------------------------------------------------
+
+ATT = {}
+
+ATT.PrintName = "High-Capacity Dnipro Magazine"
+ATT.CompactName = "Extended Mag"
+ATT.Icon = Material("entities/attachments/wrench.png", "mips smooth") 
+ATT.Description = "Increased magazine capacity at the cost of longer reload time."
+
+ATT.SortOrder = 1
+ATT.MenuCategory = "ARC9 - S.T.A.L.K.E.R. 2"
+ATT.Category = {"stalker2_dnipro_mag"}
+
+ATT.ActivateElements = {"stalker2_dnipro_magbig", "stalker2_dnipro_bullets"}
+
+-- ATT.ReloadTimeMult = 0.95
+-- ATT.SwayAddSighted = -0.2
+-- ATT.AimDownSightsTime = -0.25
+-- ATT.SprintToFireTimeMult = 0.6
+-- ATT.SpreadMult = 1.22
+-- ATT.RecoilMult = 1.15
+ATT.ClipSizeMult = 1.5
+ATT.DropMagazineTime = 1.0
+
+ATT.Hook_TranslateAnimation = function (self, anim)
+	return anim .. "_ext"
+end
+
+ARC9.LoadAttachment(ATT, "stalker2_dnipro_mag_ext")
 
 --[[ -----------------------------------------------------------------------------------------------------------
 --------- GROZA
@@ -143,7 +175,9 @@ ATT.Hook_TranslateAnimation = function (self, anim)
 end
 
 ARC9.LoadAttachment(ATT, "stalker2_groza_mag_drum")
---------------------------------------------------------------------------------------------------------------------------------
+--[[ -----------------------------------------------------------------------------------------------------------
+--------- M416
+]] -------------------------------------------------------------------------------------------------------------
 ATT = {}
 
 ATT.PrintName = "High-Capacity AR416 Magazine"
@@ -157,13 +191,9 @@ ATT.Category = {"stalker2_m416_mag"}
 
 ATT.ActivateElements = {"stalker2_m416_mag_drum"}
 
--- ATT.ReloadTimeMult = 0.95
--- ATT.SwayAddSighted = -0.2
--- ATT.AimDownSightsTime = -0.25
--- ATT.SprintToFireTimeMult = 0.6
--- ATT.SpreadMult = 1.22
--- ATT.RecoilMult = 1.15
-ATT.ClipSizeMult = 1.68
+ATT.DropMagazineModel 			= "models/weapons/arc9/stalker2/ar_m416/w_ar_m416_magbig.mdl"
+ATT.ClipSizeMult 				= 1.68
+ATT.DropMagazineTime 			= 1.15
 
 ATT.Hook_TranslateAnimation = function (self, anim)
 	return anim .. "_ext"
@@ -263,3 +293,26 @@ ATT.Hook_TranslateAnimation = function (self, anim)
 end
 
 ARC9.LoadAttachment(ATT, "stalker2_saiga_mag_ext")
+
+--[[ -----------------------------------------------------------------------------------------------------------
+--------- M860
+]] -------------------------------------------------------------------------------------------------------------
+ATT = {}
+
+ATT.PrintName = "M860 Magazine"
+ATT.CompactName = "Mag Feed"
+ATT.Icon = Material("entities/attachments/wrench.png", "mips smooth") 
+ATT.Description = "Allows the shotgun to accept magazines as a feeding method."
+
+ATT.SortOrder = 1
+ATT.MenuCategory = "ARC9 - S.T.A.L.K.E.R. 2"
+ATT.Category = {"stalker2_m860_mag"}
+
+ATT.ActivateElements = {"stalker2_m860_mag", "stalker2_m860_feed", "stalker2_m860_magbullets"}
+
+-- ATT.ClipSizeMult = 2
+ATT.ShotgunReload = false
+ATT.ShouldDropMag = true
+ATT.ShouldDropMagEmpty = true
+
+ARC9.LoadAttachment(ATT, "stalker2_m860_mag")
