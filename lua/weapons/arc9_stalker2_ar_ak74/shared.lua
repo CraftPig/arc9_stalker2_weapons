@@ -1,4 +1,5 @@
 AddCSLuaFile()
+SWEP.Base = "weapon_template_stalker2_ar"
 
 -------------------------------------------------------------------------------------------------------
 -- Hud and Spawn Menu Elements ------------------------------------------------------------------------
@@ -11,6 +12,9 @@ SWEP.PrintName = "AKM-74S"
 SWEP.TrueName = "AKS-74N"
 
 SWEP.Slot = 2
+SWEP.Spawnable = true
+
+SWEP.Category = "ARC9 - S.T.A.L.K.E.R. 2"
 
 SWEP.Class = "Assault Rifle"
 SWEP.Trivia = {
@@ -666,4 +670,4 @@ SWEP.Animations = {
     },
 }
 
-include("weapon_template_stalker2_ar.lua")
+-- include("weapons/weapon_template_stalker2_ar/shared.lua")

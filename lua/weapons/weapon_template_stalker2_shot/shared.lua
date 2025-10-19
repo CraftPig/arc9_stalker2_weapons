@@ -1,20 +1,15 @@
--------------------------------------------------------------------------------------------------------
--- Define Base ----------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------
 SWEP.Base = "arc9_base"
-SWEP.Spawnable = true
-
-SWEP.Category = "ARC9 - S.T.A.L.K.E.R. 2"
+SWEP.Spawnable = false
 
 -- Damage
 SWEP.BodyDamageMults = {
-    [HITGROUP_HEAD] = 1.5,
-    [HITGROUP_CHEST] = 1.1,
+    [HITGROUP_HEAD] = 1.3,
+    [HITGROUP_CHEST] = 1,
     [HITGROUP_STOMACH] = 1,
-    [HITGROUP_LEFTARM] = 0.8,
-    [HITGROUP_RIGHTARM] = 0.8,
-    [HITGROUP_LEFTLEG] = 0.6,
-    [HITGROUP_RIGHTLEG] = 0.6,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 1,
+    [HITGROUP_RIGHTLEG] = 1,
 }
 
 -- Weapon Visual Recoil
@@ -25,10 +20,10 @@ SWEP.VisualRecoilMultHipFire 				= 1.0
 SWEP.VisualRecoilMultSights 				= 0.5
 SWEP.VisualRecoilMultCrouch 				= 1.0
 
-SWEP.VisualRecoilUp 						= 0.05
-SWEP.VisualRecoilUpAddSighted 				= -0.05
-SWEP.VisualRecoilSide 						= 0.17
-SWEP.VisualRecoilSideAddSighted 			= -0.15
+SWEP.VisualRecoilUp 						= 3
+SWEP.VisualRecoilUpAddSighted 				= -0.0
+SWEP.VisualRecoilSide 						= 0.15
+SWEP.VisualRecoilSideAddSighted 			= -0.1
 SWEP.VisualRecoilRoll 						= 15
 
 SWEP.VisualRecoilPunch 						= 0.5
@@ -38,8 +33,8 @@ SWEP.VisualRecoilDampingConst 				= 140 -- How spring will be visual recoil, 120
 SWEP.VisualRecoilSpringMagnitude 			= 5
 SWEP.VisualRecoilSpringPunchDamping 		= 5 -- ehh another val for "eft" recoil, 6 is default
 
-SWEP.RecoilKick 							= 1.5 -- Camera recoil
-SWEP.RecoilKickDamping 						= 35.0 -- Camera recoil damping
+SWEP.RecoilKick 							= 5 -- Camera recoil
+SWEP.RecoilKickDamping 						= 15.0 -- Camera recoil damping
 SWEP.RecoilKickAffectPitch = nil
 
 -- Weapon Handling ------------------------------------------------------------------------------------
@@ -91,7 +86,7 @@ SWEP.CamCoolView 				= false -- Enable to use procedural camera movement. Set Ca
 SWEP.CamOffsetAng 				= Angle(0, 0, 0)
 
 SWEP.BobSprintMult 				= 0.5 -- 
-SWEP.BobWalkMult 				= 1 -- same but for all non sprint actions
+SWEP.BobWalkMult 				= 1.5 -- same but for all non sprint actions
 
 
 -- SWEP.DryFireDelay = 0.5
@@ -145,7 +140,7 @@ SWEP.Hook_PrimaryAttack = function(self)
 	
     local rnd = math.random(1,100)
 	if (rnd < jamChance) then
-		if self:Clip1() % 5 == 0 and self:Clip1() <= 200 then
+		if self:Clip1() <= 200 then
 			self:SetJammed(true)	
 		end
 	end
@@ -192,6 +187,17 @@ SWEP.CustomPoseParamsHandler = function (self, ent, iswm)
 		vm:SetPoseParameter("malfunction", 0)
 	end
 	
+	if owner:GetActiveWeapon():GetClass() == "arc9_stalker2_shot_boomstick" then
+		if self:Clip1() == 1 then
+			vm:SetPoseParameter("blend_hammer_1", 1)
+		end
+		
+		if self:Clip1() == 0 or self:GetJammed() == true then
+			vm:SetPoseParameter("blend_hammer_1", 1)
+			vm:SetPoseParameter("blend_hammer_2", 1)
+		end
+	end
+	
     if not self.blend_walk then
         self.blend_walk = 0
         self.blend_walk_right = 0
@@ -200,7 +206,7 @@ SWEP.CustomPoseParamsHandler = function (self, ent, iswm)
     end
 
     if owner:KeyDown(IN_FORWARD) then
-        self.blend_walk = math.Approach(self.blend_walk, 1, speed * FrameTime())
+        self.blend_walk = math.Approach(self.blend_walk, 0.5, speed * FrameTime())
     else
         self.blend_walk = math.Approach(self.blend_walk, 0, speed * FrameTime())
     end

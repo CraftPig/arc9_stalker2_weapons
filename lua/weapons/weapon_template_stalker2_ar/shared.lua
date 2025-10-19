@@ -1,27 +1,22 @@
--------------------------------------------------------------------------------------------------------
--- Define Base ----------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------
 SWEP.Base = "arc9_base"
-SWEP.Spawnable = true
-
-SWEP.Category = "ARC9 - S.T.A.L.K.E.R. 2"
+SWEP.Spawnable = false
 
 -- Damage
 SWEP.BodyDamageMults = {
-    [HITGROUP_HEAD] = 1.25,
-    [HITGROUP_CHEST] = 1,
+    [HITGROUP_HEAD] = 1.5,
+    [HITGROUP_CHEST] = 1.1,
     [HITGROUP_STOMACH] = 1,
-    [HITGROUP_LEFTARM] = 0.6,
-    [HITGROUP_RIGHTARM] = 0.6,
-    [HITGROUP_LEFTLEG] = 0.4,
-    [HITGROUP_RIGHTLEG] = 0.4,
+    [HITGROUP_LEFTARM] = 0.8,
+    [HITGROUP_RIGHTARM] = 0.8,
+    [HITGROUP_LEFTLEG] = 0.6,
+    [HITGROUP_RIGHTLEG] = 0.6,
 }
 
 -- Weapon Visual Recoil
 SWEP.UseVisualRecoil 						= true
 SWEP.PhysicalVisualRecoil 					= false 
 
-SWEP.VisualRecoilMultHipFire 				= 1.5
+SWEP.VisualRecoilMultHipFire 				= 1.0
 SWEP.VisualRecoilMultSights 				= 0.5
 SWEP.VisualRecoilMultCrouch 				= 1.0
 
@@ -31,8 +26,8 @@ SWEP.VisualRecoilSide 						= 0.17
 SWEP.VisualRecoilSideAddSighted 			= -0.15
 SWEP.VisualRecoilRoll 						= 15
 
-SWEP.VisualRecoilPunch 						= 1.75
-SWEP.VisualRecoilPunchMultSights 			= 4
+SWEP.VisualRecoilPunch 						= 0.5
+SWEP.VisualRecoilPunchMultSights 			= 3
 
 SWEP.VisualRecoilDampingConst 				= 140 -- How spring will be visual recoil, 120 is default
 SWEP.VisualRecoilSpringMagnitude 			= 5
@@ -44,11 +39,11 @@ SWEP.RecoilKickAffectPitch = nil
 
 -- Weapon Handling ------------------------------------------------------------------------------------
 SWEP.Sway 						= 0 -- How much the gun sways
-SWEP.SwayAddSighted 			= 0.5
+SWEP.SwayAddSighted 			= 0.35
 SWEP.SwayAddMidAir 				= 1.0 
 
-SWEP.SprintToFireTime 			= 0.1
-SWEP.AimDownSightsTime 			= 0.1
+SWEP.SprintToFireTime 			= 0.18
+SWEP.AimDownSightsTime 			= 0.2
 SWEP.MagnificationZoomSpeed 	= 1
 SWEP.NoFireDuringSighting 		= true
 
@@ -57,7 +52,7 @@ SWEP.TriggerDelayCancellable 	= false
 SWEP.TriggerDelayTime 			= 0.01
 
 SWEP.Speed 						= 1
-SWEP.SpeedMultSights 			= 1
+SWEP.SpeedMultSights 			= 0.92
 SWEP.SpeedMultShooting			= 1
 
 SWEP.PushBackForce 				= 1
@@ -145,7 +140,7 @@ SWEP.Hook_PrimaryAttack = function(self)
 	
     local rnd = math.random(1,100)
 	if (rnd < jamChance) then
-		if self:Clip1() % 2 == 0 and self:Clip1() <= 200 then
+		if self:Clip1() % 5 == 0 and self:Clip1() <= 200 then
 			self:SetJammed(true)	
 		end
 	end

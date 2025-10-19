@@ -1,4 +1,5 @@
 AddCSLuaFile()
+SWEP.Base = "weapon_template_stalker2_shot"
 
 -------------------------------------------------------------------------------------------------------
 -- Hud and Spawn Menu Elements ------------------------------------------------------------------------
@@ -11,6 +12,9 @@ SWEP.PrintName = "M860 Cracker"
 SWEP.TrueName = "Remington Model 870"
 
 SWEP.Slot = 3
+SWEP.Spawnable = true
+
+SWEP.Category = "ARC9 - S.T.A.L.K.E.R. 2"
 
 SWEP.Class = "Shotgun"
 SWEP.Trivia = {
@@ -521,7 +525,7 @@ SWEP.Animations = {
     },
 }
 
-include("weapon_template_stalker2_shotgun.lua")
+-- include("weapons/arc9_stalker2_template/weapon_template_stalker2_shotgun.lua")
  
 SWEP.VisualRecoilPunch 						= -5
 

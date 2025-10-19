@@ -1,4 +1,5 @@
 AddCSLuaFile()
+SWEP.Base = "weapon_template_stalker2_pt"
 
 -------------------------------------------------------------------------------------------------------
 -- Hud and Spawn Menu Elements ------------------------------------------------------------------------
@@ -11,6 +12,9 @@ SWEP.PrintName = "Rhino"
 SWEP.TrueName = "Colt Python"
 
 SWEP.Slot = 1
+SWEP.Spawnable = true
+
+SWEP.Category = "ARC9 - S.T.A.L.K.E.R. 2"
 
 SWEP.Class = "Revolver"
 SWEP.Trivia = {
@@ -434,4 +438,4 @@ SWEP.Animations = {
 }
 
 
-include("weapon_template_stalker2_pt.lua")
+-- include("weapons/arc9_stalker2_template/weapon_template_stalker2_pt.lua")

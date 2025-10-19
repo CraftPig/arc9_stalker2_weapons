@@ -1,4 +1,5 @@
 AddCSLuaFile()
+SWEP.Base = "weapon_template_stalker2_shot"
 
 -------------------------------------------------------------------------------------------------------
 -- Hud and Spawn Menu Elements ------------------------------------------------------------------------
@@ -11,6 +12,9 @@ SWEP.PrintName = "TOZ-34"
 SWEP.TrueName = "TOZ-34"
 
 SWEP.Slot = 3
+SWEP.Spawnable = true
+
+SWEP.Category = "ARC9 - S.T.A.L.K.E.R. 2"
 
 SWEP.Class = "Over/Under Shotgun"
 SWEP.Trivia = {
@@ -415,4 +419,5 @@ SWEP.Animations = {
 		InstantIdle = true,
     },
 }
-include("weapon_template_stalker2_shotgun.lua")
+
+-- include("weapons/arc9_stalker2_template/weapon_template_stalker2_shotgun.lua")
