@@ -20,6 +20,8 @@ local WeaponTable = {
 	"arc9_stalker2_shot_boomstick",
 	"arc9_stalker2_shot_m860",
 	"arc9_stalker2_shot_spas",
+	
+	"arc9_stalker2_sr_threeliner",
 }
 	
 hook.Add("PlayerCanPickupWeapon", "HookStalker2ResetGunHealth", function(ply, wep)
@@ -97,6 +99,7 @@ Sound Tables
 -- Sounds_DniPro
 -- Sounds_M860
 -- Sounds_Rhino
+-- Sounds_Threeliner
 
 ----------------------------------------------------------------------------------------------------- Sounds_Generic
 sound.Add( {
@@ -468,6 +471,68 @@ sound.Add( {
 		"weapons/arc9/stalker2/tails/S_HG_Tail_B_Outdoor_Silenced_12 (SFX).ogg",
     }
 } )
+
+sound.Add( {
+    name = "Stalker2.ExtSrSil",
+    channel = CHAN_STREAM,
+    volume = 1,
+    level = 125,
+    pitch = {95, 115},
+    sound = {
+        "weapons/arc9/stalker2/tails/SR_Tails_Ext_Silenced_01 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/SR_Tails_Ext_Silenced_02 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/SR_Tails_Ext_Silenced_03 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/SR_Tails_Ext_Silenced_04 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/SR_Tails_Ext_Silenced_05 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/SR_Tails_Ext_Silenced_06 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/SR_Tails_Ext_Silenced_07 (SFX).ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.IntSrLarge",
+    channel = CHAN_STREAM,
+    volume = 1,
+    level = 125,
+    pitch = {95, 115},
+    sound = {
+        "weapons/arc9/stalker2/tails/Tail_Int_SR_Large_01 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/Tail_Int_SR_Large_02 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/Tail_Int_SR_Large_03 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/Tail_Int_SR_Large_04 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/Tail_Int_SR_Large_05 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/Tail_Int_SR_Large_06 (SFX).ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.ExtAClose",
+    channel = CHAN_STREAM,
+    volume = 1,
+    level = 125,
+    pitch = {95, 115},
+    sound = {
+        "weapons/arc9/stalker2/tails/S_SR_Tail_Outdoor_A_Close_01 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_SR_Tail_Outdoor_A_Close_02 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_SR_Tail_Outdoor_A_Close_03 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_SR_Tail_Outdoor_A_Close_04 (SFX).ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.ExtBClose",
+    channel = CHAN_STREAM,
+    volume = 1,
+    level = 115,
+    pitch = {95, 115},
+    sound = {
+        "weapons/arc9/stalker2/tails/S_SR_Tail_Outdoor_B_Close_01 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_SR_Tail_Outdoor_B_Close_02 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_SR_Tail_Outdoor_B_Close_03 (SFX).ogg",
+		"weapons/arc9/stalker2/tails/S_SR_Tail_Outdoor_B_Close_04 (SFX).ogg",
+    }
+} )
+
 ----------------------------------------------------------------------------------------------------- Sounds_TOZ34
 sound.Add( {
     name = "Stalker2.TOZFire",
@@ -2329,5 +2394,181 @@ sound.Add( {
     pitch = {95, 100},
     sound = {
         "weapons/arc9/stalker2/pt_rhino/S_Raging_Bull_TriggerJam (SFX).ogg",
+    }
+} )
+
+----------------------------------------------------------------------------------------------------- Sounds_Threeliner
+sound.Add( {
+    name = "Stalker2.threelinerFire",
+    channel = CHAN_STATIC,
+    volume = 1,
+    level = 125,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/stalker2/sr_threeliner/fire_threeliner_1.ogg",
+		"weapons/arc9/stalker2/sr_threeliner/fire_threeliner_2.ogg",
+		"weapons/arc9/stalker2/sr_threeliner/fire_threeliner_3.ogg",
+		"weapons/arc9/stalker2/sr_threeliner/fire_threeliner_4.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Stalker2.ThreeLinerMagin",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_In_01 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_In_02 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_In_03 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_In_04 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ThreeLinerMagInIntro",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_In_Intro_01 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_In_Intro_02 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_In_Intro_03 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_In_Intro_04 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ThreeLinerMagInOutro",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_In_Outro_01 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_In_Outro_02 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_In_Outro_03 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_In_Outro_04 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ThreeLinerTactical",
+    channel = CHAN_ITEM,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_In_Tactical_01 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_In_Tactical_02 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_In_Tactical_03 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_In_Tactical_04 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_In_Tactical_06 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_In_Tactical_08 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ThreeLinerMagOutIntro",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_Out_Intro_01 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_Out_Intro_02 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_Out_Intro_03 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_Out_Intro_04 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ThreeLinerMagOutOutro",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_Out_Outro_01 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_Out_Outro_02 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_Out_Outro_03 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Mag_Out_Outro_04 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ThreeLinerSlideBack",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Back_01 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Back_02 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Back_03 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Back_04 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Back_05 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Back_06 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Back_07 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Back_08 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ThreeLinerSlideDown",
+    channel = CHAN_ITEM,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Down_01 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Down_02 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Down_03 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Down_04 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Down_05 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Down_06 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Down_07 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Down_08 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ThreeLinerUp",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Up_01 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Up_02 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Up_03 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Up_04 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Up_05 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Up_06 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Up_07 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Up_08 (SFX).ogg",
+    }
+} )
+sound.Add( {
+    name = "Stalker2.ThreeLinerForward",
+    channel = CHAN_ITEM,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Forward_01 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Forward_02 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Forward_03 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Forward_04 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Forward_05 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Forward_06 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Forward_07 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Slide_Forward_08 (SFX).ogg",
+    }
+} )sound.Add( {
+    name = "Stalker2.ThreeLinerWeaponHit",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 65,
+    pitch = {95, 100},
+    sound = {
+        "weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Weapon_Hit_01 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Weapon_Hit_02 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Weapon_Hit_03 (SFX).ogg",
+		"weapons/arc9/stalker2/sr_threeliner/S_ThreeLine_Weapon_Hit_04 (SFX).ogg",
     }
 } )
